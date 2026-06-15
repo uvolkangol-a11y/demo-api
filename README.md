@@ -27,6 +27,11 @@ docker compose up -d
 
 API `http://localhost:8080` adresinde hazır.
 
+| Arayüz | URL |
+|--------|-----|
+| Swagger UI | http://localhost:8080/swagger-ui.html |
+| OpenAPI JSON | http://localhost:8080/api-docs |
+
 ### Sadece DB'yi çalıştır, uygulamayı IDE'den başlat
 
 ```bash
