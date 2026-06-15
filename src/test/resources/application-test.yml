@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/demoapi_test
-    username: demoapi
-    password: demoapi
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/demoapi_test}
+    username: ${SPRING_DATASOURCE_USERNAME:demoapi}
+    password: ${SPRING_DATASOURCE_PASSWORD:demoapi}
   flyway:
     enabled: true
