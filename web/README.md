@@ -1,5 +1,7 @@
 # Rota Health — web preview
 
+Live: https://rota-health.netlify.app (Netlify Drop — upload `rota-health-site.zip` from `./build.sh` + zip to update)
+
 Mobile-first, single-file launch preview (`index.html`) of a medical travel platform:
 Google-rated dental and hair transplant clinics in Türkiye, booking on a 10% deposit model.
 
