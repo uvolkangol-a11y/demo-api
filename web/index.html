@@ -1,0 +1,856 @@
+<title>Rota Health</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Compare Google-rated dental and hair transplant clinics in Türkiye and book with a 10% deposit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap">
+<style>
+/* Layout: app-style single column — sticky header, deep-teal hero with filters, clinic card grid, price comparison, steps, partner band; booking happens in a bottom sheet (centered modal on desktop). */
+:root {
+  --bg: #F3F7F6;
+  --surface: #FFFFFF;
+  --ink: #10262B;
+  --muted: #56696D;
+  --line: #D9E3E1;
+  --accent: #0B7A77;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #DCEFED;
+  --gold: #B87A0A;
+  --coral: #B9472F;
+  --coral-soft: #F8E4DE;
+  --hero: #0E2E32;
+  --hero-ink: #ECF5F3;
+  --hero-muted: #A9C4C1;
+  --hero-field: #173E42;
+  --scrim: rgba(8, 22, 24, .55);
+  --display: "Manrope", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body: "Inter", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1517; --surface: #122123; --ink: #E5EFED; --muted: #93A8A9; --line: #233739;
+    --accent: #3FC1BA; --accent-ink: #062224; --accent-soft: #143A3A; --gold: #E6B23E;
+    --coral: #EE8A72; --coral-soft: #3A2019; --hero: #081B1D; --hero-ink: #ECF5F3;
+    --hero-muted: #93B2AF; --hero-field: #123134; --scrim: rgba(0, 0, 0, .65);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1517; --surface: #122123; --ink: #E5EFED; --muted: #93A8A9; --line: #233739;
+  --accent: #3FC1BA; --accent-ink: #062224; --accent-soft: #143A3A; --gold: #E6B23E;
+  --coral: #EE8A72; --coral-soft: #3A2019; --hero: #081B1D; --hero-ink: #ECF5F3;
+  --hero-muted: #93B2AF; --hero-field: #123134; --scrim: rgba(0, 0, 0, .65);
+  color-scheme: dark;
+}
+:lang(ar) { --display: "IBM Plex Sans Arabic", "Manrope", system-ui, sans-serif; --body: "IBM Plex Sans Arabic", "Inter", system-ui, sans-serif; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--hero); }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--hero); color: var(--hero-ink); border-bottom: 1px solid rgba(255,255,255,.06); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; min-width: 0; }
+.brand-mark { width: 34px; height: 34px; flex: none; }
+.brand-name { font-family: "Manrope", system-ui, sans-serif; font-weight: 800; font-size: 18px; letter-spacing: -0.02em; line-height: 1.1; }
+.brand-tag { font-size: 11px; color: var(--hero-muted); letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lang-select { background: var(--hero-field); color: var(--hero-ink); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 7px 12px; font-size: 13px; }
+
+/* Hero */
+.hero { background: var(--hero); color: var(--hero-ink); position: relative; overflow: hidden; }
+.hero::after {
+  content: ""; position: absolute; inset-block: 0; inset-inline-end: -60px; width: 46%; pointer-events: none; opacity: .14;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 17px, var(--hero-muted) 18px, var(--hero-muted) 19px, transparent 20px) 0 0 / 56px 56px,
+    radial-gradient(circle at 0 0, transparent 26px, var(--hero-muted) 27px, var(--hero-muted) 28px, transparent 29px) 0 0 / 56px 56px;
+  -webkit-mask-image: linear-gradient(to left, #000 30%, transparent);
+          mask-image: linear-gradient(to left, #000 30%, transparent);
+}
+[dir="rtl"] .hero::after { -webkit-mask-image: linear-gradient(to right, #000 30%, transparent); mask-image: linear-gradient(to right, #000 30%, transparent); }
+.hero .wrap { position: relative; z-index: 1; padding-block: 36px 30px; display: grid; gap: 22px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--hero-muted); }
+:lang(ar) .eyebrow { letter-spacing: 0; }
+.hero h1 { font-size: clamp(28px, 6vw, 48px); line-height: 1.08; font-weight: 800; max-width: 17ch; }
+.hero h1 em { font-style: normal; color: #7FDCD5; }
+.hero .sub { color: var(--hero-muted); max-width: 58ch; font-size: 16px; }
+.filters { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 640px; }
+.field-dark { display: grid; gap: 4px; }
+.field-dark label { font-size: 12px; color: var(--hero-muted); }
+.field-dark select { width: 100%; background: var(--hero-field); color: var(--hero-ink); border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 12px; font-size: 15px; }
+.trust { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--hero-muted); }
+.trust span { display: inline-flex; align-items: center; gap: 6px; }
+.trust svg { width: 16px; height: 16px; flex: none; }
+
+/* Notice */
+.notice { margin-top: 18px; display: flex; gap: 10px; align-items: flex-start; background: var(--coral-soft); color: var(--ink); border-radius: 10px; padding: 10px 14px; font-size: 13px; }
+.notice b { color: var(--coral); white-space: nowrap; }
+
+/* Categories */
+.cats { display: flex; gap: 8px; overflow-x: auto; padding-block: 16px 4px; scrollbar-width: none; }
+.cats::-webkit-scrollbar { display: none; }
+.cat { flex: none; display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.cat[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.cat:disabled { cursor: default; color: var(--muted); background: transparent; border-style: dashed; }
+.cat .soon { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--coral); }
+:lang(ar) .cat .soon { letter-spacing: 0; }
+.cat svg { width: 16px; height: 16px; }
+
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px 12px; flex-wrap: wrap; }
+.count { font-weight: 600; }
+.sort { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.sort select { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 13px; color: var(--ink); }
+
+/* Clinic cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; padding-bottom: 8px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.card-top { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start; }
+.mono { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-family: "Manrope", sans-serif; font-weight: 800; font-size: 15px; background: var(--accent-soft); color: var(--accent); }
+.mono svg { width: 24px; height: 24px; }
+.card h3 { font-size: 16px; font-weight: 700; line-height: 1.25; }
+.loc { font-size: 13px; color: var(--muted); }
+.tag-sample { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--coral); border: 1px solid currentColor; border-radius: 6px; padding: 2px 6px; white-space: nowrap; }
+:lang(ar) .tag-sample { letter-spacing: 0; }
+.rating { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.rating .score { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 18px; color: var(--ink); }
+.stars { position: relative; display: inline-block; font-size: 15px; letter-spacing: 1px; line-height: 1; color: var(--line); direction: ltr; }
+.stars::before { content: "★★★★★"; }
+.stars i { position: absolute; inset: 0 auto 0 0; overflow: hidden; color: var(--gold); font-style: normal; white-space: nowrap; }
+.stars i::before { content: "★★★★★"; }
+.src { font-size: 11px; font-weight: 600; color: var(--muted); border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; }
+.perks { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
+.perks li { font-size: 12px; background: var(--bg); border-radius: 6px; padding: 3px 8px; color: var(--muted); }
+.speaks { font-size: 12px; color: var(--muted); }
+.card-foot { display: flex; align-items: end; justify-content: space-between; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
+.price small { display: block; font-size: 12px; color: var(--muted); }
+.price strong { font-family: "Manrope", sans-serif; font-size: 22px; font-weight: 800; }
+.btn { border: 0; border-radius: 10px; background: var(--accent); color: var(--accent-ink); font-weight: 600; padding: 11px 16px; font-size: 14px; white-space: nowrap; transition: transform .12s ease, filter .12s ease; }
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: scale(.98); }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.btn.block { width: 100%; padding: 14px; font-size: 15px; }
+.empty { padding: 32px 0; color: var(--muted); text-align: center; }
+
+/* Sections */
+section.block { padding-block: 40px 8px; }
+.sec-head { display: grid; gap: 6px; margin-bottom: 18px; }
+.sec-head h2 { font-size: clamp(22px, 4vw, 30px); font-weight: 800; }
+.sec-head p { color: var(--muted); max-width: 62ch; }
+
+/* Price comparison */
+.cmp { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.cmp-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: grid; gap: 10px; min-width: 0; }
+.cmp-card h3 { font-size: 15px; font-weight: 700; }
+.cmp-row { display: grid; grid-template-columns: 7.5em 1fr; gap: 10px; align-items: center; font-size: 12px; }
+.cmp-row .c { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cmp-row.tr .c { color: var(--ink); font-weight: 600; }
+.track { position: relative; height: 26px; background: var(--bg); border-radius: 6px; }
+.range { position: absolute; top: 4px; bottom: 4px; border-radius: 4px; background: var(--muted); opacity: .45; }
+.cmp-row.tr .range { background: var(--accent); opacity: 1; }
+.rv { position: absolute; top: 50%; transform: translateY(-50%); font-size: 11px; font-weight: 600; white-space: nowrap; color: var(--ink); direction: ltr; }
+.save { font-size: 13px; color: var(--accent); font-weight: 600; }
+.fine { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+/* Steps */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-content: start; }
+.steps li::before { content: counter(s); grid-row: span 2; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-family: "Manrope", sans-serif; font-weight: 800; }
+.steps h3 { font-size: 16px; font-weight: 700; padding-top: 5px; }
+.steps p { color: var(--muted); font-size: 14px; }
+
+/* Partner band */
+.partner { margin-block: 40px 0; background: var(--accent-soft); border-radius: 18px; padding: 24px; display: flex; gap: 18px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.partner > div { display: grid; gap: 6px; max-width: 60ch; min-width: 0; }
+.partner h2 { font-size: 22px; font-weight: 800; }
+.partner p { color: var(--muted); }
+.partner .big { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 44px; color: var(--accent); line-height: 1; }
+
+footer { padding-block: 32px 40px; color: var(--muted); font-size: 12px; display: grid; gap: 6px; }
+
+/* Sheet */
+.scrim { position: fixed; inset: 0; background: var(--scrim); z-index: 40; display: flex; align-items: flex-end; justify-content: center; }
+.sheet { background: var(--surface); width: 100%; max-width: 560px; max-height: 92vh; overflow-y: auto; border-radius: 20px 20px 0 0; padding: 8px max(18px, env(safe-area-inset-right, 0px)) calc(20px + env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px)); animation: up .22s ease-out; }
+@keyframes up { from { transform: translateY(24px); opacity: .6; } to { transform: none; opacity: 1; } }
+@media (min-width: 720px) { .scrim { align-items: center; } .sheet { border-radius: 20px; max-height: 88vh; padding: 8px 24px 24px; } }
+@media (prefers-reduced-motion: reduce) { .sheet { animation: none; } .btn { transition: none; } }
+.grab { width: 40px; height: 4px; border-radius: 4px; background: var(--line); margin: 4px auto 10px; }
+.sheet-head { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.x { background: var(--bg); border: 0; width: 34px; height: 34px; border-radius: 50%; font-size: 18px; line-height: 1; color: var(--muted); }
+.sheet h2 { font-size: 18px; font-weight: 800; }
+.sheet h4 { margin: 18px 0 8px; font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+:lang(ar) .sheet h4 { letter-spacing: 0; text-transform: none; }
+.pkgs { display: grid; gap: 8px; }
+.pkg { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; border: 1px solid var(--line); border-radius: 12px; padding: 12px; cursor: pointer; }
+.pkg:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.pkg input { accent-color: var(--accent); width: 18px; height: 18px; margin: 0; }
+.pkg b { display: block; font-size: 14px; }
+.pkg small { color: var(--muted); font-size: 12px; }
+.pkg .p { font-family: "Manrope", sans-serif; font-weight: 800; }
+.form { display: grid; gap: 12px; }
+.f { display: grid; gap: 5px; min-width: 0; }
+.f label { font-size: 13px; font-weight: 500; }
+.f input, .f select, .f textarea { width: 100%; border: 1px solid var(--line); background: var(--bg); border-radius: 10px; padding: 11px 12px; font-size: 15px; }
+.f textarea { min-height: 72px; resize: vertical; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.consent { display: grid; grid-template-columns: auto 1fr; gap: 10px; font-size: 13px; color: var(--muted); align-items: start; }
+.consent input { accent-color: var(--accent); width: 18px; height: 18px; margin: 2px 0 0; }
+.err { color: var(--coral); font-size: 13px; }
+.est { background: var(--bg); border-radius: 12px; padding: 12px 14px; display: grid; gap: 6px; font-size: 14px; }
+.est div { display: flex; justify-content: space-between; gap: 10px; }
+.est .dep { color: var(--accent); font-weight: 700; }
+.est .tot { border-top: 1px dashed var(--line); padding-top: 6px; }
+.done { display: grid; gap: 14px; padding-top: 16px; }
+.ref { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 26px; letter-spacing: .04em; direction: ltr; text-align: start; }
+.okmark { width: 48px; height: 48px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+.okmark svg { width: 26px; height: 26px; }
+.row-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+a.btn { text-decoration: none; text-align: center; display: inline-block; }
+pre.req { direction: ltr; text-align: left; white-space: pre-wrap; word-break: break-word; font-size: 12px; background: var(--bg); border-radius: 10px; padding: 10px 12px; margin: 0; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+@media (max-width: 520px) {
+  .filters { grid-template-columns: 1fr 1fr; }
+  .two { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  .cmp { grid-template-columns: 1fr; }
+  .brand-tag { display: none; }
+}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Rota Health">
+      <svg class="brand-mark" viewBox="0 0 34 34" aria-hidden="true">
+        <rect width="34" height="34" rx="10" fill="#0B7A77"/>
+        <path d="M9 23c3-9 7-12 16-12" stroke="#ECF5F3" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <circle cx="9" cy="23" r="3" fill="#ECF5F3"/>
+        <path d="M21 8l4 3-4 3" stroke="#7FDCD5" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>
+        <span class="brand-name">Rota Health</span><br>
+        <span class="brand-tag" data-i18n="tagline"></span>
+      </span>
+    </a>
+    <label class="sr" for="lang" hidden>Language</label>
+    <select id="lang" class="lang-select" aria-label="Language"></select>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="eyebrow"></p>
+    <h1 data-i18n="h1"></h1>
+    <p class="sub" data-i18n="sub"></p>
+    <div class="filters">
+      <div class="field-dark">
+        <label for="f-cat" data-i18n="treatment"></label>
+        <select id="f-cat"></select>
+      </div>
+      <div class="field-dark">
+        <label for="f-city" data-i18n="city"></label>
+        <select id="f-city"></select>
+      </div>
+    </div>
+    <div class="trust">
+      <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.3l-3.8 2 .7-4.3-3.1-3 4.3-.6z" fill="currentColor"/></svg><span data-i18n="trust1"></span></span>
+      <span><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="4" width="12" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M2 7h12" stroke="currentColor" stroke-width="1.5"/></svg><span data-i18n="trust2"></span></span>
+      <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="trust3"></span></span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="notice" role="note"><b data-i18n="sample"></b><span data-i18n="demo"></span></div>
+
+  <nav class="cats" id="cats" aria-label="Treatments"></nav>
+
+  <div class="bar">
+    <span class="count num" id="count" aria-live="polite"></span>
+    <label class="sort"><span data-i18n="sortBy"></span>
+      <select id="sort">
+        <option value="rating" data-i18n="sort_rating"></option>
+        <option value="reviews" data-i18n="sort_reviews"></option>
+        <option value="price" data-i18n="sort_price"></option>
+      </select>
+    </label>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <section class="block" aria-labelledby="cmp-h">
+    <div class="sec-head">
+      <h2 id="cmp-h" data-i18n="cmp_title"></h2>
+      <p data-i18n="cmp_sub"></p>
+    </div>
+    <div class="cmp" id="cmp"></div>
+  </section>
+
+  <section class="block" aria-labelledby="how-h">
+    <div class="sec-head"><h2 id="how-h" data-i18n="how_title"></h2></div>
+    <ol class="steps">
+      <li><h3 data-i18n="s1t"></h3><p data-i18n="s1d"></p></li>
+      <li><h3 data-i18n="s2t"></h3><p data-i18n="s2d"></p></li>
+      <li><h3 data-i18n="s3t"></h3><p data-i18n="s3d"></p></li>
+    </ol>
+  </section>
+
+  <div class="partner">
+    <div>
+      <h2 data-i18n="partner_title"></h2>
+      <p data-i18n="partner_desc"></p>
+    </div>
+    <span class="big num" aria-hidden="true">10%</span>
+    <a class="btn" id="partner-cta" target="_blank" rel="noopener" data-i18n="partner_cta"></a>
+  </div>
+
+  <footer>
+    <p data-i18n="footer"></p>
+    <p>© 2026 Rota Health</p>
+  </footer>
+</main>
+
+<div class="scrim" id="scrim" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-name" id="sheet">
+    <div class="grab" aria-hidden="true"></div>
+    <div class="sheet-head">
+      <div class="mono" id="sh-mono"></div>
+      <div>
+        <h2 id="sh-name"></h2>
+        <div class="rating" id="sh-rating"></div>
+      </div>
+      <button class="x" id="sh-close" type="button" aria-label="Close">×</button>
+    </div>
+
+    <form id="book" class="form" novalidate>
+      <h4 data-i18n="f_pkg"></h4>
+      <div class="pkgs" id="sh-pkgs"></div>
+      <h4 data-i18n="form_title"></h4>
+      <div class="two">
+        <div class="f"><label for="b-date" data-i18n="f_date"></label><input id="b-date" type="date" required></div>
+        <div class="f"><label for="b-country" data-i18n="f_country"></label><select id="b-country"></select></div>
+      </div>
+      <div class="f"><label for="b-name" data-i18n="f_name"></label><input id="b-name" type="text" autocomplete="name" required></div>
+      <div class="f"><label for="b-phone" data-i18n="f_phone"></label><input id="b-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+20 100 000 0000" required></div>
+      <div class="f"><label for="b-notes" data-i18n="f_notes"></label><textarea id="b-notes" data-i18n-ph="f_notes_ph"></textarea></div>
+      <div class="est" id="b-est"></div>
+      <label class="consent"><input id="b-consent" type="checkbox"><span data-i18n="f_consent"></span></label>
+      <p class="err" id="b-err" hidden data-i18n="f_err"></p>
+      <button class="btn block" type="submit" data-i18n="f_submit"></button>
+    </form>
+
+    <div class="done" id="done" hidden>
+      <div class="okmark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h2 data-i18n="done_title"></h2>
+      <div><small class="loc" data-i18n="done_ref"></small><div class="ref" id="d-ref"></div></div>
+      <div class="est" id="d-est"></div>
+      <p class="loc" data-i18n="done_next"></p>
+      <pre class="req" id="d-text"></pre>
+      <div class="row-btns">
+        <a class="btn" id="d-wa" target="_blank" rel="noopener" data-i18n="wa"></a>
+        <button class="btn ghost" type="button" id="d-copy" data-i18n="copy"></button>
+      </div>
+      <button class="btn ghost block" type="button" id="d-close" data-i18n="close"></button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Coordinator WhatsApp number in international format without "+", e.g. "905321234567".
+  // Empty = WhatsApp opens with the message ready and the patient picks the recipient.
+  var WHATSAPP_NUMBER = "";
+  var DEPOSIT_RATE = 0.10;
+
+  var LANGS = ["en", "ar", "de", "ru", "fr", "tr"];
+  var LANG_NAMES = { en: "English", ar: "العربية", de: "Deutsch", ru: "Русский", fr: "Français", tr: "Türkçe" };
+  // Default patient country per UI language (used when the browser gives no region).
+  var LANG_COUNTRY = { en: "GB", ar: "EG", de: "DE", ru: "RU", fr: "FR", tr: "TR" };
+  var COUNTRIES = ["GB", "DE", "NL", "FR", "BE", "IE", "US", "EG", "IQ", "SA", "AE", "KW", "LY", "DZ", "MA", "RU", "AZ", "KZ", "UA", "TR"];
+
+  var T = {
+    en: {
+      tagline: "Medical travel · Türkiye", eyebrow: "Dental & hair clinics in Türkiye",
+      h1: "Find a top-rated clinic. Book it in <em>two minutes</em>.",
+      sub: "Compare Google ratings and package prices across Istanbul, Antalya, İzmir and Ankara. Secure your date with a 10% deposit and pay the rest at the clinic.",
+      treatment: "Treatment", city: "City", allCities: "All cities",
+      trust1: "Google ratings on every clinic", trust2: "Only 10% paid upfront", trust3: "Coordinator in your language",
+      cat_all: "All", cat_dental: "Dental", cat_hair: "Hair transplant", cat_aesthetic: "Aesthetic surgery", cat_eye: "Eye surgery", cat_bariatric: "Weight-loss surgery", cat_ivf: "IVF", soon: "Soon",
+      sortBy: "Sort by", sort_rating: "Highest rated", sort_reviews: "Most reviewed", sort_price: "Lowest price",
+      count: "{n} clinics", demo: "Preview version. The clinics on this page are sample listings; live Google ratings and verified clinics go online at launch.", sample: "Sample",
+      reviews: "{n} Google reviews", from: "from", book: "View & book", speaks: "Languages",
+      perk_transfer: "Airport transfer", perk_hotel: "Hotel included", perk_interpreter: "Interpreter", perk_aftercare: "Aftercare follow-up",
+      pkg_implant: "Dental implant", pkg_implant_u: "per tooth", pkg_zirconia: "Zirconia crown", pkg_zirconia_u: "per tooth", pkg_emax: "E-max veneer", pkg_emax_u: "per tooth", pkg_smile: "Smile makeover", pkg_smile_u: "20 teeth, zirconia",
+      pkg_fue: "FUE hair transplant", pkg_fue_u: "up to 4,000 grafts", pkg_dhi: "DHI hair transplant", pkg_dhi_u: "up to 3,500 grafts", pkg_beard: "Beard transplant", pkg_beard_u: "up to 2,500 grafts",
+      cmp_title: "What the same treatment costs", cmp_sub: "Typical price ranges in euros. Your final price depends on your treatment plan.",
+      c_TR: "Türkiye", c_DE: "Germany", c_GB: "United Kingdom", c_US: "United States",
+      cmp_hair: "Hair transplant, ~3,000 grafts", cmp_implant: "Dental implant, per tooth", cmp_veneer: "Veneer, per tooth", save: "Up to {p}% less in Türkiye",
+      how_title: "How it works",
+      s1t: "Compare", s1d: "Filter by treatment and city. Every clinic shows its Google rating, review count and package prices.",
+      s2t: "Request", s2d: "Pick a package and your arrival date. A patient coordinator confirms with the clinic within 24 hours.",
+      s3t: "Travel", s3d: "Pay a 10% deposit to lock your date. Pay the rest at the clinic, after your consultation.",
+      partner_title: "Clinics: join the platform", partner_desc: "Listing is free. We earn a 10% commission only when a patient completes treatment, collected as the patient's deposit.", partner_cta: "Become a partner clinic",
+      form_title: "Your details", f_pkg: "Choose a package", f_date: "Preferred arrival date", f_name: "Full name", f_country: "Country", f_phone: "WhatsApp number",
+      f_notes: "Notes for the doctor (optional)", f_notes_ph: "e.g. two missing molars, X-ray available",
+      f_consent: "I agree that my details are shared with this clinic for this request.", f_submit: "Request appointment",
+      f_err: "Fill in your name, WhatsApp number and arrival date, and tick the consent box.",
+      est: "Estimated package", deposit: "Deposit to book (10%)", atclinic: "Pay at the clinic",
+      done_title: "Your request is ready", done_ref: "Reference", done_next: "Send it to our patient coordinator on WhatsApp. The deposit is requested only after the clinic confirms your date.",
+      wa: "Open in WhatsApp", copy: "Copy request", copied: "Copied", close: "Close",
+      footer: "Prices are estimates. Your doctor sets the final treatment plan after an in-person examination. Ratings are shown with attribution to Google.",
+      wa_head: "New appointment request", wa_partner: "Hello, we are a clinic in Türkiye and would like to join Rota Health as a partner."
+    },
+    ar: {
+      tagline: "السياحة العلاجية · تركيا", eyebrow: "عيادات الأسنان وزراعة الشعر في تركيا",
+      h1: "اعثر على عيادة بأعلى تقييم، واحجز خلال <em>دقيقتين</em>.",
+      sub: "قارن تقييمات Google وأسعار الباقات في إسطنبول وأنطاليا وإزمير وأنقرة. ثبّت موعدك بعربون 10% وادفع الباقي في العيادة.",
+      treatment: "العلاج", city: "المدينة", allCities: "كل المدن",
+      trust1: "تقييمات Google لكل عيادة", trust2: "تدفع 10% فقط مقدمًا", trust3: "منسّق يتحدث لغتك",
+      cat_all: "الكل", cat_dental: "طب الأسنان", cat_hair: "زراعة الشعر", cat_aesthetic: "الجراحة التجميلية", cat_eye: "جراحة العيون", cat_bariatric: "جراحة السمنة", cat_ivf: "أطفال الأنابيب", soon: "قريبًا",
+      sortBy: "الترتيب", sort_rating: "الأعلى تقييمًا", sort_reviews: "الأكثر مراجعات", sort_price: "الأقل سعرًا",
+      count: "{n} عيادة", demo: "نسخة تجريبية. العيادات في هذه الصفحة أمثلة؛ ستتوفر تقييمات Google المباشرة والعيادات الموثّقة عند الإطلاق.", sample: "مثال",
+      reviews: "{n} مراجعة على Google", from: "ابتداءً من", book: "التفاصيل والحجز", speaks: "اللغات",
+      perk_transfer: "نقل من المطار", perk_hotel: "الفندق مشمول", perk_interpreter: "مترجم", perk_aftercare: "متابعة بعد العلاج",
+      pkg_implant: "زراعة سن", pkg_implant_u: "للسن الواحد", pkg_zirconia: "تاج زركونيا", pkg_zirconia_u: "للسن الواحد", pkg_emax: "قشرة E-max", pkg_emax_u: "للسن الواحد", pkg_smile: "ابتسامة هوليوود", pkg_smile_u: "20 سنًا، زركونيا",
+      pkg_fue: "زراعة الشعر FUE", pkg_fue_u: "حتى 4,000 بصيلة", pkg_dhi: "زراعة الشعر DHI", pkg_dhi_u: "حتى 3,500 بصيلة", pkg_beard: "زراعة اللحية", pkg_beard_u: "حتى 2,500 بصيلة",
+      cmp_title: "كم يكلّف العلاج نفسه", cmp_sub: "نطاقات أسعار تقريبية باليورو. يعتمد السعر النهائي على خطة علاجك.",
+      c_TR: "تركيا", c_DE: "ألمانيا", c_GB: "المملكة المتحدة", c_US: "الولايات المتحدة",
+      cmp_hair: "زراعة الشعر، نحو 3,000 بصيلة", cmp_implant: "زراعة سن، للسن الواحد", cmp_veneer: "قشرة، للسن الواحد", save: "أقل بنسبة تصل إلى {p}% في تركيا",
+      how_title: "كيف تعمل الخدمة",
+      s1t: "قارن", s1d: "صفِّ النتائج حسب العلاج والمدينة. تعرض كل عيادة تقييمها على Google وعدد المراجعات وأسعار الباقات.",
+      s2t: "اطلب", s2d: "اختر الباقة وتاريخ وصولك. يؤكد منسّق المرضى الموعد مع العيادة خلال 24 ساعة.",
+      s3t: "سافر", s3d: "ادفع عربونًا بنسبة 10% لتثبيت موعدك، وادفع الباقي في العيادة بعد الاستشارة.",
+      partner_title: "للعيادات: انضموا إلى المنصة", partner_desc: "الإدراج مجاني. نتقاضى عمولة 10% فقط عند إتمام المريض للعلاج، وتُحصَّل من عربون المريض.", partner_cta: "انضم كعيادة شريكة",
+      form_title: "بياناتك", f_pkg: "اختر الباقة", f_date: "تاريخ الوصول المفضّل", f_name: "الاسم الكامل", f_country: "البلد", f_phone: "رقم واتساب",
+      f_notes: "ملاحظات للطبيب (اختياري)", f_notes_ph: "مثال: لديّ ضرسان مفقودان، والأشعة متوفرة",
+      f_consent: "أوافق على مشاركة بياناتي مع هذه العيادة لهذا الطلب.", f_submit: "اطلب الموعد",
+      f_err: "أدخل اسمك ورقم واتساب وتاريخ الوصول، وضع علامة على خانة الموافقة.",
+      est: "السعر التقديري للباقة", deposit: "عربون الحجز (10%)", atclinic: "يُدفع في العيادة",
+      done_title: "طلبك جاهز", done_ref: "رقم المرجع", done_next: "أرسله إلى منسّق المرضى عبر واتساب. لا يُطلب العربون إلا بعد أن تؤكد العيادة موعدك.",
+      wa: "فتح في واتساب", copy: "نسخ الطلب", copied: "تم النسخ", close: "إغلاق",
+      footer: "الأسعار تقديرية. يحدّد طبيبك خطة العلاج النهائية بعد الفحص المباشر. تُعرض التقييمات مع الإشارة إلى Google.",
+      wa_head: "طلب موعد جديد", wa_partner: "مرحبًا، نحن عيادة في تركيا ونرغب في الانضمام إلى Rota Health كشريك."
+    },
+    de: {
+      tagline: "Medizinreisen · Türkei", eyebrow: "Zahn- und Haarkliniken in der Türkei",
+      h1: "Top-bewertete Klinik finden. In <em>zwei Minuten</em> anfragen.",
+      sub: "Vergleichen Sie Google-Bewertungen und Paketpreise in Istanbul, Antalya, İzmir und Ankara. Sichern Sie Ihren Termin mit 10 % Anzahlung, den Rest zahlen Sie in der Klinik.",
+      treatment: "Behandlung", city: "Stadt", allCities: "Alle Städte",
+      trust1: "Google-Bewertung bei jeder Klinik", trust2: "Nur 10 % im Voraus", trust3: "Koordinator in Ihrer Sprache",
+      cat_all: "Alle", cat_dental: "Zahnmedizin", cat_hair: "Haartransplantation", cat_aesthetic: "Ästhetische Chirurgie", cat_eye: "Augenchirurgie", cat_bariatric: "Adipositas-Chirurgie", cat_ivf: "Kinderwunsch (IVF)", soon: "Bald",
+      sortBy: "Sortieren", sort_rating: "Beste Bewertung", sort_reviews: "Meiste Bewertungen", sort_price: "Niedrigster Preis",
+      count: "{n} Kliniken", demo: "Vorschauversion. Die Kliniken auf dieser Seite sind Beispieleinträge; Live-Google-Bewertungen und geprüfte Kliniken folgen zum Start.", sample: "Beispiel",
+      reviews: "{n} Google-Bewertungen", from: "ab", book: "Details & Anfrage", speaks: "Sprachen",
+      perk_transfer: "Flughafentransfer", perk_hotel: "Hotel inklusive", perk_interpreter: "Dolmetscher", perk_aftercare: "Nachsorge",
+      pkg_implant: "Zahnimplantat", pkg_implant_u: "pro Zahn", pkg_zirconia: "Zirkonkrone", pkg_zirconia_u: "pro Zahn", pkg_emax: "E-max-Veneer", pkg_emax_u: "pro Zahn", pkg_smile: "Smile Makeover", pkg_smile_u: "20 Zähne, Zirkon",
+      pkg_fue: "FUE-Haartransplantation", pkg_fue_u: "bis 4.000 Grafts", pkg_dhi: "DHI-Haartransplantation", pkg_dhi_u: "bis 3.500 Grafts", pkg_beard: "Barttransplantation", pkg_beard_u: "bis 2.500 Grafts",
+      cmp_title: "Was dieselbe Behandlung kostet", cmp_sub: "Typische Preisspannen in Euro. Der Endpreis hängt von Ihrem Behandlungsplan ab.",
+      c_TR: "Türkei", c_DE: "Deutschland", c_GB: "Großbritannien", c_US: "USA",
+      cmp_hair: "Haartransplantation, ca. 3.000 Grafts", cmp_implant: "Zahnimplantat, pro Zahn", cmp_veneer: "Veneer, pro Zahn", save: "Bis zu {p} % günstiger in der Türkei",
+      how_title: "So funktioniert es",
+      s1t: "Vergleichen", s1d: "Filtern Sie nach Behandlung und Stadt. Jede Klinik zeigt Google-Bewertung, Anzahl der Bewertungen und Paketpreise.",
+      s2t: "Anfragen", s2d: "Wählen Sie ein Paket und Ihr Anreisedatum. Ein Patientenkoordinator bestätigt innerhalb von 24 Stunden mit der Klinik.",
+      s3t: "Anreisen", s3d: "Mit 10 % Anzahlung sichern Sie Ihren Termin. Den Rest zahlen Sie nach der Beratung in der Klinik.",
+      partner_title: "Für Kliniken: Partner werden", partner_desc: "Der Eintrag ist kostenlos. Wir erhalten 10 % Provision nur bei abgeschlossener Behandlung, eingezogen über die Anzahlung des Patienten.", partner_cta: "Partnerklinik werden",
+      form_title: "Ihre Angaben", f_pkg: "Paket wählen", f_date: "Gewünschtes Anreisedatum", f_name: "Vollständiger Name", f_country: "Land", f_phone: "WhatsApp-Nummer",
+      f_notes: "Hinweise für den Arzt (optional)", f_notes_ph: "z. B. zwei fehlende Backenzähne, Röntgenbild vorhanden",
+      f_consent: "Ich bin einverstanden, dass meine Angaben für diese Anfrage an die Klinik weitergegeben werden.", f_submit: "Termin anfragen",
+      f_err: "Bitte Name, WhatsApp-Nummer und Anreisedatum angeben und die Einwilligung ankreuzen.",
+      est: "Geschätzter Paketpreis", deposit: "Anzahlung (10 %)", atclinic: "Zahlung in der Klinik",
+      done_title: "Ihre Anfrage ist bereit", done_ref: "Referenz", done_next: "Senden Sie sie per WhatsApp an unseren Patientenkoordinator. Die Anzahlung wird erst fällig, wenn die Klinik Ihren Termin bestätigt.",
+      wa: "In WhatsApp öffnen", copy: "Anfrage kopieren", copied: "Kopiert", close: "Schließen",
+      footer: "Preise sind Schätzungen. Den endgültigen Behandlungsplan legt Ihr Arzt nach einer persönlichen Untersuchung fest. Bewertungen mit Quellenangabe Google.",
+      wa_head: "Neue Terminanfrage", wa_partner: "Hallo, wir sind eine Klinik in der Türkei und möchten Partner von Rota Health werden."
+    },
+    ru: {
+      tagline: "Медицинский туризм · Турция", eyebrow: "Стоматология и пересадка волос в Турции",
+      h1: "Найдите клинику с лучшим рейтингом. Запишитесь за <em>две минуты</em>.",
+      sub: "Сравнивайте рейтинги Google и цены пакетов в Стамбуле, Анталье, Измире и Анкаре. Закрепите дату предоплатой 10 %, остальное оплатите в клинике.",
+      treatment: "Лечение", city: "Город", allCities: "Все города",
+      trust1: "Рейтинг Google у каждой клиники", trust2: "Предоплата всего 10 %", trust3: "Координатор на вашем языке",
+      cat_all: "Все", cat_dental: "Стоматология", cat_hair: "Пересадка волос", cat_aesthetic: "Пластическая хирургия", cat_eye: "Хирургия глаз", cat_bariatric: "Бариатрия", cat_ivf: "ЭКО", soon: "Скоро",
+      sortBy: "Сортировка", sort_rating: "Высокий рейтинг", sort_reviews: "Больше отзывов", sort_price: "Низкая цена",
+      count: "Клиник: {n}", demo: "Предварительная версия. Клиники на этой странице — примеры; актуальные рейтинги Google и проверенные клиники появятся при запуске.", sample: "Пример",
+      reviews: "Отзывов в Google: {n}", from: "от", book: "Подробнее и запись", speaks: "Языки",
+      perk_transfer: "Трансфер из аэропорта", perk_hotel: "Отель включён", perk_interpreter: "Переводчик", perk_aftercare: "Наблюдение после лечения",
+      pkg_implant: "Имплант зуба", pkg_implant_u: "за зуб", pkg_zirconia: "Циркониевая коронка", pkg_zirconia_u: "за зуб", pkg_emax: "Винир E-max", pkg_emax_u: "за зуб", pkg_smile: "Голливудская улыбка", pkg_smile_u: "20 зубов, цирконий",
+      pkg_fue: "Пересадка волос FUE", pkg_fue_u: "до 4 000 графтов", pkg_dhi: "Пересадка волос DHI", pkg_dhi_u: "до 3 500 графтов", pkg_beard: "Пересадка бороды", pkg_beard_u: "до 2 500 графтов",
+      cmp_title: "Сколько стоит то же лечение", cmp_sub: "Типичные диапазоны цен в евро. Итоговая цена зависит от плана лечения.",
+      c_TR: "Турция", c_DE: "Германия", c_GB: "Великобритания", c_US: "США",
+      cmp_hair: "Пересадка волос, ~3 000 графтов", cmp_implant: "Имплант, за зуб", cmp_veneer: "Винир, за зуб", save: "В Турции дешевле до {p} %",
+      how_title: "Как это работает",
+      s1t: "Сравните", s1d: "Фильтруйте по виду лечения и городу. У каждой клиники указаны рейтинг Google, число отзывов и цены пакетов.",
+      s2t: "Оставьте заявку", s2d: "Выберите пакет и дату приезда. Координатор подтвердит запись с клиникой в течение 24 часов.",
+      s3t: "Приезжайте", s3d: "Внесите предоплату 10 %, чтобы закрепить дату. Остальное оплатите в клинике после консультации.",
+      partner_title: "Клиникам: станьте партнёром", partner_desc: "Размещение бесплатное. Комиссия 10 % — только за завершённое лечение, она удерживается из предоплаты пациента.", partner_cta: "Стать клиникой-партнёром",
+      form_title: "Ваши данные", f_pkg: "Выберите пакет", f_date: "Желаемая дата приезда", f_name: "Имя и фамилия", f_country: "Страна", f_phone: "Номер WhatsApp",
+      f_notes: "Комментарий для врача (необязательно)", f_notes_ph: "например: нет двух коренных зубов, есть снимок",
+      f_consent: "Я согласен(на) на передачу моих данных этой клинике для данной заявки.", f_submit: "Оформить заявку",
+      f_err: "Укажите имя, номер WhatsApp и дату приезда и отметьте согласие.",
+      est: "Ориентировочная стоимость", deposit: "Предоплата (10 %)", atclinic: "Оплата в клинике",
+      done_title: "Заявка готова", done_ref: "Номер заявки", done_next: "Отправьте её нашему координатору в WhatsApp. Предоплата запрашивается только после подтверждения даты клиникой.",
+      wa: "Открыть в WhatsApp", copy: "Скопировать заявку", copied: "Скопировано", close: "Закрыть",
+      footer: "Цены ориентировочные. Окончательный план лечения врач составляет после очного осмотра. Рейтинги приводятся со ссылкой на Google.",
+      wa_head: "Новая заявка на приём", wa_partner: "Здравствуйте, мы клиника в Турции и хотим стать партнёром Rota Health."
+    },
+    fr: {
+      tagline: "Tourisme médical · Turquie", eyebrow: "Cliniques dentaires et capillaires en Turquie",
+      h1: "Trouvez une clinique très bien notée. Réservez en <em>deux minutes</em>.",
+      sub: "Comparez les notes Google et les prix des forfaits à Istanbul, Antalya, İzmir et Ankara. Bloquez votre date avec un acompte de 10 % et réglez le reste à la clinique.",
+      treatment: "Traitement", city: "Ville", allCities: "Toutes les villes",
+      trust1: "Note Google pour chaque clinique", trust2: "Seulement 10 % à l'avance", trust3: "Coordinateur dans votre langue",
+      cat_all: "Tout", cat_dental: "Dentaire", cat_hair: "Greffe de cheveux", cat_aesthetic: "Chirurgie esthétique", cat_eye: "Chirurgie des yeux", cat_bariatric: "Chirurgie de l'obésité", cat_ivf: "FIV", soon: "Bientôt",
+      sortBy: "Trier", sort_rating: "Mieux notées", sort_reviews: "Plus d'avis", sort_price: "Prix le plus bas",
+      count: "{n} cliniques", demo: "Version d'aperçu. Les cliniques de cette page sont des exemples ; les notes Google en direct et les cliniques vérifiées arrivent au lancement.", sample: "Exemple",
+      reviews: "{n} avis Google", from: "dès", book: "Voir et réserver", speaks: "Langues",
+      perk_transfer: "Transfert aéroport", perk_hotel: "Hôtel inclus", perk_interpreter: "Interprète", perk_aftercare: "Suivi post-traitement",
+      pkg_implant: "Implant dentaire", pkg_implant_u: "par dent", pkg_zirconia: "Couronne zircone", pkg_zirconia_u: "par dent", pkg_emax: "Facette E-max", pkg_emax_u: "par dent", pkg_smile: "Smile makeover", pkg_smile_u: "20 dents, zircone",
+      pkg_fue: "Greffe de cheveux FUE", pkg_fue_u: "jusqu'à 4 000 greffons", pkg_dhi: "Greffe de cheveux DHI", pkg_dhi_u: "jusqu'à 3 500 greffons", pkg_beard: "Greffe de barbe", pkg_beard_u: "jusqu'à 2 500 greffons",
+      cmp_title: "Ce que coûte le même traitement", cmp_sub: "Fourchettes de prix habituelles en euros. Le prix final dépend de votre plan de traitement.",
+      c_TR: "Turquie", c_DE: "Allemagne", c_GB: "Royaume-Uni", c_US: "États-Unis",
+      cmp_hair: "Greffe de cheveux, ~3 000 greffons", cmp_implant: "Implant dentaire, par dent", cmp_veneer: "Facette, par dent", save: "Jusqu'à {p} % moins cher en Turquie",
+      how_title: "Comment ça marche",
+      s1t: "Comparez", s1d: "Filtrez par traitement et par ville. Chaque clinique affiche sa note Google, son nombre d'avis et ses prix.",
+      s2t: "Demandez", s2d: "Choisissez un forfait et votre date d'arrivée. Un coordinateur confirme avec la clinique sous 24 heures.",
+      s3t: "Partez", s3d: "Versez un acompte de 10 % pour bloquer votre date. Réglez le reste à la clinique, après la consultation.",
+      partner_title: "Cliniques : rejoignez la plateforme", partner_desc: "L'inscription est gratuite. Nous prenons 10 % de commission uniquement sur les traitements réalisés, prélevés sur l'acompte du patient.", partner_cta: "Devenir clinique partenaire",
+      form_title: "Vos coordonnées", f_pkg: "Choisissez un forfait", f_date: "Date d'arrivée souhaitée", f_name: "Nom complet", f_country: "Pays", f_phone: "Numéro WhatsApp",
+      f_notes: "Note pour le médecin (facultatif)", f_notes_ph: "ex. : deux molaires manquantes, radio disponible",
+      f_consent: "J'accepte que mes informations soient transmises à cette clinique pour cette demande.", f_submit: "Demander le rendez-vous",
+      f_err: "Indiquez votre nom, votre numéro WhatsApp et votre date d'arrivée, puis cochez la case de consentement.",
+      est: "Forfait estimé", deposit: "Acompte (10 %)", atclinic: "À régler à la clinique",
+      done_title: "Votre demande est prête", done_ref: "Référence", done_next: "Envoyez-la à notre coordinateur sur WhatsApp. L'acompte n'est demandé qu'après confirmation de votre date par la clinique.",
+      wa: "Ouvrir dans WhatsApp", copy: "Copier la demande", copied: "Copié", close: "Fermer",
+      footer: "Les prix sont indicatifs. Votre médecin établit le plan de traitement final après un examen en personne. Notes affichées avec attribution à Google.",
+      wa_head: "Nouvelle demande de rendez-vous", wa_partner: "Bonjour, nous sommes une clinique en Turquie et souhaitons devenir partenaire de Rota Health."
+    },
+    tr: {
+      tagline: "Sağlık turizmi · Türkiye", eyebrow: "Türkiye'de diş ve saç ekimi klinikleri",
+      h1: "En yüksek puanlı kliniği bulun. <em>İki dakikada</em> randevu alın.",
+      sub: "İstanbul, Antalya, İzmir ve Ankara'daki kliniklerin Google puanlarını ve paket fiyatlarını karşılaştırın. Tarihinizi %10 kaporayla ayırtın, kalanını klinikte ödeyin.",
+      treatment: "Tedavi", city: "Şehir", allCities: "Tüm şehirler",
+      trust1: "Her klinikte Google puanı", trust2: "Peşin yalnızca %10", trust3: "Kendi dilinizde koordinatör",
+      cat_all: "Tümü", cat_dental: "Diş", cat_hair: "Saç ekimi", cat_aesthetic: "Estetik cerrahi", cat_eye: "Göz cerrahisi", cat_bariatric: "Obezite cerrahisi", cat_ivf: "Tüp bebek", soon: "Yakında",
+      sortBy: "Sırala", sort_rating: "En yüksek puan", sort_reviews: "En çok yorum", sort_price: "En düşük fiyat",
+      count: "{n} klinik", demo: "Önizleme sürümü. Bu sayfadaki klinikler örnek kayıtlardır; canlı Google puanları ve doğrulanmış klinikler lansmanda yayına girer.", sample: "Örnek",
+      reviews: "{n} Google yorumu", from: "başlangıç", book: "İncele ve randevu al", speaks: "Diller",
+      perk_transfer: "Havalimanı transferi", perk_hotel: "Otel dahil", perk_interpreter: "Tercüman", perk_aftercare: "Tedavi sonrası takip",
+      pkg_implant: "Diş implantı", pkg_implant_u: "diş başına", pkg_zirconia: "Zirkonyum kron", pkg_zirconia_u: "diş başına", pkg_emax: "E-max lamina", pkg_emax_u: "diş başına", pkg_smile: "Gülüş tasarımı", pkg_smile_u: "20 diş, zirkonyum",
+      pkg_fue: "FUE saç ekimi", pkg_fue_u: "4.000 grefte kadar", pkg_dhi: "DHI saç ekimi", pkg_dhi_u: "3.500 grefte kadar", pkg_beard: "Sakal ekimi", pkg_beard_u: "2.500 grefte kadar",
+      cmp_title: "Aynı tedavi nerede ne kadar", cmp_sub: "Euro cinsinden tipik fiyat aralıkları. Nihai fiyat tedavi planınıza göre belirlenir.",
+      c_TR: "Türkiye", c_DE: "Almanya", c_GB: "Birleşik Krallık", c_US: "ABD",
+      cmp_hair: "Saç ekimi, ~3.000 greft", cmp_implant: "Diş implantı, diş başına", cmp_veneer: "Lamina, diş başına", save: "Türkiye'de %{p}'e varan tasarruf",
+      how_title: "Nasıl çalışır",
+      s1t: "Karşılaştırın", s1d: "Tedavi ve şehre göre filtreleyin. Her klinikte Google puanı, yorum sayısı ve paket fiyatları görünür.",
+      s2t: "Talep edin", s2d: "Paketi ve geliş tarihinizi seçin. Hasta koordinatörü 24 saat içinde klinikle teyit eder.",
+      s3t: "Gelin", s3d: "Tarihinizi %10 kaporayla kesinleştirin. Kalanını muayeneden sonra klinikte ödeyin.",
+      partner_title: "Klinikler için: platforma katılın", partner_desc: "Listelenmek ücretsiz. Yalnızca tamamlanan tedavilerden %10 komisyon alırız; bu tutar hastanın kaporasından tahsil edilir.", partner_cta: "Partner klinik olun",
+      form_title: "Bilgileriniz", f_pkg: "Paket seçin", f_date: "Tercih edilen geliş tarihi", f_name: "Ad soyad", f_country: "Ülke", f_phone: "WhatsApp numarası",
+      f_notes: "Doktora not (isteğe bağlı)", f_notes_ph: "örn. iki azı dişim eksik, röntgenim var",
+      f_consent: "Bilgilerimin bu talep için klinikle paylaşılmasını kabul ediyorum.", f_submit: "Randevu talep et",
+      f_err: "Adınızı, WhatsApp numaranızı ve geliş tarihinizi girin, onay kutusunu işaretleyin.",
+      est: "Tahmini paket", deposit: "Kapora (%10)", atclinic: "Klinikte ödenecek",
+      done_title: "Talebiniz hazır", done_ref: "Referans", done_next: "Talebinizi WhatsApp'tan hasta koordinatörümüze gönderin. Kapora yalnızca klinik tarihinizi onayladıktan sonra istenir.",
+      wa: "WhatsApp'ta aç", copy: "Talebi kopyala", copied: "Kopyalandı", close: "Kapat",
+      footer: "Fiyatlar tahminidir. Nihai tedavi planını doktorunuz yüz yüze muayeneden sonra belirler. Puanlar Google kaynağı belirtilerek gösterilir.",
+      wa_head: "Yeni randevu talebi", wa_partner: "Merhaba, Türkiye'de bir kliniğiz ve Rota Health'e partner olarak katılmak istiyoruz."
+    }
+  };
+
+  var CITIES = {
+    istanbul: { en: "Istanbul", ar: "إسطنبول", de: "Istanbul", ru: "Стамбул", fr: "Istanbul", tr: "İstanbul" },
+    antalya: { en: "Antalya", ar: "أنطاليا", de: "Antalya", ru: "Анталья", fr: "Antalya", tr: "Antalya" },
+    izmir: { en: "İzmir", ar: "إزمير", de: "İzmir", ru: "Измир", fr: "Izmir", tr: "İzmir" },
+    ankara: { en: "Ankara", ar: "أنقرة", de: "Ankara", ru: "Анкара", fr: "Ankara", tr: "Ankara" }
+  };
+
+  var CATS = [
+    { id: "all" }, { id: "dental" }, { id: "hair" },
+    { id: "aesthetic", soon: true }, { id: "eye", soon: true }, { id: "bariatric", soon: true }, { id: "ivf", soon: true }
+  ];
+
+  // Sample listings for the preview. Replaced by verified clinics + Google Places data at launch.
+  var CLINICS = [
+    { id: "d1", type: "dental", name: "Kalamış Dental Atelier", city: "istanbul", district: "Kadıköy", rating: 4.9, reviews: 1284, langs: ["en", "ar", "de", "ru"], perks: ["transfer", "hotel", "interpreter"], pk: { implant: 450, zirconia: 180, emax: 260, smile: 4200 } },
+    { id: "d2", type: "dental", name: "Nişantaşı Smile Studio", city: "istanbul", district: "Şişli", rating: 4.8, reviews: 2105, langs: ["en", "ar", "fr"], perks: ["transfer", "interpreter", "aftercare"], pk: { implant: 520, zirconia: 210, emax: 290, smile: 4900 } },
+    { id: "d3", type: "dental", name: "Lara Coast Dental", city: "antalya", district: "Muratpaşa", rating: 4.9, reviews: 864, langs: ["en", "de", "ru"], perks: ["transfer", "hotel", "aftercare"], pk: { implant: 400, zirconia: 160, emax: 240, smile: 3800 } },
+    { id: "d4", type: "dental", name: "Konyaaltı Dental Care", city: "antalya", district: "Konyaaltı", rating: 4.7, reviews: 642, langs: ["en", "ru"], perks: ["transfer", "hotel"], pk: { implant: 380, zirconia: 150, emax: 230, smile: 3600 } },
+    { id: "d5", type: "dental", name: "Alsancak Dental House", city: "izmir", district: "Konak", rating: 4.8, reviews: 517, langs: ["en", "de", "fr"], perks: ["transfer", "aftercare"], pk: { implant: 420, zirconia: 170, emax: 250, smile: 3900 } },
+    { id: "d6", type: "dental", name: "Çankaya Oral Health", city: "ankara", district: "Çankaya", rating: 4.6, reviews: 398, langs: ["en", "ar"], perks: ["interpreter", "aftercare"], pk: { implant: 390, zirconia: 155, emax: 235, smile: 3700 } },
+    { id: "d7", type: "dental", name: "Ataşehir Dental Clinic", city: "istanbul", district: "Ataşehir", rating: 4.7, reviews: 1560, langs: ["en", "ar", "ru"], perks: ["transfer", "hotel", "interpreter"], pk: { implant: 430, zirconia: 175, emax: 255, smile: 4100 } },
+    { id: "h1", type: "hair", name: "Beylerbeyi Hair Institute", city: "istanbul", district: "Üsküdar", rating: 4.9, reviews: 3412, langs: ["en", "ar", "de", "fr"], perks: ["transfer", "hotel", "interpreter", "aftercare"], pk: { fue: 1900, dhi: 2400, beard: 1400 } },
+    { id: "h2", type: "hair", name: "Levent FUE Center", city: "istanbul", district: "Beşiktaş", rating: 4.8, reviews: 2276, langs: ["en", "ar", "ru"], perks: ["transfer", "hotel", "interpreter"], pk: { fue: 2100, dhi: 2700, beard: 1500 } },
+    { id: "h3", type: "hair", name: "Şişli Graft Lab", city: "istanbul", district: "Şişli", rating: 4.7, reviews: 1893, langs: ["en", "ar", "fr"], perks: ["transfer", "hotel"], pk: { fue: 1750, dhi: 2200, beard: 1300 } },
+    { id: "h4", type: "hair", name: "Antalya Hairline Clinic", city: "antalya", district: "Muratpaşa", rating: 4.8, reviews: 931, langs: ["en", "de", "ru"], perks: ["transfer", "hotel", "aftercare"], pk: { fue: 1850, dhi: 2350, beard: 1350 } },
+    { id: "h5", type: "hair", name: "Karşıyaka Hair Studio", city: "izmir", district: "Karşıyaka", rating: 4.6, reviews: 455, langs: ["en", "de"], perks: ["transfer", "aftercare"], pk: { fue: 1700, dhi: 2150, beard: 1250 } },
+    { id: "h6", type: "hair", name: "Ankara Follicle Clinic", city: "ankara", district: "Çankaya", rating: 4.7, reviews: 612, langs: ["en", "ar"], perks: ["interpreter", "aftercare"], pk: { fue: 1650, dhi: 2100, beard: 1200 } },
+    { id: "h7", type: "hair", name: "Maltepe Hair & Skin", city: "istanbul", district: "Maltepe", rating: 4.5, reviews: 1120, langs: ["en", "ar", "ru"], perks: ["transfer", "hotel"], pk: { fue: 1600, dhi: 2000, beard: 1150 } }
+  ];
+
+  // Typical price ranges in EUR (approximate, public price surveys 2024–2025).
+  var COMPARE = [
+    { key: "cmp_hair", rows: { TR: [1500, 3500], DE: [6000, 12000], GB: [8000, 17500], US: [10000, 20000] } },
+    { key: "cmp_implant", rows: { TR: [450, 1100], DE: [2000, 3500], GB: [2300, 3500], US: [3000, 5000] } },
+    { key: "cmp_veneer", rows: { TR: [200, 400], DE: [600, 1200], GB: [600, 1200], US: [900, 2300] } }
+  ];
+
+  var ICONS = {
+    dental: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5c-1.6-1.3-3.4-1.9-5-1.3-2.4.9-3 3.8-2.2 6.5.6 2 1 3.3 1.3 5.6.3 2.2.9 3.7 2 3.7 1.5 0 1.6-2.4 2.2-4.2.3-.9.9-1.3 1.7-1.3s1.4.4 1.7 1.3c.6 1.8.7 4.2 2.2 4.2 1.1 0 1.7-1.5 2-3.7.3-2.3.7-3.6 1.3-5.6.8-2.7.2-5.6-2.2-6.5-1.6-.6-3.4 0-5 1.3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
+    hair: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20c0-6 1.5-11 4-15M10 20c0-5 1-9.5 3-13M15 20c0-4 .8-7.5 2.5-10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    all: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="4" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="4" y="13" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="13" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>'
+  };
+
+  var state = { lang: "en", cat: "all", city: "all", sort: "rating", clinic: null, pkg: null };
+
+  function $(id) { return document.getElementById(id); }
+  function t(k, vars) {
+    var s = (T[state.lang] && T[state.lang][k]) || T.en[k] || k;
+    if (vars) for (var v in vars) s = s.split("{" + v + "}").join(vars[v]);
+    return s;
+  }
+  function locale() { return state.lang === "ar" ? "ar-u-nu-latn" : state.lang; }
+  function fmtNum(n) { return new Intl.NumberFormat(locale()).format(n); }
+  function fmtEur(n) { return new Intl.NumberFormat(locale(), { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(n); }
+  function fmtRating(r) { return new Intl.NumberFormat(locale(), { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(r); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function langName(code) {
+    try { return new Intl.DisplayNames([state.lang], { type: "language" }).of(code); } catch (e) { return LANG_NAMES[code] || code; }
+  }
+  function countryName(code) {
+    try { return new Intl.DisplayNames([state.lang], { type: "region" }).of(code); } catch (e) { return code; }
+  }
+  function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function mainKey(c) { return Object.keys(c.pk)[0]; }
+  function minPrice(c) { return c.pk[mainKey(c)]; }
+  function initials(name) { return name.split(/\s+/).slice(0, 2).map(function (w) { return w[0]; }).join(""); }
+  function stars(r) { return '<span class="stars" aria-hidden="true"><i style="width:' + (r / 5 * 100).toFixed(0) + '%"></i></span>'; }
+  function waLink(text) { return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text); }
+
+  function detectLang() {
+    var h = (location.hash || "").replace("#", "").toLowerCase();
+    if (LANGS.indexOf(h) > -1) return h;
+    var saved = load("rh-lang");
+    if (saved && LANGS.indexOf(saved) > -1) return saved;
+    var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+    var base = nav.slice(0, 2).toLowerCase();
+    return LANGS.indexOf(base) > -1 ? base : "en";
+  }
+
+  function applyStatic() {
+    document.documentElement.lang = state.lang;
+    document.documentElement.dir = state.lang === "ar" ? "rtl" : "ltr";
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n");
+      if (k === "h1") el.innerHTML = t(k); else el.textContent = t(k);
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function (el) { el.placeholder = t(el.getAttribute("data-i18n-ph")); });
+    $("partner-cta").href = waLink(t("wa_partner"));
+    $("sh-close").setAttribute("aria-label", t("close"));
+
+    $("lang").innerHTML = LANGS.map(function (l) { return '<option value="' + l + '"' + (l === state.lang ? " selected" : "") + ">" + LANG_NAMES[l] + "</option>"; }).join("");
+
+    $("f-cat").innerHTML = CATS.filter(function (c) { return !c.soon; }).map(function (c) {
+      return '<option value="' + c.id + '"' + (c.id === state.cat ? " selected" : "") + ">" + esc(t("cat_" + c.id)) + "</option>";
+    }).join("");
+    $("f-city").innerHTML = '<option value="all">' + esc(t("allCities")) + "</option>" + Object.keys(CITIES).map(function (k) {
+      return '<option value="' + k + '"' + (k === state.city ? " selected" : "") + ">" + esc(CITIES[k][state.lang]) + "</option>";
+    }).join("");
+    $("sort").value = state.sort;
+
+    var defCountry = LANG_COUNTRY[state.lang];
+    var navRegion = ((navigator.language || "").split("-")[1] || "").toUpperCase();
+    if (COUNTRIES.indexOf(navRegion) > -1) defCountry = navRegion;
+    var cur = $("b-country").value || defCountry;
+    $("b-country").innerHTML = COUNTRIES.map(function (c) {
+      return '<option value="' + c + '"' + (c === cur ? " selected" : "") + ">" + esc(countryName(c)) + "</option>";
+    }).join("");
+  }
+
+  function renderCats() {
+    $("cats").innerHTML = CATS.map(function (c) {
+      var icon = ICONS[c.id] || "";
+      if (c.soon) return '<button class="cat" type="button" disabled>' + esc(t("cat_" + c.id)) + ' <span class="soon">' + esc(t("soon")) + "</span></button>";
+      return '<button class="cat" type="button" data-cat="' + c.id + '" aria-pressed="' + (state.cat === c.id) + '">' + icon + esc(t("cat_" + c.id)) + "</button>";
+    }).join("");
+  }
+
+  function renderGrid() {
+    var list = CLINICS.filter(function (c) {
+      return (state.cat === "all" || c.type === state.cat) && (state.city === "all" || c.city === state.city);
+    });
+    list.sort(function (a, b) {
+      if (state.sort === "price") return minPrice(a) - minPrice(b);
+      if (state.sort === "reviews") return b.reviews - a.reviews;
+      return b.rating - a.rating || b.reviews - a.reviews;
+    });
+    $("count").textContent = t("count", { n: fmtNum(list.length) });
+    if (!list.length) { $("grid").innerHTML = '<p class="empty">—</p>'; return; }
+    $("grid").innerHTML = list.map(function (c) {
+      var k = mainKey(c);
+      return '<article class="card">' +
+        '<div class="card-top"><div class="mono">' + ICONS[c.type] + '</div>' +
+        '<div><h3>' + esc(c.name) + '</h3><p class="loc">' + esc(c.district) + ", " + esc(CITIES[c.city][state.lang]) + "</p></div>" +
+        '<span class="tag-sample">' + esc(t("sample")) + "</span></div>" +
+        '<div class="rating"><span class="score num">' + fmtRating(c.rating) + "</span>" + stars(c.rating) +
+        '<span class="num">' + esc(t("reviews", { n: fmtNum(c.reviews) })) + '</span><span class="src">Google</span></div>' +
+        '<ul class="perks">' + c.perks.map(function (p) { return "<li>" + esc(t("perk_" + p)) + "</li>"; }).join("") + "</ul>" +
+        '<p class="speaks">' + esc(t("speaks")) + ": " + c.langs.map(function (l) { return esc(langName(l)); }).join(" · ") + "</p>" +
+        '<div class="card-foot"><div class="price"><small>' + esc(t("from")) + '</small><strong class="num">' + fmtEur(c.pk[k]) + "</strong><small>" + esc(t("pkg_" + k)) + " · " + esc(t("pkg_" + k + "_u")) + "</small></div>" +
+        '<button class="btn" type="button" data-open="' + c.id + '">' + esc(t("book")) + "</button></div>" +
+        "</article>";
+    }).join("");
+  }
+
+  function renderCompare() {
+    var order = ["TR", "DE", "GB", "US"];
+    $("cmp").innerHTML = COMPARE.map(function (row) {
+      var max = 0;
+      order.forEach(function (c) { max = Math.max(max, row.rows[c][1]); });
+      var maxAbroad = 0; order.slice(1).forEach(function (c) { maxAbroad = Math.max(maxAbroad, row.rows[c][0]); });
+      var pct = Math.round((1 - row.rows.TR[0] / maxAbroad) * 100);
+      var rows = order.map(function (c) {
+        var r = row.rows[c];
+        var start = r[0] / max * 100, width = (r[1] - r[0]) / max * 100;
+        var labelPos = start + width > 62 ? "inset-inline-end:calc(" + (100 - start) + "% + 6px)" : "inset-inline-start:calc(" + (start + width) + "% + 6px)";
+        return '<div class="cmp-row' + (c === "TR" ? " tr" : "") + '"><span class="c">' + esc(t("c_" + c)) + '</span>' +
+          '<div class="track"><span class="range" style="inset-inline-start:' + start + "%;width:" + Math.max(width, 1.5) + '%"></span>' +
+          '<span class="rv num" style="' + labelPos + '">' + fmtEur(r[0]) + "–" + fmtEur(r[1]) + "</span></div></div>";
+      }).join("");
+      return '<div class="cmp-card"><h3>' + esc(t(row.key)) + "</h3>" + rows + '<p class="save">' + esc(t("save", { p: pct })) + "</p></div>";
+    }).join("");
+  }
+
+  function renderAll() { applyStatic(); renderCats(); renderGrid(); renderCompare(); if (state.clinic) renderSheet(); }
+
+  /* ---------- Booking sheet ---------- */
+  function renderEstimate(target) {
+    var c = state.clinic, price = c.pk[state.pkg], dep = Math.round(price * DEPOSIT_RATE);
+    target.innerHTML =
+      "<div><span>" + esc(t("est")) + " · " + esc(t("pkg_" + state.pkg)) + '</span><b class="num">' + fmtEur(price) + "</b></div>" +
+      '<div class="dep"><span>' + esc(t("deposit")) + '</span><span class="num">' + fmtEur(dep) + "</span></div>" +
+      '<div class="tot"><span>' + esc(t("atclinic")) + '</span><span class="num">' + fmtEur(price - dep) + "</span></div>";
+  }
+
+  function renderSheet() {
+    var c = state.clinic;
+    $("sh-mono").innerHTML = ICONS[c.type];
+    $("sh-name").textContent = c.name;
+    $("sh-rating").innerHTML = '<span class="score num">' + fmtRating(c.rating) + "</span>" + stars(c.rating) +
+      '<span class="num">' + esc(t("reviews", { n: fmtNum(c.reviews) })) + "</span>";
+    $("sh-pkgs").innerHTML = Object.keys(c.pk).map(function (k) {
+      return '<label class="pkg"><input type="radio" name="pkg" value="' + k + '"' + (k === state.pkg ? " checked" : "") + ">" +
+        "<span><b>" + esc(t("pkg_" + k)) + "</b><small>" + esc(t("pkg_" + k + "_u")) + '</small></span><span class="p num">' + fmtEur(c.pk[k]) + "</span></label>";
+    }).join("");
+    renderEstimate($("b-est"));
+    if (!$("done").hidden) renderDone();
+  }
+
+  var lastFocus = null;
+  function openSheet(id) {
+    state.clinic = CLINICS.filter(function (c) { return c.id === id; })[0];
+    state.pkg = mainKey(state.clinic);
+    $("book").hidden = false; $("done").hidden = true; $("b-err").hidden = true;
+    renderSheet();
+    lastFocus = document.activeElement;
+    $("scrim").hidden = false;
+    document.body.style.overflow = "hidden";
+    $("sh-close").focus();
+  }
+  function closeSheet() {
+    $("scrim").hidden = true;
+    document.body.style.overflow = "";
+    state.clinic = null;
+    if (lastFocus) lastFocus.focus();
+  }
+
+  var booking = null;
+  function makeRef() {
+    var chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789", s = "RH-";
+    for (var i = 0; i < 6; i++) s += chars[Math.floor(Math.random() * chars.length)];
+    return s;
+  }
+  function requestText() {
+    var c = state.clinic, price = c.pk[booking.pkg], dep = Math.round(price * DEPOSIT_RATE);
+    return [
+      t("wa_head") + " · " + booking.ref,
+      "Clinic: " + c.name + " (" + c.district + ", " + CITIES[c.city].en + ")",
+      "Package: " + T.en["pkg_" + booking.pkg] + " – " + T.en["pkg_" + booking.pkg + "_u"] + " – €" + price,
+      "Deposit (10%): €" + dep + " · At clinic: €" + (price - dep),
+      "Arrival: " + booking.date,
+      "Name: " + booking.name,
+      "Country: " + booking.country,
+      "WhatsApp: " + booking.phone,
+      "Language: " + LANG_NAMES[state.lang],
+      booking.notes ? "Notes: " + booking.notes : ""
+    ].filter(Boolean).join("\n");
+  }
+  function renderDone() {
+    $("d-ref").textContent = booking.ref;
+    var saved = state.pkg; state.pkg = booking.pkg; renderEstimate($("d-est")); state.pkg = saved;
+    var text = requestText();
+    $("d-text").textContent = text;
+    $("d-wa").href = waLink(text);
+  }
+
+  /* ---------- Events ---------- */
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-cat]");
+    if (b) { state.cat = b.getAttribute("data-cat"); $("f-cat").value = state.cat; renderCats(); renderGrid(); return; }
+    var o = e.target.closest("[data-open]");
+    if (o) { openSheet(o.getAttribute("data-open")); return; }
+  });
+  $("f-cat").addEventListener("change", function () { state.cat = this.value; renderCats(); renderGrid(); });
+  $("f-city").addEventListener("change", function () { state.city = this.value; renderGrid(); });
+  $("sort").addEventListener("change", function () { state.sort = this.value; renderGrid(); });
+  $("lang").addEventListener("change", function () {
+    state.lang = this.value; store("rh-lang", state.lang);
+    if (location.hash.replace("#", "") !== state.lang) location.hash = state.lang;
+    renderAll();
+  });
+  window.addEventListener("hashchange", function () {
+    var h = location.hash.replace("#", "").toLowerCase();
+    if (LANGS.indexOf(h) > -1 && h !== state.lang) { state.lang = h; store("rh-lang", h); renderAll(); }
+  });
+  $("sh-pkgs").addEventListener("change", function (e) { if (e.target.name === "pkg") { state.pkg = e.target.value; renderEstimate($("b-est")); } });
+  $("sh-close").addEventListener("click", closeSheet);
+  $("d-close").addEventListener("click", closeSheet);
+  $("scrim").addEventListener("click", function (e) { if (e.target === this) closeSheet(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("scrim").hidden) closeSheet(); });
+
+  $("book").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = $("b-name").value.trim(), phone = $("b-phone").value.trim(), date = $("b-date").value;
+    if (!name || phone.replace(/\D/g, "").length < 7 || !date || !$("b-consent").checked) { $("b-err").hidden = false; return; }
+    $("b-err").hidden = true;
+    booking = { ref: makeRef(), pkg: state.pkg, name: name, phone: phone, date: date, country: countryName($("b-country").value) + " (" + $("b-country").value + ")", notes: $("b-notes").value.trim() };
+    renderDone();
+    $("book").hidden = true; $("done").hidden = false;
+    $("sheet").scrollTop = 0;
+  });
+
+  $("d-copy").addEventListener("click", function () {
+    var btn = this, text = $("d-text").textContent;
+    function ok() { btn.textContent = t("copied"); setTimeout(function () { btn.textContent = t("copy"); }, 1600); }
+    function fallback() { var r = document.createRange(); r.selectNodeContents($("d-text")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    try { navigator.clipboard.writeText(text).then(ok, fallback); } catch (err) { fallback(); }
+  });
+
+  // Earliest arrival: one week from today.
+  var d = new Date(); d.setDate(d.getDate() + 7);
+  var iso = d.toISOString().slice(0, 10);
+  $("b-date").min = iso;
+  var d2 = new Date(); d2.setDate(d2.getDate() + 30);
+  $("b-date").value = d2.toISOString().slice(0, 10);
+
+  state.lang = detectLang();
+  renderAll();
+})();
+</script>
