@@ -9,3 +9,4 @@ target/
 .DS_Store
 *.log
 .env
+rota-health-site.zip
