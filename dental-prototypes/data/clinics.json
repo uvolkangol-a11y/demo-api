@@ -8,13 +8,31 @@
     "phone": "0551 454 34 24",
     "whatsapp": "905514543424",
     "email": "info@densaclinic.com",
-    "hours": { "weekdays": "09:00 – 19:00", "saturday": "09:00 – 18:00", "sunday": null },
-    "open": { "start": 9, "end": 19, "satEnd": 18, "sunday": false },
+    "hours": {
+      "weekdays": "09:00 – 19:00",
+      "saturday": "09:00 – 18:00",
+      "sunday": null
+    },
+    "open": {
+      "start": 9,
+      "end": 19,
+      "satEnd": 18,
+      "sunday": false
+    },
     "color": "#0E7C86",
     "accent": "#F2A65A",
-    "featured": ["kanal", "pedodonti", "implant", "zirkonyum", "beyazlatma", "ortodonti"],
+    "featured": [
+      "kanal",
+      "pedodonti",
+      "implant",
+      "zirkonyum",
+      "beyazlatma",
+      "ortodonti"
+    ],
     "source": "densaclinic.com (arama sonucu özeti)",
-    "currentSite": "Var (densaclinic.com) — online randevu takvimi görünmüyor"
+    "currentSite": "Var (densaclinic.com) — online randevu takvimi görünmüyor",
+    "key": "k7m2",
+    "instagram": null
   },
   {
     "slug": "astradent",
@@ -26,13 +44,31 @@
     "phone2": "0506 043 90 43",
     "whatsapp": "905060439043",
     "email": "info@astradentclinic.com",
-    "hours": { "weekdays": "09:00 – 19:00", "saturday": "09:00 – 18:00", "sunday": null },
-    "open": { "start": 9, "end": 19, "satEnd": 18, "sunday": false },
+    "hours": {
+      "weekdays": "09:00 – 19:00",
+      "saturday": "09:00 – 18:00",
+      "sunday": null
+    },
+    "open": {
+      "start": 9,
+      "end": 19,
+      "satEnd": 18,
+      "sunday": false
+    },
     "color": "#3B3F98",
     "accent": "#E8B04B",
-    "featured": ["implant", "beyazlatma", "dis-tasi", "zirkonyum", "kanal", "ortodonti"],
+    "featured": [
+      "implant",
+      "beyazlatma",
+      "dis-tasi",
+      "zirkonyum",
+      "kanal",
+      "ortodonti"
+    ],
     "source": "astradentclinic.com + yorum.com (arama sonucu özeti)",
-    "currentSite": "Var (astradentclinic.com) — SEO blog ağırlıklı, randevu takvimi yok"
+    "currentSite": "Var (astradentclinic.com) — SEO blog ağırlıklı, randevu takvimi yok",
+    "key": "p4x9",
+    "instagram": null
   },
   {
     "slug": "dentexpert-mahmutbey",
@@ -44,13 +80,31 @@
     "phone2": "0534 635 75 75",
     "whatsapp": "905346357575",
     "email": null,
-    "hours": { "weekdays": "10:00 – 19:00", "saturday": "10:00 – 18:00", "sunday": null },
-    "open": { "start": 10, "end": 19, "satEnd": 18, "sunday": false },
+    "hours": {
+      "weekdays": "10:00 – 19:00",
+      "saturday": "10:00 – 18:00",
+      "sunday": null
+    },
+    "open": {
+      "start": 10,
+      "end": 19,
+      "satEnd": 18,
+      "sunday": false
+    },
     "color": "#1F6FEB",
     "accent": "#2EC4B6",
-    "featured": ["implant", "cene-cerrahisi", "pedodonti", "estetik", "zirkonyum", "beyazlatma"],
+    "featured": [
+      "implant",
+      "cene-cerrahisi",
+      "pedodonti",
+      "estetik",
+      "zirkonyum",
+      "beyazlatma"
+    ],
     "source": "dentexpertdisklinigi.com + Yandex Haritalar (arama sonucu özeti)",
-    "currentSite": "Var (dentexpertdisklinigi.com)"
+    "currentSite": "Var (dentexpertdisklinigi.com)",
+    "key": "r8v3",
+    "instagram": null
   },
   {
     "slug": "kirazli",
@@ -61,13 +115,31 @@
     "phone": "0212 515 22 99",
     "whatsapp": null,
     "email": null,
-    "hours": { "weekdays": "09:00 – 19:00", "saturday": "09:00 – 18:00", "sunday": null },
-    "open": { "start": 9, "end": 19, "satEnd": 18, "sunday": false },
+    "hours": {
+      "weekdays": "09:00 – 19:00",
+      "saturday": "09:00 – 18:00",
+      "sunday": null
+    },
+    "open": {
+      "start": 9,
+      "end": 19,
+      "satEnd": 18,
+      "sunday": false
+    },
     "color": "#B23A48",
     "accent": "#F4C095",
-    "featured": ["implant", "zirkonyum", "kanal", "ortodonti", "pedodonti", "beyazlatma"],
+    "featured": [
+      "implant",
+      "zirkonyum",
+      "kanal",
+      "ortodonti",
+      "pedodonti",
+      "beyazlatma"
+    ],
     "source": "kirazlidis.com + Zavis rehberi (arama sonucu özeti)",
-    "currentSite": "Var (kirazlidis.com)"
+    "currentSite": "Var (kirazlidis.com)",
+    "key": "t2n6",
+    "instagram": null
   },
   {
     "slug": "mkm-klinik",
@@ -78,12 +150,31 @@
     "phone": "0212 651 00 61",
     "whatsapp": null,
     "email": null,
-    "hours": { "weekdays": "10:00 – 21:00", "saturday": "10:00 – 21:00", "sunday": "10:00 – 19:00" },
-    "open": { "start": 10, "end": 21, "satEnd": 21, "sunday": true, "sunEnd": 19 },
+    "hours": {
+      "weekdays": "10:00 – 21:00",
+      "saturday": "10:00 – 21:00",
+      "sunday": "10:00 – 19:00"
+    },
+    "open": {
+      "start": 10,
+      "end": 21,
+      "satEnd": 21,
+      "sunday": true,
+      "sunEnd": 19
+    },
     "color": "#2D6A4F",
     "accent": "#D4A373",
-    "featured": ["implant", "estetik", "zirkonyum", "beyazlatma", "kanal", "dis-tasi"],
+    "featured": [
+      "implant",
+      "estetik",
+      "zirkonyum",
+      "beyazlatma",
+      "kanal",
+      "dis-tasi"
+    ],
     "source": "Zavis rehberi (Google puanı 4.8 / 76 yorum)",
-    "currentSite": "Bulunamadı — en sıcak aday"
+    "currentSite": "Bulunamadı — en sıcak aday",
+    "key": "h5q1",
+    "instagram": null
   }
 ]

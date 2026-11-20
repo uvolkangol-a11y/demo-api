@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>MKM Klinik Ağız ve Diş Sağlığı | Online Randevu</title>
-<meta name="description" content="MKM Klinik Mahmutbey – Bağcılar Mahmutbey. Online randevu, implant, zirkonyum, ortodonti ve yabancı hastalar için destek.">
+<title>Dentexpert Ağız ve Diş Sağlığı | Online Randevu</title>
+<meta name="description" content="Özel Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği – Bağcılar Mahmutbey. Online randevu ve yurt dışından gelen hastalar için ücretsiz online ön değerlendirme.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --brand:#2D6A4F;
-  --accent:#D4A373;
+  --brand:#1F6FEB;
+  --accent:#2EC4B6;
   --brand-dark:color-mix(in oklab,var(--brand) 70%,#000);
   --brand-soft:color-mix(in oklab,var(--brand) 10%,#fff);
   --brand-softer:color-mix(in oklab,var(--brand) 5%,#fff);
@@ -41,6 +41,7 @@ header.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);bac
 .logo small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.02em;margin-top:-4px}
 .menu{display:flex;gap:26px;font-weight:600;font-size:14.5px;color:var(--muted)}
 .menu a:hover{color:var(--brand)}
+.menu .nav-intl{color:var(--brand)}
 .nav-right{display:flex;align-items:center;gap:10px}
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff}
 .lang button{font-size:12px;font-weight:700;padding:5px 9px;border-radius:999px;color:var(--muted)}
@@ -51,6 +52,16 @@ header.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);bac
 .btn-primary:hover{background:var(--brand-dark)}
 .btn-ghost{background:#fff;border:1px solid var(--line)}
 .btn-accent{background:var(--accent);color:#1b1b1b}
+.btn-dark{background:#14202b;color:#fff}
+.istrip{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.istrip button{background:#ffffffb3;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;color:var(--muted)}
+.istrip button:hover{border-color:var(--brand);color:var(--brand)}
+.stays{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+.stay{background:#ffffff0d;border:1px solid #ffffff1a;border-radius:18px;padding:18px}
+.stay small{display:block;font-size:12px;color:#93a3b1}
+.stay b{display:block;font-size:22px;color:var(--accent);margin:6px 0 2px;letter-spacing:-.02em}
+.stay span{font-size:14.5px;font-weight:700;color:#fff}
+.stays-head{margin:44px 0 14px;font-size:18px;color:#fff}
 .btn-sm{padding:9px 16px;font-size:14px}
 .burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);place-items:center}
 
@@ -63,7 +74,7 @@ header.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);bac
 .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 8px;font-size:13px;font-weight:600;color:var(--muted)}
 .pill i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px #22c55e22;display:inline-block;margin-inline-start:6px}
 h1{font-size:clamp(34px,5.2vw,58px);line-height:1.06;letter-spacing:-.035em;font-weight:800;margin:20px 0 18px}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--brand),color-mix(in oklab,var(--brand) 55%,var(--accent)));-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 em{white-space:nowrap;font-style:normal;background:linear-gradient(90deg,var(--brand),color-mix(in oklab,var(--brand) 55%,var(--accent)));-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{font-size:18px;color:var(--muted);max-width:540px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px}
@@ -219,6 +230,7 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
   .hero-in{padding:48px 20px 60px;gap:36px}
   .grid-t{grid-template-columns:1fr 1fr}
   .why-grid{grid-template-columns:1fr 1fr}
+  .stays{grid-template-columns:1fr 1fr}
   .float-tag{display:none}
   .nav-right .btn{display:none}
 }
@@ -254,7 +266,7 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
     <nav class="menu" id="menu">
       <a href="#tedaviler" data-i18n="navTreat"></a>
       <a href="#randevu" data-i18n="navBook"></a>
-      <a href="#international" data-i18n="navIntl"></a>
+      <a href="#international" class="nav-intl">🌍 <span data-i18n="navIntl"></span></a>
       <a href="#iletisim" data-i18n="navContact"></a>
     </nav>
     <div class="nav-right">
@@ -278,12 +290,17 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
       <p class="lead" data-i18n="heroLead"></p>
       <div class="hero-cta">
         <a href="#randevu" class="btn btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg><span data-i18n="ctaBook"></span></a>
-        <a href="#" class="btn btn-ghost js-wa"><span class="js-wa-ic"></span><span class="js-wa-label"></span></a>
+        <a href="#international" class="btn btn-dark">🌍 <span data-i18n="ctaIntl"></span></a>
+      </div>
+      <div class="istrip">
+        <button data-go="en">🇬🇧 International patients</button>
+        <button data-go="ar">🇸🇦 المرضى الدوليون</button>
+        <button data-go="de">🇩🇪 Internationale Patienten</button>
       </div>
       <div class="facts">
         <div class="fact"><b>7/24</b><span data-i18n="fact1"></span></div>
         <div class="fact"><b>4</b><span data-i18n="fact2"></span></div>
-        <div class="fact"><b data-c="openDays"></b><span data-i18n="fact3"></span></div>
+        <div class="fact"><b data-i18n="factB3"></b><span data-i18n="fact3"></span></div>
       </div>
     </div>
     <div class="hero-card">
@@ -296,25 +313,6 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
     </div>
   </div>
 </div>
-
-<!-- TREATMENTS -->
-<section id="tedaviler">
-  <div class="wrap">
-    <div class="head">
-      <div><div class="eyebrow" data-i18n="treatEyebrow"></div><h2 data-i18n="treatTitle"></h2><p class="sub" data-i18n="treatSub"></p></div>
-      <a href="#randevu" class="btn btn-ghost" data-i18n="ctaBook"></a>
-    </div>
-    <div class="grid-t" id="treatGrid"></div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="why">
-  <div class="wrap">
-    <div class="head"><div><div class="eyebrow" data-i18n="whyEyebrow"></div><h2 data-i18n="whyTitle"></h2></div></div>
-    <div class="why-grid" id="whyGrid"></div>
-  </div>
-</section>
 
 <!-- BOOKING -->
 <section id="randevu">
@@ -366,11 +364,32 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
         <div class="field"><textarea name="msg" rows="3" data-i18n-ph="phMsg"></textarea></div>
         <label class="consent"><input type="checkbox" required><span data-i18n-html="consent"></span></label>
         <button class="btn btn-accent" style="width:100%;margin-top:10px" data-i18n="consultBtn"></button>
+        <a class="btn btn-ghost" id="sendPhotos" style="width:100%;margin-top:8px" target="_blank" rel="noopener"></a>
         <div class="err" id="intlMsg" style="color:#16a34a"></div>
       </form>
     </div></div>
   </div>
-  <div class="wrap"><p class="note" data-i18n="intlNote"></p></div>
+  <div class="wrap"><h3 class="stays-head" data-i18n="stayTitle"></h3><div class="stays" id="stays"></div>
+  <p class="note" data-i18n="stayNote"></p><p class="note" data-i18n="intlNote"></p></div>
+</section>
+
+<!-- TREATMENTS -->
+<section id="tedaviler">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow" data-i18n="treatEyebrow"></div><h2 data-i18n="treatTitle"></h2><p class="sub" data-i18n="treatSub"></p></div>
+      <a href="#randevu" class="btn btn-ghost" data-i18n="ctaBook"></a>
+    </div>
+    <div class="grid-t" id="treatGrid"></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow" data-i18n="whyEyebrow"></div><h2 data-i18n="whyTitle"></h2></div></div>
+    <div class="why-grid" id="whyGrid"></div>
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -382,6 +401,7 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
         <div class="crow"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><small data-i18n="cAddress"></small><b data-c="address"></b></div></div>
         <div class="crow"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small data-i18n="cPhone"></small><b id="phones"></b></div></div>
         <div class="crow" id="emailRow"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg></span><div><small>E-mail</small><b><a data-c="email" id="emailLink"></a></b></div></div>
+        <div class="crow" id="igRow"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><div><small>Instagram</small><b><a id="igLink" target="_blank" rel="noopener"></a></b></div></div>
         <div>
           <div class="crow" style="margin-bottom:8px"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small data-i18n="cHours"></small></div></div>
           <table class="hours" id="hoursTbl"></table>
@@ -399,6 +419,7 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
     <div class="foot">
       <div><b style="color:#fff" data-c="fullName"></b><div data-c="address"></div></div>
       <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a id="igFoot" target="_blank" rel="noopener">Instagram</a>
         <a href="#" id="kvkkLink" data-i18n="kvkk"></a>
         <a href="#" id="panelLink" data-i18n="panelLink"></a>
       </div>
@@ -424,7 +445,7 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
 </div></div>
 
 <script>
-const CLINIC = {"slug":"mkm-klinik","name":"MKM Klinik","fullName":"MKM Klinik Mahmutbey","address":"Barbaros Mah. Mahmutbey Cad. No:6A, Bağcılar / İstanbul","mapQuery":"MKM Klinik Mahmutbey Cad 6A Bağcılar","phone":"0212 651 00 61","whatsapp":null,"email":null,"hours":{"weekdays":"10:00 – 21:00","saturday":"10:00 – 21:00","sunday":"10:00 – 19:00"},"open":{"start":10,"end":21,"satEnd":21,"sunday":true,"sunEnd":19},"color":"#2D6A4F","accent":"#D4A373","featured":["implant","estetik","zirkonyum","beyazlatma","kanal","dis-tasi"],"source":"Zavis rehberi (Google puanı 4.8 / 76 yorum)","currentSite":"Bulunamadı — en sıcak aday"};
+const CLINIC = {"slug":"dentexpert-mahmutbey","name":"Dentexpert","fullName":"Özel Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği","address":"Demirkapı Mah. Günışığı Konutları, İnönü Cad. No:62B, Bağcılar / İstanbul","mapQuery":"Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği","phone":"0212 447 04 46","phone2":"0534 635 75 75","whatsapp":"905346357575","email":null,"hours":{"weekdays":"10:00 – 19:00","saturday":"10:00 – 18:00","sunday":null},"open":{"start":10,"end":19,"satEnd":18,"sunday":false},"color":"#1F6FEB","accent":"#2EC4B6","featured":["implant","cene-cerrahisi","pedodonti","estetik","zirkonyum","beyazlatma"],"source":"dentexpertdisklinigi.com + Yandex Haritalar (arama sonucu özeti)","currentSite":"Var (dentexpertdisklinigi.com)","key":"r8v3","instagram":null};
 
 const ICONS = {
   tooth:'<path d="M7 3c-2.2 0-4 1.8-4 4.4 0 2.6 1.2 4 1.6 6.4.4 2.4.6 7.2 2.4 7.2 1.8 0 1.6-5 3-5h4c1.4 0 1.2 5 3 5s2-4.8 2.4-7.2C19.8 11.4 21 10 21 7.4 21 4.8 19.2 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z"/>',
@@ -496,7 +517,8 @@ tr:{
   panelTitle:'Klinik Paneli — Gelen Randevular',panelSub:'Demo: Bu tarayıcıda oluşturulan randevu talepleri burada listelenir. Gerçek sürümde tüm talepler klinik paneline ve WhatsApp\'a anında düşer.',
   pEmpty:'Henüz randevu yok. Yukarıdaki formdan bir deneme randevusu oluşturun.',pApprove:'Onayla',pPending:'Bekliyor',pOk:'Onaylandı',pWhen:'Zaman',pPatient:'Hasta',pTreat:'Tedavi',pStatus:'Durum',
   kvkkText:'<p>Veri sorumlusu: {fullName}.</p><p>Randevu formunda paylaştığınız ad, telefon ve sağlıkla ilgili notlarınız yalnızca randevunuzun planlanması ve sizinle iletişim kurulması amacıyla, açık rızanıza dayanarak işlenir.</p><p>Verileriniz yasal saklama süreleri boyunca muhafaza edilir ve üçüncü kişilerle paylaşılmaz. 6698 sayılı KVKK md. 11 kapsamındaki haklarınız için kliniğimize başvurabilirsiniz.</p><p><i>(Örnek metindir; yayın öncesi klinik bilgileriyle güncellenir.)</i></p>',
-  weekdays:['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'],months:['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara']
+  weekdays:['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'],months:['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'],
+  heroTitle:"Gülüşünüz için <em>1 dakikada</em> online randevu",heroLead:"{name} · Bağcılar Mahmutbey. Telefonda beklemeden randevunuzu oluşturun. Yurt dışından geliyorsanız ücretsiz online ön değerlendirme ile tedavinizi önceden planlayın.",ctaIntl:"Yurt Dışından Hasta",factB3:"1 dk",fact3:"Randevu süresi",stayTitle:"Yabancı hastaların en çok tercih ettiği tedaviler",stayLabel:"İstanbul'da tipik kalış",stayNote:"Süreler tipiktir; kesin plan hekim muayenesinden sonra netleşir.",stays:[["zirkonyum", "5–7 gün"], ["implant", "2 ziyaret"], ["estetik", "5–7 gün"], ["beyazlatma", "1 gün"]],sendPhotos:"Fotoğraf / röntgen gönder"
 },
 en:{
   demoBar:'<b>Design preview</b> · prepared for {fullName} · not the official website',
@@ -533,7 +555,8 @@ en:{
   panelTitle:'Clinic Panel — Incoming Appointments',panelSub:'Demo: requests created in this browser appear here. In production, every request lands in the clinic panel and on WhatsApp instantly.',
   pEmpty:'No appointments yet. Create a test booking using the form.',pApprove:'Approve',pPending:'Pending',pOk:'Approved',pWhen:'Time',pPatient:'Patient',pTreat:'Treatment',pStatus:'Status',
   kvkkText:'<p>Data controller: {fullName}.</p><p>Your name, phone and health-related notes are processed solely to plan your appointment and contact you, based on your explicit consent.</p><p>Data is kept for the legally required period and is not shared with third parties.</p><p><i>(Sample text.)</i></p>',
-  weekdays:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],months:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+  weekdays:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],months:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+  heroTitle:"Book your dental visit <em>in 1 minute</em>",heroLead:"{name} · Istanbul. Book online, no phone queues. Travelling from abroad? Get a free online pre-assessment and plan your treatment before you fly.",ctaIntl:"International Patients",factB3:"1 min",fact3:"To book",stayTitle:"Most requested by international patients",stayLabel:"Typical stay in Istanbul",stayNote:"Durations are typical; your exact plan is confirmed after examination.",stays:[["zirkonyum", "5–7 days"], ["implant", "2 visits"], ["estetik", "5–7 days"], ["beyazlatma", "1 day"]],sendPhotos:"Send photos / X-ray"
 },
 ar:{
   demoBar:'<b>معاينة تصميم</b> · أُعدّت لـ {fullName} · ليس الموقع الرسمي',
@@ -570,7 +593,8 @@ ar:{
   panelTitle:'لوحة العيادة — المواعيد الواردة',panelSub:'تجريبي: تظهر هنا الطلبات التي أُنشئت في هذا المتصفح.',
   pEmpty:'لا توجد مواعيد بعد.',pApprove:'تأكيد',pPending:'قيد الانتظار',pOk:'مؤكد',pWhen:'الموعد',pPatient:'المريض',pTreat:'العلاج',pStatus:'الحالة',
   kvkkText:'<p>المسؤول عن البيانات: {fullName}.</p><p>تتم معالجة بياناتك فقط لتنظيم موعدك والتواصل معك بناءً على موافقتك الصريحة.</p><p><i>(نص توضيحي.)</i></p>',
-  weekdays:['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'],months:['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر']
+  weekdays:['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'],months:['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'],
+  heroTitle:"احجز موعدك <em>في دقيقة واحدة</em>",heroLead:"{name} · إسطنبول. احجز عبر الإنترنت دون انتظار. قادم من الخارج؟ احصل على تقييم أولي مجاني وخطط لعلاجك قبل السفر.",ctaIntl:"المرضى الدوليون",factB3:"1",fact3:"دقيقة للحجز",stayTitle:"الأكثر طلباً من المرضى الدوليين",stayLabel:"مدة الإقامة المعتادة",stayNote:"المدد تقريبية؛ تُحدد الخطة النهائية بعد الفحص.",stays:[["zirkonyum", "5–7 أيام"], ["implant", "زيارتان"], ["estetik", "5–7 أيام"], ["beyazlatma", "يوم واحد"]],sendPhotos:"أرسل الصور / الأشعة"
 },
 de:{
   demoBar:'<b>Design-Vorschau</b> · erstellt für {fullName} · nicht die offizielle Website',
@@ -607,12 +631,19 @@ de:{
   panelTitle:'Klinik-Panel — Eingehende Termine',panelSub:'Demo: In diesem Browser erstellte Anfragen erscheinen hier.',
   pEmpty:'Noch keine Termine.',pApprove:'Bestätigen',pPending:'Offen',pOk:'Bestätigt',pWhen:'Zeit',pPatient:'Patient',pTreat:'Behandlung',pStatus:'Status',
   kvkkText:'<p>Verantwortlicher: {fullName}.</p><p>Ihre Daten werden ausschließlich zur Terminplanung und Kontaktaufnahme auf Grundlage Ihrer ausdrücklichen Einwilligung verarbeitet.</p><p><i>(Beispieltext.)</i></p>',
-  weekdays:['So','Mo','Di','Mi','Do','Fr','Sa'],months:['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez']
+  weekdays:['So','Mo','Di','Mi','Do','Fr','Sa'],months:['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
+  heroTitle:"Ihr Zahnarzttermin <em>in 1 Minute</em>",heroLead:"{name} · Istanbul. Online buchen ohne Warteschleife. Sie kommen aus dem Ausland? Kostenlose Online-Voreinschätzung – Behandlung vor der Reise planen.",ctaIntl:"Internationale Patienten",factB3:"1 Min",fact3:"zur Buchung",stayTitle:"Am häufigsten von internationalen Patienten angefragt",stayLabel:"Typischer Aufenthalt",stayNote:"Typische Dauer; der genaue Plan wird nach der Untersuchung festgelegt.",stays:[["zirkonyum", "5–7 Tage"], ["implant", "2 Aufenthalte"], ["estetik", "5–7 Tage"], ["beyazlatma", "1 Tag"]],sendPhotos:"Fotos / Röntgen senden"
 }};
 
 /* ---------- state ---------- */
 let lang = 'tr';
-try{ const s=localStorage.getItem('lang'); if(T[s]) lang=s; }catch(e){}
+(function(){
+  let stored=null; try{ stored=localStorage.getItem('lang'); }catch(e){}
+  const qp=new URLSearchParams(location.search).get('lang');
+  if(T[qp]) lang=qp;
+  else if(T[stored]) lang=stored;
+  else { const nav=(navigator.languages||[navigator.language||'tr']).map(l=>String(l).slice(0,2).toLowerCase()); const hit=nav.find(l=>T[l]); if(hit) lang=hit; }
+})();
 const state={step:0,treat:null,date:null,slot:null};
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const t=k=>{const v=T[lang][k]; return typeof v==='string'? v.replace(/\{name\}/g,CLINIC.name).replace(/\{fullName\}/g,CLINIC.fullName):v;};
@@ -660,13 +691,18 @@ function renderStatic(){
   $$('.js-wa-label').forEach(s=>s.textContent=CLINIC.whatsapp?t('wa'):t('call'));
   if(!CLINIC.whatsapp) $('.fab').innerHTML='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>';
   // open days
-  const o=CLINIC.open; $('[data-c=openDays]').textContent=o.sunday?'7':'6';
   // treatments
   $('#treatGrid').innerHTML=CLINIC.featured.map(id=>`<div class="tcard"><div class="tic">${ico(TREAT[id].ic,26)}</div><h3>${TREAT[id][lang][0]}</h3><p>${TREAT[id][lang][1]}</p><a href="#randevu" class="lnk" data-treat="${id}">${t('more')} ${ico('arrow',16)}</a></div>`).join('');
   $$('[data-treat]').forEach(a=>a.onclick=()=>{state.treat=a.dataset.treat;state.step=1;renderBook();});
   $('#whyGrid').innerHTML=t('why').map(([i,h,p])=>`<div class="why-item"><div class="tic">${ico(i)}</div><h4>${h}</h4><p>${p}</p></div>`).join('');
   $('#bookPerks').innerHTML=t('perks').map(p=>`<li><span class="ck">${ico('check',14,3)}</span>${p}</li>`).join('');
   $('#flow').innerHTML=t('flow').map(([h,p],i)=>`<div class="flow-item"><span class="n">${i+1}</span><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');
+  $('#stays').innerHTML=t('stays').map(([id,d])=>`<div class="stay"><small>${t('stayLabel')}</small><b>${d}</b><span>${treatName(id)}</span></div>`).join('');
+  const sp=$('#sendPhotos');
+  if(CLINIC.whatsapp){ sp.style.display=''; sp.href='https://wa.me/'+CLINIC.whatsapp+'?text='+encodeURIComponent(`Merhaba ${CLINIC.name}, ön değerlendirme için fotoğraf/röntgen gönderiyorum. (Dil: ${lang.toUpperCase()})`); sp.innerHTML=WA_SVG+' '+t('sendPhotos'); } else sp.style.display='none';
+  const ig=CLINIC.instagram; const igUrl=ig?'https://instagram.com/'+ig.replace(/^@/,''):null;
+  $('#igRow').style.display=ig?'':'none'; $('#igFoot').style.display=ig?'':'none';
+  if(ig){ $('#igLink').href=igUrl; $('#igLink').textContent='@'+ig.replace(/^@/,''); $('#igFoot').href=igUrl; }
   $('#intlTreat').innerHTML=treatList().map(id=>`<option value="${id}">${treatName(id)}</option>`).join('');
   // contact
   const phones=[CLINIC.phone,CLINIC.phone2].filter(Boolean);
@@ -774,6 +810,7 @@ $('#panelLink').onclick=e=>{e.preventDefault();renderPanel();openModal('#panelMo
 if(location.hash==='#panel'){renderPanel();openModal('#panelModal');}
 
 $$('#lang button').forEach(b=>b.onclick=()=>{lang=b.dataset.l;try{localStorage.setItem('lang',lang)}catch(e){};renderStatic();});
+$$('[data-go]').forEach(b=>b.onclick=()=>{lang=b.dataset.go;try{localStorage.setItem('lang',lang)}catch(e){};renderStatic();$('#international').scrollIntoView({behavior:'smooth'});});
 $('#burger').onclick=()=>$('#menu').classList.toggle('open');
 $$('#menu a').forEach(a=>a.onclick=()=>$('#menu').classList.remove('open'));
 renderStatic();
