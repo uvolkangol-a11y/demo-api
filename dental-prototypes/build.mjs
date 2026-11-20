@@ -17,17 +17,32 @@ rmSync(dist, { recursive: true, force: true });
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const pathOf = c => `${c.slug}-${c.key}`;
 
+const THEMES = [
+  { id: 'modern', label: 'Modern', fonts: 'family=Plus+Jakarta+Sans:wght@400;500;600;700;800' },
+  { id: 'klasik', label: 'Klasik', fonts: 'family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700' },
+  { id: 'premium', label: 'Premium', fonts: 'family=Manrope:wght@400;500;600;700;800' },
+];
+
 for (const c of clinics) {
   const json = JSON.stringify(c).replace(/</g, '\\u003c');
-  const html = template
-    .replace('{{TITLE}}', esc(`${c.name} Ağız ve Diş Sağlığı | Online Randevu`))
-    .replace('{{DESCRIPTION}}', esc(`${c.fullName} – Bağcılar Mahmutbey. Online randevu ve yurt dışından gelen hastalar için ücretsiz online ön değerlendirme.`))
-    .replace('{{COLOR}}', c.color)
-    .replace('{{ACCENT}}', c.accent)
-    .replace('/*CLINIC*/{}/*END*/', json);
-  mkdirSync(join(dist, pathOf(c)), { recursive: true });
-  writeFileSync(join(dist, pathOf(c), 'index.html'), html);
-  console.log(`✓ dist/${pathOf(c)}/`);
+  THEMES.forEach((th, i) => {
+    const up = i === 0 ? '' : '../';
+    const sw = `<div class="theme-switch"><span>Tasarım seçin:</span>${THEMES.map((o, j) =>
+      `<a href="${(up + (j === 0 ? '' : o.id + '/')) || './'}" class="${j === i ? 'on' : ''}">${j + 1} · ${o.label}</a>`).join('')}</div>`;
+    const html = template
+      .replace('{{THEME}}', th.id)
+      .replace('{{FONTS}}', th.fonts)
+      .replace('{{SWITCH}}', sw)
+      .replace('{{TITLE}}', esc(`${c.name} Ağız ve Diş Sağlığı | Online Randevu`))
+      .replace('{{DESCRIPTION}}', esc(`${c.fullName} – ${c.area || 'Bağcılar'}. Online randevu ve yurt dışından gelen hastalar için ücretsiz online ön değerlendirme.`))
+      .replace('{{COLOR}}', c.color)
+      .replace('{{ACCENT}}', c.accent)
+      .replace('/*CLINIC*/{}/*END*/', json);
+    const dir = i === 0 ? join(dist, pathOf(c)) : join(dist, pathOf(c), th.id);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, 'index.html'), html);
+  });
+  console.log(`✓ dist/${pathOf(c)}/  (+ klasik/, premium/)`);
 }
 
 // ---- Nötr kapak sayfası ----
@@ -41,7 +56,7 @@ const msgs = c => ({
   acilis: `Merhaba, iyi çalışmalar 🙏
 Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
 
-${c.fullName} için size özel bir site önizlemesi hazırladım:
+${c.fullName} için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
 ✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
 🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
 
@@ -50,7 +65,7 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 
 "Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?"
 
-"Bağcılar'daki diş kliniklerine online randevu ve yabancı hasta odaklı web siteleri hazırlıyorum. ${c.name} için size özel, ücretsiz bir site önizlemesi hazırladım. Hastalar telefonsuz randevu alıyor, site 4 dilde ve yurt dışından gelen hastalar için ön değerlendirme formu var."
+"Bağcılar'daki diş kliniklerine online randevu ve yabancı hasta odaklı web siteleri hazırlıyorum. ${c.name} için size özel, 3 farklı tasarımda ücretsiz bir site önizlemesi hazırladım. Hastalar telefonsuz randevu alıyor, site 4 dilde ve yurt dışından gelen hastalar için ön değerlendirme formu var."
 
 "Size WhatsApp'tan bağlantısını göndermem için hangi numarayı kullanabilirim?"
 
@@ -63,6 +78,7 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 {LINK}
 
 Denemek için:
+0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ "Online Randevu" ile deneme randevusu oluşturun${c.whatsapp ? ' — talep WhatsApp\'ınıza düşer' : ''}
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki "Klinik Paneli" ile gelen randevuları görün
@@ -128,7 +144,7 @@ textarea{width:100%;border:1px solid #e4e9ee;border-radius:12px;padding:10px;fon
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#14202b;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;display:none}
 @media(max-width:600px){.me{grid-template-columns:1fr}}
 </style></head><body><div class="wrap">
-<header><h1>Mahmutbey Pilot – Satış Paneli</h1><p>${clinics.length} klinik · Sadece senin için (bu adresi kimseyle paylaşma). Durum ve notlar bu tarayıcıda saklanır.</p></header>
+<header><h1>Bağcılar Pilot – Satış Paneli</h1><p>${clinics.length} klinik · Sadece senin için (bu adresi kimseyle paylaşma). Durum ve notlar bu tarayıcıda saklanır.</p></header>
 <div class="me"><div><label>Adın</label><input id="myName" placeholder="Ad Soyad"></div><div><label>Telefonun</label><input id="myTel" placeholder="05xx xxx xx xx"></div></div>
 <div class="grid">${cards}</div>
 <div class="tips"><h3>Akış</h3>

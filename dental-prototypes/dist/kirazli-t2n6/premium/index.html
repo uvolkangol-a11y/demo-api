@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="tr" dir="ltr" data-theme="premium">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kirazlı Diş Ağız ve Diş Sağlığı | Online Randevu</title>
+<meta name="description" content="Özel Kirazlı Ağız ve Diş Sağlığı Polikliniği – Bağcılar Mahmutbey. Online randevu ve yurt dışından gelen hastalar için ücretsiz online ön değerlendirme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#B23A48;
+  --accent:#F4C095;
+  --brand-dark:color-mix(in oklab,var(--brand) 70%,#000);
+  --brand-soft:color-mix(in oklab,var(--brand) 10%,#fff);
+  --brand-softer:color-mix(in oklab,var(--brand) 5%,#fff);
+  --ink:#14202b;--muted:#5b6b7a;--line:#e4e9ee;--bg:#fbfcfd;--card:#fff;
+  --radius:20px;--shadow:0 10px 40px -12px rgba(20,32,43,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+html[lang=ar] body{font-family:"Noto Sans Arabic","Plus Jakarta Sans",sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+svg{display:block}
+
+/* demo bar */
+.demo-bar{background:#14202b;color:#cfd8e0;font-size:12.5px;text-align:center;padding:7px 16px}
+.demo-bar b{color:#fff}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.logo-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-dark));display:grid;place-items:center;color:#fff}
+.logo small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.02em;margin-top:-4px}
+.menu{display:flex;gap:26px;font-weight:600;font-size:14.5px;color:var(--muted)}
+.menu a:hover{color:var(--brand)}
+.menu .nav-intl{color:var(--brand)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff}
+.lang button{font-size:12px;font-weight:700;padding:5px 9px;border-radius:999px;color:var(--muted)}
+.lang button.on{background:var(--brand);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:999px;padding:13px 22px;font-size:15px;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 8px 24px -8px var(--brand)}
+.btn-primary:hover{background:var(--brand-dark)}
+.btn-ghost{background:#fff;border:1px solid var(--line)}
+.btn-accent{background:var(--accent);color:#1b1b1b}
+.btn-dark{background:#14202b;color:#fff}
+.istrip{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.istrip button{background:#ffffffb3;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;color:var(--muted)}
+.istrip button:hover{border-color:var(--brand);color:var(--brand)}
+.stays{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+.stay{background:#ffffff0d;border:1px solid #ffffff1a;border-radius:18px;padding:18px}
+.stay small{display:block;font-size:12px;color:#93a3b1}
+.stay b{display:block;font-size:22px;color:var(--accent);margin:6px 0 2px;letter-spacing:-.02em}
+.stay span{font-size:14.5px;font-weight:700;color:#fff}
+.stays-head{margin:44px 0 14px;font-size:18px;color:#fff}
+.btn-sm{padding:9px 16px;font-size:14px}
+.burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);place-items:center}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 500px at 85% -10%,color-mix(in oklab,var(--accent) 35%,transparent),transparent 60%),
+  radial-gradient(800px 600px at -10% 110%,color-mix(in oklab,var(--brand) 22%,transparent),transparent 60%),
+  linear-gradient(180deg,var(--brand-softer),#fff)}
+.hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 20px 84px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 8px;font-size:13px;font-weight:600;color:var(--muted)}
+.pill i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px #22c55e22;display:inline-block;margin-inline-start:6px}
+h1{font-size:clamp(34px,5.2vw,58px);line-height:1.06;letter-spacing:-.035em;font-weight:800;margin:20px 0 18px}
+h1 em{white-space:nowrap;font-style:normal;background:linear-gradient(90deg,var(--brand),color-mix(in oklab,var(--brand) 55%,var(--accent)));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--muted);max-width:540px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px}
+.fact b{display:block;font-size:22px;letter-spacing:-.02em}
+.fact span{font-size:13px;color:var(--muted)}
+.hero-card{background:#fff;border-radius:28px;box-shadow:var(--shadow);padding:26px;position:relative}
+.hero-card h3{font-size:17px;margin-bottom:4px}
+.hero-card p.s{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+.qslots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 18px}
+.qslots button{border:1px solid var(--line);border-radius:12px;padding:10px 0;font-weight:700;font-size:14px}
+.qslots button:hover,.qslots button.on{border-color:var(--brand);background:var(--brand-soft);color:var(--brand-dark)}
+.qday{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px;padding:12px 14px;background:var(--brand-softer);border-radius:14px}
+.float-tag{position:absolute;inset-inline-end:22px;top:-22px;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:12px 14px;display:flex;gap:10px;align-items:center;font-size:13px;font-weight:600}
+.float-tag .ic{width:34px;height:34px;border-radius:10px;background:#22c55e1a;color:#16a34a;display:grid;place-items:center}
+.deco-tooth{position:absolute;inset-inline-end:-60px;top:40px;opacity:.07;color:var(--brand);width:420px;pointer-events:none}
+
+/* sections */
+section{padding:88px 0}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+html[lang=ar] .eyebrow{letter-spacing:0}
+h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.03em;line-height:1.15;margin:10px 0 14px}
+.sub{color:var(--muted);max-width:620px;font-size:16.5px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:40px;flex-wrap:wrap}
+
+.grid-t{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:border-color .2s,box-shadow .2s,transform .2s;display:flex;flex-direction:column}
+.tcard:hover{border-color:color-mix(in oklab,var(--brand) 40%,var(--line));box-shadow:var(--shadow);transform:translateY(-3px)}
+.tic{width:52px;height:52px;border-radius:16px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;margin-bottom:18px}
+.tcard h3{font-size:18px;margin-bottom:6px}
+.tcard p{color:var(--muted);font-size:14.5px;flex:1}
+.tcard .lnk{margin-top:16px;font-weight:700;font-size:14px;color:var(--brand);display:inline-flex;gap:6px;align-items:center}
+
+/* why */
+.why{background:#fff;border-block:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why-item{padding:22px;border-radius:var(--radius);background:var(--brand-softer)}
+.why-item .tic{background:#fff}
+.why-item h4{font-size:16px;margin-bottom:4px}
+.why-item p{font-size:14px;color:var(--muted)}
+
+/* booking */
+.book{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start}
+.book-side ul{list-style:none;margin-top:22px;display:grid;gap:14px}
+.book-side li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.book-side li .ck{flex:none;width:24px;height:24px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;margin-top:1px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}
+.steps{display:flex;border-bottom:1px solid var(--line)}
+.steps div{flex:1;padding:16px 10px;text-align:center;font-size:13px;font-weight:700;color:var(--muted);position:relative}
+.steps div span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid currentColor;font-size:11.5px;margin-inline-end:6px}
+.steps div.on{color:var(--brand)}
+.steps div.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--brand)}
+.steps div.done{color:var(--ink)}
+.pbody{padding:26px}
+.lbl{font-size:13px;font-weight:700;color:var(--muted);margin:0 0 10px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);border-radius:999px;padding:9px 15px;font-size:14px;font-weight:600;background:#fff}
+.chip:hover{border-color:color-mix(in oklab,var(--brand) 45%,var(--line))}
+.chip.on{border-color:var(--brand);background:var(--brand);color:#fff}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}
+.day{flex:none;width:68px;border:1.5px solid var(--line);border-radius:16px;padding:10px 0;text-align:center;background:#fff}
+.day small{display:block;font-size:11.5px;font-weight:700;color:var(--muted);text-transform:uppercase}
+.day b{display:block;font-size:20px;line-height:1.2}
+.day em{font-style:normal;font-size:11px;color:var(--muted)}
+.day.on{border-color:var(--brand);background:var(--brand);color:#fff}
+.day.on small,.day.on em{color:#ffffffcc}
+.day:disabled{opacity:.38;cursor:not-allowed;background:#f4f6f8}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.slot{border:1.5px solid var(--line);border-radius:12px;padding:9px 0;font-weight:700;font-size:14px;background:#fff}
+.slot:hover:not(:disabled){border-color:var(--brand)}
+.slot.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.slot:disabled{text-decoration:line-through;color:#a9b4be;background:#f4f6f8;cursor:not-allowed}
+.field{margin-bottom:14px}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:13px 14px;font-size:15px;background:#fff;outline:none;transition:border-color .15s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin:6px 0 4px}
+.consent input{margin-top:3px;accent-color:var(--brand);width:16px;height:16px;flex:none}
+.consent a{color:var(--brand);font-weight:600;text-decoration:underline}
+.pfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 26px;border-top:1px solid var(--line);background:var(--brand-softer)}
+.summary{font-size:13.5px;color:var(--muted)}
+.summary b{color:var(--ink)}
+.err{color:#c2410c;font-size:13px;font-weight:600;min-height:18px;margin-top:6px}
+.success{text-align:center;padding:16px 6px}
+.success .big{width:72px;height:72px;border-radius:50%;background:#22c55e1a;color:#16a34a;display:grid;place-items:center;margin:0 auto 16px}
+.success h3{font-size:22px;margin-bottom:8px}
+.success p{color:var(--muted);margin-bottom:18px}
+.rcpt{background:var(--brand-softer);border-radius:16px;padding:16px;text-align:start;font-size:14.5px;display:grid;gap:6px;margin-bottom:18px}
+.rcpt div{display:flex;justify-content:space-between;gap:12px}
+.rcpt span{color:var(--muted)}
+.rcpt b,#phones,table.bk td{unicode-bidi:plaintext}
+
+/* international */
+.intl{background:linear-gradient(160deg,#0f1b26,color-mix(in oklab,var(--brand) 45%,#0f1b26));color:#e8eef3;position:relative;overflow:hidden}
+.intl .eyebrow{color:var(--accent)}
+.intl .sub{color:#b7c4cf}
+.intl-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
+.flow{display:grid;gap:12px;margin-top:28px}
+.flow-item{display:flex;gap:16px;background:#ffffff0d;border:1px solid #ffffff1a;border-radius:18px;padding:18px}
+.flow-item .n{flex:none;width:38px;height:38px;border-radius:12px;background:var(--accent);color:#1b1b1b;font-weight:800;display:grid;place-items:center}
+.flow-item h4{font-size:16px;margin-bottom:2px;color:#fff}
+.flow-item p{font-size:14px;color:#b7c4cf}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.langs span{background:#ffffff14;border:1px solid #ffffff22;border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600}
+.intl .panel{color:var(--ink)}
+.intl .panel h3{font-size:19px;margin-bottom:4px}
+.intl .note{font-size:12px;color:#93a3b1;margin-top:14px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px}
+.cinfo{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;gap:20px;align-content:start}
+.crow{display:flex;gap:14px}
+.crow .tic{margin:0;width:44px;height:44px;border-radius:14px;flex:none}
+.crow small{display:block;font-size:12.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+html[lang=ar] .crow small{letter-spacing:0}
+.crow b{font-size:15.5px;font-weight:600}
+.hours{width:100%;font-size:14.5px;border-collapse:collapse}
+.hours td{padding:6px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:end;font-weight:700}
+.hours .closed{color:#c2410c}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:420px;background:#e9eef2}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+
+footer{background:#0f1b26;color:#93a3b1;font-size:13.5px;padding:40px 0 30px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer a{color:#cfd8e0}
+footer a:hover{color:#fff}
+.legal{font-size:12px;margin-top:18px;color:#6d7f8e}
+
+/* float */
+.fab{position:fixed;inset-inline-end:20px;bottom:20px;z-index:50;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px #25D366aa}
+.fab.call{background:var(--brand);box-shadow:0 12px 30px -8px var(--brand)}
+.mbar{display:none}
+
+/* modal */
+.modal{position:fixed;inset:0;background:#0f1b26b3;z-index:100;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.on{display:flex}
+.mbox{background:#fff;border-radius:24px;max-width:860px;width:100%;max-height:86vh;overflow:auto;padding:26px}
+.mhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px}
+.mhead h3{font-size:20px}
+table.bk{width:100%;border-collapse:collapse;font-size:14px}
+table.bk th{text-align:start;font-size:12px;text-transform:uppercase;color:var(--muted);padding:8px;border-bottom:1px solid var(--line)}
+table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.badge{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;background:#fef3c7;color:#92400e;white-space:nowrap}
+.badge.ok{background:#dcfce7;color:#166534}
+.empty{color:var(--muted);text-align:center;padding:30px}
+.kvkk p{color:var(--muted);font-size:14px;margin-bottom:10px}
+
+@media (max-width:980px){
+  .menu{display:none}
+  .burger{display:grid}
+  .menu.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:#fff;padding:18px 20px;border-bottom:1px solid var(--line);gap:16px}
+  .hero-in,.book,.intl-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-in{padding:48px 20px 60px;gap:36px}
+  .grid-t{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .stays{grid-template-columns:1fr 1fr}
+  .float-tag{display:none}
+  .nav-right .btn{display:none}
+}
+@media (max-width:620px){
+  section{padding:64px 0}
+  .grid-t,.why-grid,.row2{grid-template-columns:1fr}
+  .wrap{padding:0 16px}
+  .hero-in{padding:40px 16px 52px}
+  .lang button{padding:5px 7px}
+  .logo small{display:none}
+  .steps div{font-size:0}
+  .steps div span{font-size:11.5px;margin:0}
+  .pbody{padding:20px}
+  .pfoot{padding:16px 20px;flex-direction:column;align-items:stretch}
+  .pfoot .btn{width:100%}
+  .fab{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line)}
+  .mbar .btn{padding:12px 10px;font-size:14px}
+  footer{padding-bottom:90px}
+}
+
+/* ---------- theme switch (demo only) ---------- */
+.theme-switch{background:#14202b;color:#93a3b1;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;padding:0 12px 9px;font-size:12.5px;font-family:system-ui,sans-serif}
+.theme-switch a{padding:4px 11px;border-radius:999px;border:1px solid #ffffff2e;color:#e8eef3;font-weight:600}
+.theme-switch a.on{background:#fff;color:#14202b;border-color:#fff}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] .logo{font-family:"Noto Sans Arabic",sans-serif!important;font-style:normal}
+
+/* ================= KLASİK ================= */
+[data-theme=klasik]{--bg:#faf7f2;--card:#fffdf9;--line:#e6dccb;--ink:#2a2420;--muted:#7a6f63;--gold:#b08d57;--radius:4px;--shadow:0 24px 50px -30px rgba(60,40,20,.35)}
+[data-theme=klasik] body{font-family:"Lato",system-ui,sans-serif;background:var(--bg)}
+[data-theme=klasik] h1,[data-theme=klasik] h2,[data-theme=klasik] h3,[data-theme=klasik] .logo,[data-theme=klasik] .fact b,[data-theme=klasik] .stay b,[data-theme=klasik] .flow-item .n{font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:0}
+[data-theme=klasik] h1{font-size:clamp(42px,6.2vw,78px);font-weight:500;line-height:1.04}
+[data-theme=klasik] h1 em{font-style:italic;background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--brand)}
+[data-theme=klasik] h2{font-size:clamp(34px,4.2vw,52px);font-weight:500}
+[data-theme=klasik] h2::after{content:"";display:block;width:56px;height:1px;background:var(--gold);margin:18px auto 0}
+[data-theme=klasik] .book-side h2::after,[data-theme=klasik] .intl h2::after{margin-inline:0}
+[data-theme=klasik] h3{font-weight:600}
+[data-theme=klasik] .btn{border-radius:2px;text-transform:uppercase;letter-spacing:.12em;font-size:12.5px;padding:15px 26px}
+[data-theme=klasik] .btn-sm{padding:11px 18px}
+[data-theme=klasik] .btn-primary{background:var(--brand);box-shadow:none}
+[data-theme=klasik] .btn-ghost{background:transparent;border:1px solid var(--ink)}
+[data-theme=klasik] .btn-dark{background:transparent;color:var(--ink);border:1px solid var(--gold)}
+[data-theme=klasik] .btn-accent{background:var(--gold);color:#fff}
+[data-theme=klasik] header.nav{background:var(--bg)}
+[data-theme=klasik] .nav-in{height:84px}
+[data-theme=klasik] .logo{font-size:26px;font-weight:600}
+[data-theme=klasik] .logo small{font-family:"Lato",sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:9.5px;margin-top:0}
+[data-theme=klasik] .logo-mark{border-radius:50%;background:transparent;border:1px solid var(--gold);color:var(--gold)}
+[data-theme=klasik] .menu{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700}
+[data-theme=klasik] .lang{border-radius:2px;background:transparent}
+[data-theme=klasik] .lang button{border-radius:2px}
+[data-theme=klasik] .lang button.on{background:var(--ink)}
+[data-theme=klasik] .hero{background:linear-gradient(180deg,#f2eadc,var(--bg));border-bottom:1px solid var(--line)}
+[data-theme=klasik] .deco-tooth,[data-theme=klasik] .float-tag{display:none}
+[data-theme=klasik] .hero-in{grid-template-columns:1fr;text-align:center;justify-items:center;padding:84px 20px 72px;gap:52px}
+[data-theme=klasik] .lead{margin:0 auto}
+[data-theme=klasik] .hero-cta,[data-theme=klasik] .istrip,[data-theme=klasik] .facts{justify-content:center}
+[data-theme=klasik] .pill{border-radius:0;background:transparent;border:0;border-bottom:1px solid var(--gold);text-transform:uppercase;letter-spacing:.16em;font-size:11.5px;padding:6px 2px}
+[data-theme=klasik] .istrip button{border-radius:2px;background:transparent}
+[data-theme=klasik] .facts{gap:0}
+[data-theme=klasik] .fact{padding:0 34px;border-inline-start:1px solid var(--line)}
+[data-theme=klasik] .fact:first-child{border:0}
+[data-theme=klasik] .fact b{font-size:38px;font-weight:500;color:var(--brand)}
+[data-theme=klasik] .fact span{text-transform:uppercase;letter-spacing:.12em;font-size:11px}
+[data-theme=klasik] .hero-card{width:100%;max-width:900px;border-radius:4px;border:1px solid var(--line);background:var(--card);display:grid;grid-template-columns:1fr 1.5fr;gap:8px 32px;text-align:start;align-items:center;padding:30px}
+[data-theme=klasik] .hero-card h3,[data-theme=klasik] .hero-card p.s,[data-theme=klasik] .hero-card .qday{grid-column:1}
+[data-theme=klasik] .hero-card h3{font-size:28px}
+[data-theme=klasik] .hero-card .qslots{grid-column:2;grid-row:1/4;margin:0}
+[data-theme=klasik] .hero-card #qGo{grid-column:1/-1;margin-top:10px}
+[data-theme=klasik] .qday{border-radius:2px;background:#f4ede1}
+[data-theme=klasik] .qslots button,[data-theme=klasik] .slot,[data-theme=klasik] .day,[data-theme=klasik] .chip{border-radius:2px}
+[data-theme=klasik] .eyebrow{color:var(--gold);letter-spacing:.26em;font-size:11.5px}
+[data-theme=klasik] .head{flex-direction:column;align-items:center;text-align:center}
+[data-theme=klasik] .head .sub{margin:0 auto}
+[data-theme=klasik] .grid-t{gap:0;border-top:1px solid var(--line);border-inline-start:1px solid var(--line)}
+[data-theme=klasik] .tcard{border-radius:0;border:0;border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;padding:40px 30px;text-align:center;align-items:center}
+[data-theme=klasik] .tcard:hover{transform:none;box-shadow:none;background:var(--card)}
+[data-theme=klasik] .tcard h3{font-size:26px}
+[data-theme=klasik] .tcard .lnk{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+[data-theme=klasik] .tic{border-radius:50%;background:transparent;border:1px solid var(--gold);color:var(--gold)}
+[data-theme=klasik] .why{background:var(--card)}
+[data-theme=klasik] .why-item{background:transparent;border-top:2px solid var(--gold);border-radius:0;padding:26px 4px}
+[data-theme=klasik] .why-item h4{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600}
+[data-theme=klasik] .panel{border-radius:4px;background:var(--card)}
+[data-theme=klasik] .steps div.on{color:var(--ink)}
+[data-theme=klasik] .steps div.on::after{height:2px;background:var(--gold)}
+[data-theme=klasik] .book-side li .ck{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+[data-theme=klasik] .field input,[data-theme=klasik] .field select,[data-theme=klasik] .field textarea{border-radius:2px;border-width:1px}
+[data-theme=klasik] .pfoot{background:#f6f0e6}
+[data-theme=klasik] .intl{background:#221c18}
+[data-theme=klasik] .intl .eyebrow{color:var(--gold)}
+[data-theme=klasik] .flow-item{border-radius:0;background:transparent;border:0;border-bottom:1px solid #ffffff1f;padding:18px 0}
+[data-theme=klasik] .flow-item .n{background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:50%;font-size:22px;font-weight:600}
+[data-theme=klasik] .langs span{border-radius:2px}
+[data-theme=klasik] .stay{border-radius:0;background:transparent;border:1px solid #ffffff22;text-align:center}
+[data-theme=klasik] .stay b{color:var(--gold);font-size:34px;font-weight:500}
+[data-theme=klasik] .cinfo,[data-theme=klasik] .map{border-radius:4px}
+[data-theme=klasik] .cinfo{background:var(--card)}
+[data-theme=klasik] footer{background:#221c18}
+[data-theme=klasik] .mbox{border-radius:4px}
+
+/* ================= PREMIUM (koyu) ================= */
+[data-theme=premium]{--bg:#0a0d12;--card:#121821;--line:#243041;--ink:#eef2f6;--muted:#93a1b0;--radius:16px;--shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+[data-theme=premium] body{font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+[data-theme=premium] h1{font-size:clamp(42px,6.6vw,84px);font-weight:800;letter-spacing:-.045em}
+[data-theme=premium] h1 em{background:linear-gradient(90deg,var(--accent),color-mix(in oklab,var(--accent) 35%,#fff));-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-theme=premium] h2{font-size:clamp(32px,4.4vw,56px);font-weight:800;letter-spacing:-.04em}
+[data-theme=premium] section{padding:110px 0}
+[data-theme=premium] .demo-bar,[data-theme=premium] .theme-switch{background:#000}
+[data-theme=premium] header.nav{background:rgba(10,13,18,.72);border-bottom:1px solid var(--line)}
+[data-theme=premium] .menu{color:var(--muted)}
+[data-theme=premium] .menu a:hover{color:#fff}
+[data-theme=premium] .menu .nav-intl{color:var(--accent)}
+[data-theme=premium] .menu.open{background:var(--bg)}
+[data-theme=premium] .burger{border-color:var(--line)}
+[data-theme=premium] .logo-mark{background:linear-gradient(135deg,var(--accent),var(--brand));color:#0a0d12;border-radius:10px}
+[data-theme=premium] .logo small{color:var(--muted)}
+[data-theme=premium] .lang{background:transparent;border-color:var(--line)}
+[data-theme=premium] .lang button.on{background:var(--accent);color:#111}
+[data-theme=premium] .btn{border-radius:12px}
+[data-theme=premium] .btn-primary,[data-theme=premium] .btn-primary:hover{background:linear-gradient(135deg,var(--accent),color-mix(in oklab,var(--accent) 50%,var(--brand)));color:#0a0d12;box-shadow:0 12px 40px -12px var(--accent)}
+[data-theme=premium] .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+[data-theme=premium] .btn-dark{background:#ffffff10;border:1px solid #ffffff26;color:#fff}
+[data-theme=premium] .btn-accent{background:var(--accent);color:#0a0d12}
+[data-theme=premium] .hero{background:radial-gradient(900px 560px at 85% 10%,color-mix(in oklab,var(--brand) 60%,transparent),transparent 62%),radial-gradient(700px 460px at 0% 100%,color-mix(in oklab,var(--accent) 22%,transparent),transparent 60%),var(--bg)}
+[data-theme=premium] .hero-in{padding:110px 20px 120px}
+[data-theme=premium] .deco-tooth{color:var(--accent);opacity:.05}
+[data-theme=premium] .pill{background:#ffffff0d;border-color:#ffffff1f;color:var(--muted)}
+[data-theme=premium] .istrip button{background:#ffffff0a;border-color:#ffffff1f;color:var(--muted)}
+[data-theme=premium] .istrip button:hover{border-color:var(--accent);color:var(--accent)}
+[data-theme=premium] .fact{background:#ffffff08;border:1px solid #ffffff14;border-radius:14px;padding:14px 18px}
+[data-theme=premium] .fact b{color:var(--accent)}
+[data-theme=premium] .hero-card{background:rgba(255,255,255,.06);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid #ffffff22;color:var(--ink)}
+[data-theme=premium] .qday{background:#ffffff0d}
+[data-theme=premium] .qslots button{border-color:#ffffff22}
+[data-theme=premium] .qslots button:hover,[data-theme=premium] .qslots button.on{background:color-mix(in oklab,var(--accent) 22%,transparent);border-color:var(--accent);color:#fff}
+[data-theme=premium] .float-tag{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+[data-theme=premium] .eyebrow{color:var(--accent)}
+[data-theme=premium] .grid-t{counter-reset:t}
+[data-theme=premium] .tcard{background:var(--card);border-color:var(--line);counter-increment:t;position:relative}
+[data-theme=premium] .tcard::before{content:"0" counter(t);position:absolute;inset-inline-end:22px;top:16px;font-size:46px;font-weight:800;color:#ffffff0c;letter-spacing:-.04em}
+[data-theme=premium] .tcard:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),var(--shadow)}
+[data-theme=premium] .tic{background:color-mix(in oklab,var(--accent) 14%,transparent);color:var(--accent)}
+[data-theme=premium] .tcard .lnk{color:var(--accent)}
+[data-theme=premium] .why{background:#0d1118;border-color:var(--line)}
+[data-theme=premium] .why-item{background:var(--card);border:1px solid var(--line)}
+[data-theme=premium] .why-item .tic{background:color-mix(in oklab,var(--accent) 14%,transparent)}
+[data-theme=premium] .panel{background:var(--card);border-color:var(--line);color:var(--ink)}
+[data-theme=premium] .intl .panel{color:var(--ink)}
+[data-theme=premium] .steps{border-color:var(--line)}
+[data-theme=premium] .steps div.on{color:var(--accent)}
+[data-theme=premium] .steps div.on::after{background:var(--accent)}
+[data-theme=premium] .steps div.done{color:var(--ink)}
+[data-theme=premium] .chip,[data-theme=premium] .day,[data-theme=premium] .slot{background:#ffffff08;border-color:var(--line);color:var(--ink)}
+[data-theme=premium] .chip.on,[data-theme=premium] .day.on,[data-theme=premium] .slot.on{background:var(--accent);border-color:var(--accent);color:#0a0d12}
+[data-theme=premium] .day.on small,[data-theme=premium] .day.on em{color:#0a0d12b3}
+[data-theme=premium] .day:disabled,[data-theme=premium] .slot:disabled{background:#ffffff04;color:#4b5868}
+[data-theme=premium] .field input,[data-theme=premium] .field select,[data-theme=premium] .field textarea{background:#0d1118;border-color:var(--line);color:var(--ink)}
+[data-theme=premium] .pfoot{background:#0d1118;border-color:var(--line)}
+[data-theme=premium] .summary b{color:#fff}
+[data-theme=premium] .rcpt{background:#0d1118}
+[data-theme=premium] .book-side li .ck{background:var(--accent);color:#0a0d12}
+[data-theme=premium] .intl{background:linear-gradient(160deg,#0d1118,color-mix(in oklab,var(--brand) 40%,#0a0d12))}
+[data-theme=premium] .flow-item .n,[data-theme=premium] .stay b{color:var(--accent)}
+[data-theme=premium] .flow-item .n{background:color-mix(in oklab,var(--accent) 18%,transparent);border:1px solid var(--accent)}
+[data-theme=premium] .cinfo{background:var(--card);border-color:var(--line)}
+[data-theme=premium] .hours td{border-color:var(--line)}
+[data-theme=premium] .map{border-color:var(--line)}
+[data-theme=premium] .map iframe{filter:invert(.9) hue-rotate(180deg) saturate(.6)}
+[data-theme=premium] footer{background:#05070a}
+[data-theme=premium] .mbar{background:var(--bg);border-color:var(--line)}
+[data-theme=premium] .mbox{background:var(--card);color:var(--ink)}
+[data-theme=premium] table.bk td,[data-theme=premium] table.bk th{border-color:var(--line)}
+
+@media (max-width:620px){
+  [data-theme=klasik] .hero-card{grid-template-columns:1fr;padding:22px}
+  [data-theme=klasik] .hero-card .qslots{grid-column:1;grid-row:auto}
+  [data-theme=klasik] .fact{padding:0 14px}
+  [data-theme=klasik] .mbar .btn{letter-spacing:.04em;font-size:12px;padding:12px 8px}
+  [data-theme=premium] .hero-in{padding:56px 16px 64px}
+  [data-theme=premium] section{padding:72px 0}
+  [data-theme=premium] .facts{gap:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" data-i18n-html="demoBar"></div>
+<div class="theme-switch"><span>Tasarım seçin:</span><a href="../" class="">1 · Modern</a><a href="../klasik/" class="">2 · Klasik</a><a href="../premium/" class="on">3 · Premium</a></div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">
+      <span class="logo-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.2 0-4 1.8-4 4.4 0 2.6 1.2 4 1.6 6.4.4 2.4.6 7.2 2.4 7.2 1.8 0 1.6-5 3-5h4c1.4 0 1.2 5 3 5s2-4.8 2.4-7.2C19.8 11.4 21 10 21 7.4 21 4.8 19.2 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z"/></svg></span>
+      <span><span data-c="name"></span><small data-i18n="tagline"></small></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#tedaviler" data-i18n="navTreat"></a>
+      <a href="#randevu" data-i18n="navBook"></a>
+      <a href="#international" class="nav-intl">🌍 <span data-i18n="navIntl"></span></a>
+      <a href="#iletisim" data-i18n="navContact"></a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" id="lang">
+        <button data-l="tr">TR</button><button data-l="en">EN</button><button data-l="ar">AR</button><button data-l="de">DE</button>
+      </div>
+      <a href="#randevu" class="btn btn-primary btn-sm" data-i18n="ctaBook"></a>
+      <button class="burger" id="burger" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<div class="hero">
+  <svg class="deco-tooth" viewBox="0 0 24 24" fill="currentColor"><path d="M7 3c-2.2 0-4 1.8-4 4.4 0 2.6 1.2 4 1.6 6.4.4 2.4.6 7.2 2.4 7.2 1.8 0 1.6-5 3-5h4c1.4 0 1.2 5 3 5s2-4.8 2.4-7.2C19.8 11.4 21 10 21 7.4 21 4.8 19.2 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z"/></svg>
+  <div class="wrap hero-in">
+    <div>
+      <span class="pill"><i></i><span data-i18n="pill"></span></span>
+      <h1 data-i18n-html="heroTitle"></h1>
+      <p class="lead" data-i18n="heroLead"></p>
+      <div class="hero-cta">
+        <a href="#randevu" class="btn btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg><span data-i18n="ctaBook"></span></a>
+        <a href="#international" class="btn btn-dark">🌍 <span data-i18n="ctaIntl"></span></a>
+      </div>
+      <div class="istrip">
+        <button data-go="en">🇬🇧 International patients</button>
+        <button data-go="ar">🇸🇦 المرضى الدوليون</button>
+        <button data-go="de">🇩🇪 Internationale Patienten</button>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>7/24</b><span data-i18n="fact1"></span></div>
+        <div class="fact"><b>4</b><span data-i18n="fact2"></span></div>
+        <div class="fact"><b data-i18n="factB3"></b><span data-i18n="fact3"></span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3 data-i18n="quickTitle"></h3>
+      <p class="s" data-i18n="quickSub"></p>
+      <div class="qday"><span id="qDayLabel"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
+      <div class="qslots" id="qSlots"></div>
+      <a href="#randevu" class="btn btn-primary" style="width:100%" id="qGo" data-i18n="quickGo"></a>
+      <div class="float-tag"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="floatTag"></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<section id="randevu">
+  <div class="wrap book">
+    <div class="book-side">
+      <div class="eyebrow" data-i18n="bookEyebrow"></div>
+      <h2 data-i18n="bookTitle"></h2>
+      <p class="sub" data-i18n="bookSub"></p>
+      <ul id="bookPerks"></ul>
+    </div>
+    <div class="panel" id="bookPanel">
+      <div class="steps" id="steps">
+        <div><span>1</span><em data-i18n="st1" style="font-style:normal"></em></div>
+        <div><span>2</span><em data-i18n="st2" style="font-style:normal"></em></div>
+        <div><span>3</span><em data-i18n="st3" style="font-style:normal"></em></div>
+      </div>
+      <div class="pbody" id="pbody"></div>
+      <div class="pfoot" id="pfoot">
+        <div class="summary" id="summary"></div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-ghost btn-sm" id="back" data-i18n="back"></button>
+          <button class="btn btn-primary btn-sm" id="next" data-i18n="next"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNATIONAL -->
+<section id="international" class="intl">
+  <div class="wrap intl-grid">
+    <div>
+      <div class="eyebrow" data-i18n="intlEyebrow"></div>
+      <h2 data-i18n="intlTitle"></h2>
+      <p class="sub" data-i18n="intlSub"></p>
+      <div class="flow" id="flow"></div>
+      <div class="langs"><span>🇹🇷 Türkçe</span><span>🇬🇧 English</span><span>🇸🇦 العربية</span><span>🇩🇪 Deutsch</span></div>
+    </div>
+    <div class="panel"><div class="pbody">
+      <h3 data-i18n="consultTitle"></h3>
+      <p class="summary" style="margin-bottom:18px" data-i18n="consultSub"></p>
+      <form id="intlForm">
+        <div class="field"><input required name="name" data-i18n-ph="phName"></div>
+        <div class="row2">
+          <div class="field"><input required name="country" data-i18n-ph="phCountry"></div>
+          <div class="field"><input required name="phone" type="tel" data-i18n-ph="phWa"></div>
+        </div>
+        <div class="field"><select name="treatment" id="intlTreat"></select></div>
+        <div class="field"><textarea name="msg" rows="3" data-i18n-ph="phMsg"></textarea></div>
+        <label class="consent"><input type="checkbox" required><span data-i18n-html="consent"></span></label>
+        <button class="btn btn-accent" style="width:100%;margin-top:10px" data-i18n="consultBtn"></button>
+        <a class="btn btn-ghost" id="sendPhotos" style="width:100%;margin-top:8px" target="_blank" rel="noopener"></a>
+        <div class="err" id="intlMsg" style="color:#16a34a"></div>
+      </form>
+    </div></div>
+  </div>
+  <div class="wrap"><h3 class="stays-head" data-i18n="stayTitle"></h3><div class="stays" id="stays"></div>
+  <p class="note" data-i18n="stayNote"></p><p class="note" data-i18n="intlNote"></p></div>
+</section>
+
+<!-- TREATMENTS -->
+<section id="tedaviler">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow" data-i18n="treatEyebrow"></div><h2 data-i18n="treatTitle"></h2><p class="sub" data-i18n="treatSub"></p></div>
+      <a href="#randevu" class="btn btn-ghost" data-i18n="ctaBook"></a>
+    </div>
+    <div class="grid-t" id="treatGrid"></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow" data-i18n="whyEyebrow"></div><h2 data-i18n="whyTitle"></h2></div></div>
+    <div class="why-grid" id="whyGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="iletisim">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow" data-i18n="contactEyebrow"></div><h2 data-i18n="contactTitle"></h2></div></div>
+    <div class="contact-grid">
+      <div class="cinfo">
+        <div class="crow"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><small data-i18n="cAddress"></small><b data-c="address"></b></div></div>
+        <div class="crow"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small data-i18n="cPhone"></small><b id="phones"></b></div></div>
+        <div class="crow" id="emailRow"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg></span><div><small>E-mail</small><b><a data-c="email" id="emailLink"></a></b></div></div>
+        <div class="crow" id="igRow"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><div><small>Instagram</small><b><a id="igLink" target="_blank" rel="noopener"></a></b></div></div>
+        <div>
+          <div class="crow" style="margin-bottom:8px"><span class="tic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small data-i18n="cHours"></small></div></div>
+          <table class="hours" id="hoursTbl"></table>
+        </div>
+        <a href="#randevu" class="btn btn-primary" data-i18n="ctaBook"></a>
+      </div>
+      <div class="map"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map" title="Map"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><b style="color:#fff" data-c="fullName"></b><div data-c="address"></div></div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a id="igFoot" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" id="kvkkLink" data-i18n="kvkk"></a>
+        <a href="#" id="panelLink" data-i18n="panelLink"></a>
+      </div>
+    </div>
+    <p class="legal" data-i18n="legal"></p>
+  </div>
+</footer>
+
+<a class="fab js-wa" href="#" aria-label="WhatsApp"><span class="js-wa-ic"></span></a>
+<div class="mbar">
+  <a href="#" class="btn btn-ghost js-wa"><span class="js-wa-ic"></span><span class="js-wa-label"></span></a>
+  <a href="#randevu" class="btn btn-primary" data-i18n="ctaBook"></a>
+</div>
+
+<div class="modal" id="panelModal"><div class="mbox">
+  <div class="mhead"><h3 data-i18n="panelTitle"></h3><button class="btn btn-ghost btn-sm js-close">✕</button></div>
+  <p class="summary" style="margin-bottom:14px" data-i18n="panelSub"></p>
+  <div id="panelBody" style="overflow-x:auto"></div>
+</div></div>
+<div class="modal" id="kvkkModal"><div class="mbox kvkk">
+  <div class="mhead"><h3 data-i18n="kvkk"></h3><button class="btn btn-ghost btn-sm js-close">✕</button></div>
+  <div data-i18n-html="kvkkText"></div>
+</div></div>
+
+<script>
+const CLINIC = {"slug":"kirazli","name":"Kirazlı Diş","fullName":"Özel Kirazlı Ağız ve Diş Sağlığı Polikliniği","address":"Kirazlı Mah. Mahmutbey Cad. No:134, Bağcılar / İstanbul","mapQuery":"Özel Kirazlı Ağız ve Diş Sağlığı Polikliniği Mahmutbey Cad 134","phone":"0212 515 22 99","whatsapp":null,"email":null,"hours":{"weekdays":"09:00 – 19:00","saturday":"09:00 – 18:00","sunday":null},"open":{"start":9,"end":19,"satEnd":18,"sunday":false},"color":"#B23A48","accent":"#F4C095","featured":["implant","zirkonyum","kanal","ortodonti","pedodonti","beyazlatma"],"source":"kirazlidis.com + Zavis rehberi (arama sonucu özeti)","currentSite":"Var (kirazlidis.com)","key":"t2n6","instagram":null,"area":"Bağcılar Mahmutbey"};
+
+const ICONS = {
+  tooth:'<path d="M7 3c-2.2 0-4 1.8-4 4.4 0 2.6 1.2 4 1.6 6.4.4 2.4.6 7.2 2.4 7.2 1.8 0 1.6-5 3-5h4c1.4 0 1.2 5 3 5s2-4.8 2.4-7.2C19.8 11.4 21 10 21 7.4 21 4.8 19.2 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z"/>',
+  implant:'<path d="M8 3h8l-1 5H9z"/><path d="M9 8h6M9.5 11h5M10 14h4M10.5 17h3M11 20h2"/>',
+  sparkle:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>',
+  crown:'<path d="m3 8 4 4 5-7 5 7 4-4-2 11H5z"/>',
+  root:'<path d="M7 3c-2 0-4 1.6-4 4 0 2.5 1.5 4 2 6l1 7M17 3c2 0 4 1.6 4 4 0 2.5-1.5 4-2 6l-1 7M7 3c2 0 3 1 5 1s3-1 5-1M12 8v12"/>',
+  child:'<circle cx="12" cy="7" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M10 7h.01M14 7h.01"/>',
+  brace:'<rect x="3" y="9" width="18" height="6" rx="2"/><path d="M7 9v6M12 9v6M17 9v6"/>',
+  clean:'<path d="M4 20 14 10M14 10l3-7 4 4-7 3z"/><path d="M7 14l3 3"/>',
+  scalpel:'<path d="M3 21 15 9l3 3L6 21z"/><path d="m15 9 4-4 2 2-4 4"/>',
+  smile:'<circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>',
+  shield:'<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
+  check:'<path d="M20 6 9 17l-5-5"/>',
+  arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>'
+};
+const ico=(n,s=22,w=2)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${ICONS[n]}</svg>`;
+const WA_SVG='<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
+
+const TREAT = {
+  implant:{ic:'implant',tr:['İmplant Tedavisi','Eksik dişleriniz için kalıcı ve doğal görünümlü çözüm.'],en:['Dental Implants','A permanent, natural-looking solution for missing teeth.'],ar:['زراعة الأسنان','حل دائم وطبيعي المظهر للأسنان المفقودة.'],de:['Zahnimplantate','Dauerhafte, natürlich wirkende Lösung für fehlende Zähne.']},
+  zirkonyum:{ic:'crown',tr:['Zirkonyum Kaplama','Işık geçirgen, estetik ve dayanıklı kaplamalar.'],en:['Zirconia Crowns','Translucent, aesthetic and durable crowns.'],ar:['تيجان الزركونيا','تيجان شفافة وجمالية ومتينة.'],de:['Zirkonkronen','Lichtdurchlässige, ästhetische und langlebige Kronen.']},
+  beyazlatma:{ic:'sparkle',tr:['Diş Beyazlatma','Klinik ortamında kontrollü ve güvenli beyazlatma.'],en:['Teeth Whitening','Controlled, safe in-office whitening.'],ar:['تبييض الأسنان','تبييض آمن ومراقب داخل العيادة.'],de:['Bleaching','Kontrollierte und sichere Zahnaufhellung in der Praxis.']},
+  kanal:{ic:'root',tr:['Kanal Tedavisi','Dişinizi kaybetmeden ağrıdan kurtulmanın yolu.'],en:['Root Canal Treatment','Relieve pain while saving your natural tooth.'],ar:['علاج العصب','تخلص من الألم مع الحفاظ على سنك الطبيعي.'],de:['Wurzelbehandlung','Schmerzfrei werden und den eigenen Zahn erhalten.']},
+  pedodonti:{ic:'child',tr:['Çocuk Diş Hekimliği','Çocuklara özel, korkutmayan ve sabırlı yaklaşım.'],en:['Pediatric Dentistry','A gentle, patient approach designed for kids.'],ar:['طب أسنان الأطفال','نهج لطيف وصبور مصمم للأطفال.'],de:['Kinderzahnheilkunde','Sanfte, geduldige Behandlung speziell für Kinder.']},
+  ortodonti:{ic:'brace',tr:['Ortodonti','Tel ve şeffaf plak seçenekleriyle düzgün dişler.'],en:['Orthodontics','Straight teeth with braces or clear aligners.'],ar:['تقويم الأسنان','أسنان مستقيمة بالتقويم أو الشفاف.'],de:['Kieferorthopädie','Gerade Zähne mit Brackets oder Alignern.']},
+  'dis-tasi':{ic:'clean',tr:['Diş Taşı Temizliği','Diş eti sağlığı için düzenli profesyonel temizlik.'],en:['Scaling & Cleaning','Regular professional cleaning for healthy gums.'],ar:['تنظيف الجير','تنظيف احترافي منتظم لصحة اللثة.'],de:['Zahnsteinentfernung','Regelmäßige professionelle Reinigung für gesundes Zahnfleisch.']},
+  'cene-cerrahisi':{ic:'scalpel',tr:['Ağız, Diş ve Çene Cerrahisi','Gömülü diş, kist ve cerrahi işlemler.'],en:['Oral Surgery','Impacted teeth, cysts and surgical procedures.'],ar:['جراحة الفم والفكين','الأسنان المطمورة والأكياس والإجراءات الجراحية.'],de:['Oralchirurgie','Verlagerte Zähne, Zysten und chirurgische Eingriffe.']},
+  estetik:{ic:'smile',tr:['Gülüş Tasarımı','Yüzünüze uyumlu, kişiye özel estetik planlama.'],en:['Smile Design','Personalised aesthetic planning that suits your face.'],ar:['تصميم الابتسامة','تخطيط جمالي مخصص يناسب وجهك.'],de:['Smile Design','Individuelle ästhetische Planung passend zu Ihrem Gesicht.']},
+  muayene:{ic:'tooth',tr:['Muayene & Kontrol','Genel ağız-diş muayenesi ve tedavi planı.'],en:['Check-up','General examination and treatment plan.'],ar:['فحص عام','فحص عام للفم والأسنان وخطة علاج.'],de:['Kontrolle','Allgemeine Untersuchung und Behandlungsplan.']}
+};
+
+const T = {
+tr:{
+  demoBar:'<b>Tasarım önizlemesi</b> · {fullName} için hazırlanmıştır · Resmi site değildir',
+  tagline:'Ağız ve Diş Sağlığı',navTreat:'Tedaviler',navBook:'Randevu',navIntl:'International',navContact:'İletişim',
+  ctaBook:'Online Randevu',pill:'Bugün için uygun saatler var',
+  heroTitle:'{name} ile <em>sağlıklı ve güvenli</em> gülüşler',
+  heroLead:'Bağcılar Mahmutbey\'de modern ağız ve diş sağlığı hizmeti. Telefonda beklemeden, 1 dakikada online randevunuzu oluşturun.',
+  fact1:'Online randevu',fact2:'Dilde hizmet',fact3:'Haftalık açık gün',
+  wa:'WhatsApp\'tan Yaz',call:'Hemen Ara',
+  quickTitle:'Hızlı randevu',quickSub:'İlk uygun gündeki boş saatler',quickGo:'Saati Seç ve Devam Et',floatTag:'Randevunuz anında iletilir',
+  treatEyebrow:'Tedaviler',treatTitle:'Size uygun tedaviyi birlikte planlayalım',treatSub:'Muayene sonrası ihtiyacınıza göre kişisel bir tedavi planı hazırlanır.',more:'Randevu al',
+  whyEyebrow:'Neden {name}?',whyTitle:'Hasta deneyimini merkeze alan bir klinik',
+  why:[['clock','Beklemeden randevu','Uygun saati sitemizden seçin, sıra beklemeyin.'],['shield','Sterilizasyon','Tek kullanımlık malzeme ve sterilizasyon protokolleri.'],['chat','Kolay iletişim','WhatsApp üzerinden hızlı bilgi ve hatırlatma.'],['globe','Yabancı hastalar','İngilizce, Arapça ve Almanca iletişim desteği.']],
+  bookEyebrow:'Online Randevu',bookTitle:'3 adımda randevunuzu oluşturun',bookSub:'Tedaviyi seçin, size uygun gün ve saati işaretleyin. Talebiniz doğrudan kliniğe iletilir.',
+  perks:['Telefonda bekleme yok, 7/24 randevu','Randevu öncesi hatırlatma mesajı','Değişiklik ve iptal için tek mesaj yeterli'],
+  st1:'Tedavi',st2:'Tarih & Saat',st3:'Bilgiler',back:'Geri',next:'Devam',confirm:'Randevuyu Oluştur',
+  pickTreat:'Hangi konuda randevu almak istiyorsunuz?',pickDay:'Gün seçin',pickSlot:'Saat seçin',closed:'Kapalı',full:'Dolu',
+  phName:'Ad Soyad',phPhone:'Telefon (05xx xxx xx xx)',phNote:'Şikayetiniz veya notunuz (isteğe bağlı)',
+  consent:'<a href="#" class="js-kvkk">KVKK Aydınlatma Metni</a>\'ni okudum, sağlık verilerimin randevu amacıyla işlenmesine açık rıza veriyorum.',
+  errTreat:'Lütfen bir tedavi seçin.',errSlot:'Lütfen gün ve saat seçin.',errForm:'Ad, geçerli telefon ve KVKK onayı gereklidir.',
+  sumTreat:'Tedavi',sumWhen:'Zaman',sumName:'Ad Soyad',sumPhone:'Telefon',
+  okTitle:'Randevu talebiniz alındı!',okSubWa:'Son adım: talebinizi WhatsApp ile kliniğe gönderin, onay mesajı aynı hattan gelecek.',okSub:'Klinik ekibimiz kısa süre içinde sizi arayarak randevunuzu onaylayacak.',
+  sendWa:'WhatsApp ile Gönder',newBook:'Yeni randevu',
+  intlEyebrow:'International Patients',intlTitle:'Yurt dışından gelen hastalarımız için uçtan uca destek',
+  intlSub:'Online ön değerlendirmeden tedavi sonrası takibe kadar süreci kendi dilinizde planlıyoruz.',
+  flow:[['Online ön değerlendirme','Fotoğraf veya röntgeninizi WhatsApp üzerinden gönderin.'],['Kişisel tedavi planı','Hekiminiz süreyi ve seans sayısını netleştirir.'],['Seyahat planlaması','Randevu tarihleri ve ulaşım için koordinasyon desteği.'],['Tedavi & takip','Tedavi sonrası ülkenize döndüğünüzde online kontrol.']],
+  consultTitle:'Ücretsiz online ön değerlendirme',consultSub:'Formu doldurun, ekibimiz WhatsApp üzerinden size dönsün.',
+  phCountry:'Ülke',phWa:'WhatsApp numarası',phMsg:'Kısaca durumunuzu anlatın',consultBtn:'Ön Değerlendirme İste',consultOk:'Talebiniz alındı, en kısa sürede dönüş yapılacak.',
+  intlNote:'Bu bölüm örnek içeriktir. Uluslararası sağlık turizmi faaliyeti için Sağlık Bakanlığı yetki belgesi gereklidir.',
+  contactEyebrow:'İletişim',contactTitle:'Bize ulaşın',cAddress:'Adres',cPhone:'Telefon',cHours:'Çalışma Saatleri',
+  days:['Pazartesi – Cuma','Cumartesi','Pazar'],closedL:'Kapalı',
+  kvkk:'KVKK Aydınlatma Metni',panelLink:'Klinik Paneli (demo)',
+  legal:'Bu sitedeki bilgiler genel bilgilendirme amaçlıdır; teşhis ve tedavi için hekiminize başvurunuz.',
+  panelTitle:'Klinik Paneli — Gelen Randevular',panelSub:'Demo: Bu tarayıcıda oluşturulan randevu talepleri burada listelenir. Gerçek sürümde tüm talepler klinik paneline ve WhatsApp\'a anında düşer.',
+  pEmpty:'Henüz randevu yok. Yukarıdaki formdan bir deneme randevusu oluşturun.',pApprove:'Onayla',pPending:'Bekliyor',pOk:'Onaylandı',pWhen:'Zaman',pPatient:'Hasta',pTreat:'Tedavi',pStatus:'Durum',
+  kvkkText:'<p>Veri sorumlusu: {fullName}.</p><p>Randevu formunda paylaştığınız ad, telefon ve sağlıkla ilgili notlarınız yalnızca randevunuzun planlanması ve sizinle iletişim kurulması amacıyla, açık rızanıza dayanarak işlenir.</p><p>Verileriniz yasal saklama süreleri boyunca muhafaza edilir ve üçüncü kişilerle paylaşılmaz. 6698 sayılı KVKK md. 11 kapsamındaki haklarınız için kliniğimize başvurabilirsiniz.</p><p><i>(Örnek metindir; yayın öncesi klinik bilgileriyle güncellenir.)</i></p>',
+  weekdays:['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'],months:['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'],
+  heroTitle:"Gülüşünüz için <em>1 dakikada</em> online randevu",heroLead:"{name} · {area}. Telefonda beklemeden randevunuzu oluşturun. Yurt dışından geliyorsanız ücretsiz online ön değerlendirme ile tedavinizi önceden planlayın.",ctaIntl:"Yurt Dışından Hasta",factB3:"1 dk",fact3:"Randevu süresi",stayTitle:"Yabancı hastaların en çok tercih ettiği tedaviler",stayLabel:"İstanbul'da tipik kalış",stayNote:"Süreler tipiktir; kesin plan hekim muayenesinden sonra netleşir.",stays:[["zirkonyum", "5–7 gün"], ["implant", "2 ziyaret"], ["estetik", "5–7 gün"], ["beyazlatma", "1 gün"]],sendPhotos:"Fotoğraf / röntgen gönder"
+},
+en:{
+  demoBar:'<b>Design preview</b> · prepared for {fullName} · not the official website',
+  tagline:'Dental Clinic',navTreat:'Treatments',navBook:'Appointment',navIntl:'International',navContact:'Contact',
+  ctaBook:'Book Online',pill:'Open slots available today',
+  heroTitle:'<em>Healthy, confident</em> smiles at {name}',
+  heroLead:'Modern dental care in Mahmutbey, Istanbul. Book your appointment online in one minute, no phone queues.',
+  fact1:'Online booking',fact2:'Languages',fact3:'Days open weekly',
+  wa:'Message on WhatsApp',call:'Call Now',
+  quickTitle:'Quick booking',quickSub:'Free slots on the next available day',quickGo:'Pick a Time & Continue',floatTag:'Your request is sent instantly',
+  treatEyebrow:'Treatments',treatTitle:'Let\'s plan the right treatment together',treatSub:'After an examination, you receive a personalised treatment plan.',more:'Book now',
+  whyEyebrow:'Why {name}?',whyTitle:'A clinic built around the patient experience',
+  why:[['clock','No waiting','Pick a time online, skip the queue.'],['shield','Sterilisation','Single-use materials and strict protocols.'],['chat','Easy contact','Quick info and reminders via WhatsApp.'],['globe','International patients','Support in English, Arabic and German.']],
+  bookEyebrow:'Online Booking',bookTitle:'Book in 3 simple steps',bookSub:'Choose a treatment, pick a day and time. Your request goes straight to the clinic.',
+  perks:['No phone queues, book 24/7','Reminder message before your visit','Change or cancel with one message'],
+  st1:'Treatment',st2:'Date & Time',st3:'Details',back:'Back',next:'Continue',confirm:'Book Appointment',
+  pickTreat:'What would you like an appointment for?',pickDay:'Choose a day',pickSlot:'Choose a time',closed:'Closed',full:'Full',
+  phName:'Full name',phPhone:'Phone number',phNote:'Your complaint or note (optional)',
+  consent:'I have read the <a href="#" class="js-kvkk">Privacy Notice</a> and consent to my health data being processed for this appointment.',
+  errTreat:'Please choose a treatment.',errSlot:'Please choose a day and time.',errForm:'Name, valid phone and consent are required.',
+  sumTreat:'Treatment',sumWhen:'Time',sumName:'Name',sumPhone:'Phone',
+  okTitle:'Your request has been received!',okSubWa:'Last step: send your request to the clinic via WhatsApp — the confirmation comes from the same line.',okSub:'Our team will call you shortly to confirm your appointment.',
+  sendWa:'Send via WhatsApp',newBook:'New booking',
+  intlEyebrow:'International Patients',intlTitle:'End-to-end support for patients travelling to Istanbul',
+  intlSub:'From an online pre-assessment to follow-up after treatment, we plan everything in your language.',
+  flow:[['Online pre-assessment','Send your photos or X-rays via WhatsApp.'],['Personal treatment plan','Your dentist clarifies duration and number of sessions.'],['Travel planning','Coordination support for appointment dates and transport.'],['Treatment & follow-up','Online check-ups after you return home.']],
+  consultTitle:'Free online pre-assessment',consultSub:'Fill in the form and our team will reply on WhatsApp.',
+  phCountry:'Country',phWa:'WhatsApp number',phMsg:'Briefly describe your case',consultBtn:'Request Assessment',consultOk:'Thank you! We will get back to you shortly.',
+  intlNote:'Sample content. International health tourism requires authorisation from the Turkish Ministry of Health.',
+  contactEyebrow:'Contact',contactTitle:'Get in touch',cAddress:'Address',cPhone:'Phone',cHours:'Opening Hours',
+  days:['Monday – Friday','Saturday','Sunday'],closedL:'Closed',
+  kvkk:'Privacy Notice',panelLink:'Clinic Panel (demo)',
+  legal:'Information on this site is for general purposes only; consult your dentist for diagnosis and treatment.',
+  panelTitle:'Clinic Panel — Incoming Appointments',panelSub:'Demo: requests created in this browser appear here. In production, every request lands in the clinic panel and on WhatsApp instantly.',
+  pEmpty:'No appointments yet. Create a test booking using the form.',pApprove:'Approve',pPending:'Pending',pOk:'Approved',pWhen:'Time',pPatient:'Patient',pTreat:'Treatment',pStatus:'Status',
+  kvkkText:'<p>Data controller: {fullName}.</p><p>Your name, phone and health-related notes are processed solely to plan your appointment and contact you, based on your explicit consent.</p><p>Data is kept for the legally required period and is not shared with third parties.</p><p><i>(Sample text.)</i></p>',
+  weekdays:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],months:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+  heroTitle:"Book your dental visit <em>in 1 minute</em>",heroLead:"{name} · Istanbul. Book online, no phone queues. Travelling from abroad? Get a free online pre-assessment and plan your treatment before you fly.",ctaIntl:"International Patients",factB3:"1 min",fact3:"To book",stayTitle:"Most requested by international patients",stayLabel:"Typical stay in Istanbul",stayNote:"Durations are typical; your exact plan is confirmed after examination.",stays:[["zirkonyum", "5–7 days"], ["implant", "2 visits"], ["estetik", "5–7 days"], ["beyazlatma", "1 day"]],sendPhotos:"Send photos / X-ray"
+},
+ar:{
+  demoBar:'<b>معاينة تصميم</b> · أُعدّت لـ {fullName} · ليس الموقع الرسمي',
+  tagline:'عيادة الأسنان',navTreat:'العلاجات',navBook:'الحجز',navIntl:'المرضى الدوليون',navContact:'اتصل بنا',
+  ctaBook:'احجز موعدك',pill:'مواعيد متاحة اليوم',
+  heroTitle:'ابتسامات <em>صحية وواثقة</em> مع {name}',
+  heroLead:'رعاية أسنان حديثة في محمود بيه، إسطنبول. احجز موعدك عبر الإنترنت خلال دقيقة واحدة.',
+  fact1:'حجز عبر الإنترنت',fact2:'لغات',fact3:'أيام عمل أسبوعياً',
+  wa:'راسلنا على واتساب',call:'اتصل الآن',
+  quickTitle:'حجز سريع',quickSub:'المواعيد المتاحة في أقرب يوم',quickGo:'اختر الوقت وتابع',floatTag:'يُرسل طلبك فوراً',
+  treatEyebrow:'العلاجات',treatTitle:'لنخطط معاً العلاج المناسب لك',treatSub:'بعد الفحص تحصل على خطة علاج شخصية.',more:'احجز الآن',
+  whyEyebrow:'لماذا {name}؟',whyTitle:'عيادة تضع تجربة المريض أولاً',
+  why:[['clock','بدون انتظار','اختر الوقت عبر الإنترنت.'],['shield','التعقيم','مواد لاستخدام واحد وبروتوكولات صارمة.'],['chat','تواصل سهل','معلومات وتذكيرات عبر واتساب.'],['globe','المرضى الدوليون','دعم بالعربية والإنجليزية والألمانية.']],
+  bookEyebrow:'الحجز عبر الإنترنت',bookTitle:'احجز في 3 خطوات',bookSub:'اختر العلاج ثم اليوم والوقت. يصل طلبك مباشرة إلى العيادة.',
+  perks:['حجز على مدار الساعة','رسالة تذكير قبل الموعد','التعديل أو الإلغاء برسالة واحدة'],
+  st1:'العلاج',st2:'التاريخ والوقت',st3:'البيانات',back:'رجوع',next:'متابعة',confirm:'تأكيد الحجز',
+  pickTreat:'ما سبب الموعد؟',pickDay:'اختر اليوم',pickSlot:'اختر الوقت',closed:'مغلق',full:'محجوز',
+  phName:'الاسم الكامل',phPhone:'رقم الهاتف',phNote:'ملاحظاتك (اختياري)',
+  consent:'قرأت <a href="#" class="js-kvkk">إشعار الخصوصية</a> وأوافق على معالجة بياناتي الصحية لهذا الموعد.',
+  errTreat:'يرجى اختيار العلاج.',errSlot:'يرجى اختيار اليوم والوقت.',errForm:'الاسم والهاتف والموافقة مطلوبة.',
+  sumTreat:'العلاج',sumWhen:'الموعد',sumName:'الاسم',sumPhone:'الهاتف',
+  okTitle:'تم استلام طلبك!',okSubWa:'الخطوة الأخيرة: أرسل طلبك إلى العيادة عبر واتساب.',okSub:'سيتصل بك فريقنا قريباً لتأكيد الموعد.',
+  sendWa:'أرسل عبر واتساب',newBook:'حجز جديد',
+  intlEyebrow:'المرضى الدوليون',intlTitle:'دعم متكامل للمرضى القادمين إلى إسطنبول',
+  intlSub:'من التقييم الأولي عبر الإنترنت حتى المتابعة بعد العلاج، بلغتك.',
+  flow:[['تقييم أولي عبر الإنترنت','أرسل صورك أو الأشعة عبر واتساب.'],['خطة علاج شخصية','يحدد طبيبك المدة وعدد الجلسات.'],['تخطيط السفر','دعم تنسيق مواعيد الحجز والتنقل.'],['العلاج والمتابعة','متابعة عبر الإنترنت بعد عودتك.']],
+  consultTitle:'تقييم أولي مجاني عبر الإنترنت',consultSub:'املأ النموذج وسيرد فريقنا عبر واتساب.',
+  phCountry:'الدولة',phWa:'رقم واتساب',phMsg:'صف حالتك باختصار',consultBtn:'اطلب التقييم',consultOk:'شكراً! سنتواصل معك قريباً.',
+  intlNote:'محتوى توضيحي. تتطلب السياحة العلاجية الدولية ترخيصاً من وزارة الصحة التركية.',
+  contactEyebrow:'اتصل بنا',contactTitle:'تواصل معنا',cAddress:'العنوان',cPhone:'الهاتف',cHours:'ساعات العمل',
+  days:['الاثنين – الجمعة','السبت','الأحد'],closedL:'مغلق',
+  kvkk:'إشعار الخصوصية',panelLink:'لوحة العيادة (تجريبي)',
+  legal:'المعلومات الواردة لأغراض عامة فقط؛ استشر طبيبك للتشخيص والعلاج.',
+  panelTitle:'لوحة العيادة — المواعيد الواردة',panelSub:'تجريبي: تظهر هنا الطلبات التي أُنشئت في هذا المتصفح.',
+  pEmpty:'لا توجد مواعيد بعد.',pApprove:'تأكيد',pPending:'قيد الانتظار',pOk:'مؤكد',pWhen:'الموعد',pPatient:'المريض',pTreat:'العلاج',pStatus:'الحالة',
+  kvkkText:'<p>المسؤول عن البيانات: {fullName}.</p><p>تتم معالجة بياناتك فقط لتنظيم موعدك والتواصل معك بناءً على موافقتك الصريحة.</p><p><i>(نص توضيحي.)</i></p>',
+  weekdays:['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'],months:['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'],
+  heroTitle:"احجز موعدك <em>في دقيقة واحدة</em>",heroLead:"{name} · إسطنبول. احجز عبر الإنترنت دون انتظار. قادم من الخارج؟ احصل على تقييم أولي مجاني وخطط لعلاجك قبل السفر.",ctaIntl:"المرضى الدوليون",factB3:"1",fact3:"دقيقة للحجز",stayTitle:"الأكثر طلباً من المرضى الدوليين",stayLabel:"مدة الإقامة المعتادة",stayNote:"المدد تقريبية؛ تُحدد الخطة النهائية بعد الفحص.",stays:[["zirkonyum", "5–7 أيام"], ["implant", "زيارتان"], ["estetik", "5–7 أيام"], ["beyazlatma", "يوم واحد"]],sendPhotos:"أرسل الصور / الأشعة"
+},
+de:{
+  demoBar:'<b>Design-Vorschau</b> · erstellt für {fullName} · nicht die offizielle Website',
+  tagline:'Zahnklinik',navTreat:'Behandlungen',navBook:'Termin',navIntl:'International',navContact:'Kontakt',
+  ctaBook:'Online-Termin',pill:'Heute freie Termine verfügbar',
+  heroTitle:'<em>Gesundes, strahlendes</em> Lächeln bei {name}',
+  heroLead:'Moderne Zahnmedizin in Mahmutbey, Istanbul. Termin online in einer Minute buchen – ohne Warteschleife.',
+  fact1:'Online-Buchung',fact2:'Sprachen',fact3:'Öffnungstage pro Woche',
+  wa:'WhatsApp schreiben',call:'Jetzt anrufen',
+  quickTitle:'Schnelltermin',quickSub:'Freie Zeiten am nächsten verfügbaren Tag',quickGo:'Zeit wählen & weiter',floatTag:'Ihre Anfrage wird sofort gesendet',
+  treatEyebrow:'Behandlungen',treatTitle:'Gemeinsam die passende Behandlung planen',treatSub:'Nach der Untersuchung erhalten Sie einen persönlichen Behandlungsplan.',more:'Termin buchen',
+  whyEyebrow:'Warum {name}?',whyTitle:'Eine Klinik, die den Patienten in den Mittelpunkt stellt',
+  why:[['clock','Ohne Wartezeit','Zeit online wählen.'],['shield','Sterilisation','Einwegmaterial und strenge Protokolle.'],['chat','Einfacher Kontakt','Infos und Erinnerungen per WhatsApp.'],['globe','Internationale Patienten','Betreuung auf Deutsch, Englisch und Arabisch.']],
+  bookEyebrow:'Online-Termin',bookTitle:'In 3 Schritten zum Termin',bookSub:'Behandlung wählen, Tag und Uhrzeit festlegen. Ihre Anfrage geht direkt an die Klinik.',
+  perks:['Rund um die Uhr buchen','Erinnerung vor dem Termin','Ändern oder absagen mit einer Nachricht'],
+  st1:'Behandlung',st2:'Datum & Zeit',st3:'Daten',back:'Zurück',next:'Weiter',confirm:'Termin anfragen',
+  pickTreat:'Wofür möchten Sie einen Termin?',pickDay:'Tag wählen',pickSlot:'Uhrzeit wählen',closed:'Geschlossen',full:'Belegt',
+  phName:'Vor- und Nachname',phPhone:'Telefonnummer',phNote:'Beschwerden oder Notiz (optional)',
+  consent:'Ich habe die <a href="#" class="js-kvkk">Datenschutzhinweise</a> gelesen und willige in die Verarbeitung meiner Gesundheitsdaten für diesen Termin ein.',
+  errTreat:'Bitte eine Behandlung wählen.',errSlot:'Bitte Tag und Uhrzeit wählen.',errForm:'Name, gültige Telefonnummer und Einwilligung erforderlich.',
+  sumTreat:'Behandlung',sumWhen:'Zeit',sumName:'Name',sumPhone:'Telefon',
+  okTitle:'Ihre Anfrage ist eingegangen!',okSubWa:'Letzter Schritt: Anfrage per WhatsApp an die Klinik senden.',okSub:'Unser Team ruft Sie in Kürze zur Bestätigung an.',
+  sendWa:'Per WhatsApp senden',newBook:'Neuer Termin',
+  intlEyebrow:'Internationale Patienten',intlTitle:'Rundum-Betreuung für Patienten aus dem Ausland',
+  intlSub:'Von der Online-Voreinschätzung bis zur Nachsorge – alles in Ihrer Sprache.',
+  flow:[['Online-Voreinschätzung','Fotos oder Röntgenbilder per WhatsApp senden.'],['Persönlicher Behandlungsplan','Ihr Zahnarzt klärt Dauer und Anzahl der Sitzungen.'],['Reiseplanung','Unterstützung bei Terminen und Transfer.'],['Behandlung & Nachsorge','Online-Kontrolle nach Ihrer Rückkehr.']],
+  consultTitle:'Kostenlose Online-Voreinschätzung',consultSub:'Formular ausfüllen – wir melden uns per WhatsApp.',
+  phCountry:'Land',phWa:'WhatsApp-Nummer',phMsg:'Beschreiben Sie kurz Ihr Anliegen',consultBtn:'Voreinschätzung anfordern',consultOk:'Danke! Wir melden uns in Kürze.',
+  intlNote:'Beispielinhalt. Internationaler Gesundheitstourismus erfordert eine Genehmigung des türkischen Gesundheitsministeriums.',
+  contactEyebrow:'Kontakt',contactTitle:'So erreichen Sie uns',cAddress:'Adresse',cPhone:'Telefon',cHours:'Öffnungszeiten',
+  days:['Montag – Freitag','Samstag','Sonntag'],closedL:'Geschlossen',
+  kvkk:'Datenschutz',panelLink:'Klinik-Panel (Demo)',
+  legal:'Die Informationen dienen nur der allgemeinen Information; für Diagnose und Behandlung wenden Sie sich an Ihren Zahnarzt.',
+  panelTitle:'Klinik-Panel — Eingehende Termine',panelSub:'Demo: In diesem Browser erstellte Anfragen erscheinen hier.',
+  pEmpty:'Noch keine Termine.',pApprove:'Bestätigen',pPending:'Offen',pOk:'Bestätigt',pWhen:'Zeit',pPatient:'Patient',pTreat:'Behandlung',pStatus:'Status',
+  kvkkText:'<p>Verantwortlicher: {fullName}.</p><p>Ihre Daten werden ausschließlich zur Terminplanung und Kontaktaufnahme auf Grundlage Ihrer ausdrücklichen Einwilligung verarbeitet.</p><p><i>(Beispieltext.)</i></p>',
+  weekdays:['So','Mo','Di','Mi','Do','Fr','Sa'],months:['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
+  heroTitle:"Ihr Zahnarzttermin <em>in 1 Minute</em>",heroLead:"{name} · Istanbul. Online buchen ohne Warteschleife. Sie kommen aus dem Ausland? Kostenlose Online-Voreinschätzung – Behandlung vor der Reise planen.",ctaIntl:"Internationale Patienten",factB3:"1 Min",fact3:"zur Buchung",stayTitle:"Am häufigsten von internationalen Patienten angefragt",stayLabel:"Typischer Aufenthalt",stayNote:"Typische Dauer; der genaue Plan wird nach der Untersuchung festgelegt.",stays:[["zirkonyum", "5–7 Tage"], ["implant", "2 Aufenthalte"], ["estetik", "5–7 Tage"], ["beyazlatma", "1 Tag"]],sendPhotos:"Fotos / Röntgen senden"
+}};
+
+/* ---------- state ---------- */
+let lang = 'tr';
+(function(){
+  let stored=null; try{ stored=localStorage.getItem('lang'); }catch(e){}
+  const qp=new URLSearchParams(location.search).get('lang');
+  if(T[qp]) lang=qp;
+  else if(T[stored]) lang=stored;
+  else { const nav=(navigator.languages||[navigator.language||'tr']).map(l=>String(l).slice(0,2).toLowerCase()); const hit=nav.find(l=>T[l]); if(hit) lang=hit; }
+})();
+const state={step:0,treat:null,date:null,slot:null};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const t=k=>{const v=T[lang][k]; return typeof v==='string'? v.replace(/\{name\}/g,CLINIC.name).replace(/\{area\}/g,CLINIC.area||'Bağcılar').replace(/\{fullName\}/g,CLINIC.fullName):v;};
+const treatName=id=>TREAT[id][lang][0];
+const treatList=()=>[...CLINIC.featured,'muayene'];
+const pad=n=>String(n).padStart(2,'0');
+const telHref=p=>'tel:+90'+p.replace(/\D/g,'').replace(/^0/,'');
+const STORE='demo-bookings-'+CLINIC.slug;
+const loadB=()=>{try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch(e){return[]}};
+const saveB=b=>{try{localStorage.setItem(STORE,JSON.stringify(b))}catch(e){}};
+
+/* ---------- schedule ---------- */
+function dayEnd(d){const o=CLINIC.open,w=d.getDay(); if(w===0) return o.sunday?(o.sunEnd||o.end):null; if(w===6) return o.satEnd??o.end; return o.end;}
+function hash(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return Math.abs(h);}
+function slotsFor(d){
+  const end=dayEnd(d); if(end==null) return [];
+  const out=[], now=new Date(), key=d.toDateString();
+  for(let m=CLINIC.open.start*60;m<=end*60-30;m+=30){
+    const hh=Math.floor(m/60),mm=m%60, label=pad(hh)+':'+pad(mm);
+    const dt=new Date(d); dt.setHours(hh,mm,0,0);
+    const past = dt < new Date(now.getTime()+60*60*1000);
+    const taken = hash(key+label)%4===0;
+    out.push({label,disabled:past||taken});
+  }
+  return out;
+}
+function nextDays(n){const a=[],d=new Date();d.setHours(0,0,0,0);for(let i=0;i<n;i++){const x=new Date(d);x.setDate(d.getDate()+i);a.push(x);}return a;}
+const fmtDate=d=>`${d.getDate()} ${T[lang].months[d.getMonth()]}, ${T[lang].weekdays[d.getDay()]}`;
+
+/* ---------- render ---------- */
+function renderStatic(){
+  const html=document.documentElement;
+  html.lang=lang; html.dir=lang==='ar'?'rtl':'ltr';
+  $$('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
+  $$('[data-i18n-html]').forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));
+  $$('[data-i18n-ph]').forEach(el=>el.placeholder=t(el.dataset.i18nPh));
+  $$('[data-c]').forEach(el=>el.textContent=CLINIC[el.dataset.c]||'');
+  $$('#lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
+  // whatsapp / call buttons
+  $$('.js-wa').forEach(a=>{
+    if(CLINIC.whatsapp){a.href='https://wa.me/'+CLINIC.whatsapp+'?text='+encodeURIComponent(`Merhaba ${CLINIC.name}, bilgi almak istiyorum.`);a.target='_blank';a.rel='noopener';}
+    else{a.href=telHref(CLINIC.phone);a.classList.add('call');}
+  });
+  $$('.js-wa-ic').forEach(s=>s.innerHTML=CLINIC.whatsapp?WA_SVG:ico('chat',20));
+  $$('.js-wa-label').forEach(s=>s.textContent=CLINIC.whatsapp?t('wa'):t('call'));
+  if(!CLINIC.whatsapp) $('.fab').innerHTML='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>';
+  // open days
+  // treatments
+  $('#treatGrid').innerHTML=CLINIC.featured.map(id=>`<div class="tcard"><div class="tic">${ico(TREAT[id].ic,26)}</div><h3>${TREAT[id][lang][0]}</h3><p>${TREAT[id][lang][1]}</p><a href="#randevu" class="lnk" data-treat="${id}">${t('more')} ${ico('arrow',16)}</a></div>`).join('');
+  $$('[data-treat]').forEach(a=>a.onclick=()=>{state.treat=a.dataset.treat;state.step=1;renderBook();});
+  $('#whyGrid').innerHTML=t('why').map(([i,h,p])=>`<div class="why-item"><div class="tic">${ico(i)}</div><h4>${h}</h4><p>${p}</p></div>`).join('');
+  $('#bookPerks').innerHTML=t('perks').map(p=>`<li><span class="ck">${ico('check',14,3)}</span>${p}</li>`).join('');
+  $('#flow').innerHTML=t('flow').map(([h,p],i)=>`<div class="flow-item"><span class="n">${i+1}</span><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');
+  $('#stays').innerHTML=t('stays').map(([id,d])=>`<div class="stay"><small>${t('stayLabel')}</small><b>${d}</b><span>${treatName(id)}</span></div>`).join('');
+  const sp=$('#sendPhotos');
+  if(CLINIC.whatsapp){ sp.style.display=''; sp.href='https://wa.me/'+CLINIC.whatsapp+'?text='+encodeURIComponent(`Merhaba ${CLINIC.name}, ön değerlendirme için fotoğraf/röntgen gönderiyorum. (Dil: ${lang.toUpperCase()})`); sp.innerHTML=WA_SVG+' '+t('sendPhotos'); } else sp.style.display='none';
+  const ig=CLINIC.instagram; const igUrl=ig?'https://instagram.com/'+ig.replace(/^@/,''):null;
+  $('#igRow').style.display=ig?'':'none'; $('#igFoot').style.display=ig?'':'none';
+  if(ig){ $('#igLink').href=igUrl; $('#igLink').textContent='@'+ig.replace(/^@/,''); $('#igFoot').href=igUrl; }
+  $('#intlTreat').innerHTML=treatList().map(id=>`<option value="${id}">${treatName(id)}</option>`).join('');
+  // contact
+  const phones=[CLINIC.phone,CLINIC.phone2].filter(Boolean);
+  $('#phones').innerHTML=phones.map(p=>`<a href="${telHref(p)}">${p}</a>`).join('<br>');
+  if(CLINIC.email){$('#emailLink').href='mailto:'+CLINIC.email;} else $('#emailRow').style.display='none';
+  const h=CLINIC.hours, d=t('days');
+  $('#hoursTbl').innerHTML=[[d[0],h.weekdays],[d[1],h.saturday],[d[2],h.sunday]].map(([a,b])=>`<tr><td>${a}</td><td class="${b?'':'closed'}">${b||t('closedL')}</td></tr>`).join('');
+  $('#map').src='https://maps.google.com/maps?q='+encodeURIComponent(CLINIC.mapQuery||CLINIC.address)+'&z=16&output=embed';
+  renderQuick(); renderBook();
+}
+
+function firstOpenDay(){return nextDays(14).find(d=>slotsFor(d).some(s=>!s.disabled));}
+function renderQuick(){
+  const d=firstOpenDay(); if(!d) return;
+  $('#qDayLabel').textContent=fmtDate(d);
+  const free=slotsFor(d).filter(s=>!s.disabled).slice(0,6);
+  $('#qSlots').innerHTML=free.map(s=>`<button data-q="${s.label}">${s.label}</button>`).join('');
+  $$('[data-q]').forEach(b=>b.onclick=()=>{$$('[data-q]').forEach(x=>x.classList.remove('on'));b.classList.add('on');state.date=d.toDateString();state.slot=b.dataset.q;});
+  $('#qGo').onclick=()=>{ if(state.slot){state.step=state.treat?2:0;} renderBook(); };
+}
+
+function renderBook(){
+  const body=$('#pbody'), foot=$('#pfoot');
+  $$('#steps > div').forEach((el,i)=>{el.classList.toggle('on',i===state.step);el.classList.toggle('done',i<state.step);});
+  foot.style.display=state.step===3?'none':'flex';
+  $('#back').style.visibility=state.step===0?'hidden':'visible';
+  $('#next').textContent=state.step===2?t('confirm'):t('next');
+  const sum=[]; if(state.treat) sum.push(`<b>${treatName(state.treat)}</b>`); if(state.slot&&state.date) sum.push(`${fmtDate(new Date(state.date))} · <b>${state.slot}</b>`);
+  $('#summary').innerHTML=sum.join('<br>');
+
+  if(state.step===0){
+    body.innerHTML=`<span class="lbl">${t('pickTreat')}</span><div class="chips">${treatList().map(id=>`<button class="chip ${state.treat===id?'on':''}" data-t="${id}">${treatName(id)}</button>`).join('')}</div><div class="err" id="err"></div>`;
+    $$('[data-t]').forEach(b=>b.onclick=()=>{state.treat=b.dataset.t;renderBook();});
+  }
+  if(state.step===1){
+    const days=nextDays(14);
+    if(!state.date) state.date=(firstOpenDay()||days[0]).toDateString();
+    const sel=new Date(state.date), slots=slotsFor(sel);
+    body.innerHTML=`<span class="lbl">${t('pickDay')}</span><div class="days">${days.map(d=>{const has=slotsFor(d).some(s=>!s.disabled);return `<button class="day ${d.toDateString()===state.date?'on':''}" data-d="${d.toDateString()}" ${has?'':'disabled'}><small>${T[lang].weekdays[d.getDay()]}</small><b>${d.getDate()}</b><em>${has?T[lang].months[d.getMonth()]:(dayEnd(d)==null?t('closed'):t('full'))}</em></button>`}).join('')}</div>
+      <span class="lbl" style="margin-top:18px">${t('pickSlot')}</span><div class="slots">${slots.map(s=>`<button class="slot ${state.slot===s.label?'on':''}" data-s="${s.label}" ${s.disabled?'disabled':''}>${s.label}</button>`).join('')}</div><div class="err" id="err"></div>`;
+    $$('[data-d]').forEach(b=>b.onclick=()=>{state.date=b.dataset.d;state.slot=null;renderBook();});
+    $$('[data-s]').forEach(b=>b.onclick=()=>{state.slot=b.dataset.s;renderBook();});
+  }
+  if(state.step===2){
+    const f=state.form||{};
+    body.innerHTML=`<div class="field"><input id="fName" placeholder="${t('phName')}" value="${esc(f.name||'')}" autocomplete="name"></div>
+      <div class="field"><input id="fPhone" type="tel" placeholder="${t('phPhone')}" value="${esc(f.phone||'')}" autocomplete="tel"></div>
+      <div class="field"><textarea id="fNote" rows="3" placeholder="${t('phNote')}">${esc(f.note||'')}</textarea></div>
+      <label class="consent"><input type="checkbox" id="fOk" ${f.ok?'checked':''}><span>${t('consent')}</span></label><div class="err" id="err"></div>`;
+  }
+  if(state.step===3){
+    const b=state.last, wa=CLINIC.whatsapp;
+    body.innerHTML=`<div class="success"><div class="big">${ico('check',34,2.6)}</div><h3>${t('okTitle')}</h3><p>${wa?t('okSubWa'):t('okSub')}</p>
+      <div class="rcpt"><div><span>${t('sumTreat')}</span><b>${treatName(b.treat)}</b></div><div><span>${t('sumWhen')}</span><b>${fmtDate(new Date(b.date))} · ${b.slot}</b></div><div><span>${t('sumName')}</span><b>${esc(b.name)}</b></div><div><span>${t('sumPhone')}</span><b>${esc(b.phone)}</b></div></div>
+      ${wa?`<a class="btn btn-primary" style="background:#25D366;width:100%" target="_blank" rel="noopener" href="${waBooking(b)}">${WA_SVG} ${t('sendWa')}</a>`:''}
+      <button class="btn btn-ghost" style="width:100%;margin-top:10px" id="again">${t('newBook')}</button></div>`;
+    $('#again').onclick=()=>{Object.assign(state,{step:0,treat:null,date:null,slot:null,form:null});renderBook();};
+  }
+  bindKvkk();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function waBooking(b){
+  const d=new Date(b.date);
+  const msg=`Merhaba ${CLINIC.name}, web sitenizden randevu talebi:\n• Tedavi: ${TREAT[b.treat].tr[0]}\n• Tarih: ${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()} ${b.slot}\n• Ad Soyad: ${b.name}\n• Telefon: ${b.phone}`+(b.note?`\n• Not: ${b.note}`:'')+(lang!=='tr'?`\n• Dil: ${lang.toUpperCase()}`:'');
+  return 'https://wa.me/'+CLINIC.whatsapp+'?text='+encodeURIComponent(msg);
+}
+
+$('#next').onclick=()=>{
+  const err=m=>{const e=$('#err'); if(e) e.textContent=m;};
+  if(state.step===0){ if(!state.treat) return err(t('errTreat')); state.step=1; }
+  else if(state.step===1){ if(!state.slot) return err(t('errSlot')); state.step=2; }
+  else if(state.step===2){
+    const f={name:$('#fName').value.trim(),phone:$('#fPhone').value.trim(),note:$('#fNote').value.trim(),ok:$('#fOk').checked};
+    state.form=f;
+    if(f.name.length<3||f.phone.replace(/\D/g,'').length<10||!f.ok) return err(t('errForm'));
+    const b={id:Date.now(),treat:state.treat,date:state.date,slot:state.slot,name:f.name,phone:f.phone,note:f.note,lang,status:'pending'};
+    const all=loadB(); all.unshift(b); saveB(all); state.last=b; state.step=3;
+  }
+  renderBook(); $('#randevu').scrollIntoView({behavior:'smooth'});
+};
+$('#back').onclick=()=>{ if(state.step===2){ state.form={name:$('#fName').value,phone:$('#fPhone').value,note:$('#fNote').value,ok:$('#fOk').checked}; } state.step=Math.max(0,state.step-1); renderBook(); };
+
+$('#intlForm').onsubmit=e=>{
+  e.preventDefault(); const fd=Object.fromEntries(new FormData(e.target));
+  if(CLINIC.whatsapp){
+    const msg=`Merhaba ${CLINIC.name}, yurt dışından ön değerlendirme talebi:\n• Ad: ${fd.name}\n• Ülke: ${fd.country}\n• WhatsApp: ${fd.phone}\n• Tedavi: ${TREAT[fd.treatment].tr[0]}\n• Mesaj: ${fd.msg||'-'}\n• Dil: ${lang.toUpperCase()}`;
+    window.open('https://wa.me/'+CLINIC.whatsapp+'?text='+encodeURIComponent(msg),'_blank','noopener');
+  }
+  $('#intlMsg').textContent=t('consultOk'); e.target.reset();
+};
+
+/* panel + kvkk */
+function openModal(id){$(id).classList.add('on');}
+$$('.js-close').forEach(b=>b.onclick=()=>b.closest('.modal').classList.remove('on'));
+$$('.modal').forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove('on');});
+function bindKvkk(){$$('.js-kvkk').forEach(a=>a.onclick=e=>{e.preventDefault();openModal('#kvkkModal');});}
+$('#kvkkLink').onclick=e=>{e.preventDefault();openModal('#kvkkModal');};
+function renderPanel(){
+  const all=loadB();
+  $('#panelBody').innerHTML=!all.length?`<div class="empty">${t('pEmpty')}</div>`:
+   `<table class="bk"><tr><th>${t('pWhen')}</th><th>${t('pPatient')}</th><th>${t('pTreat')}</th><th>${t('pStatus')}</th><th></th></tr>${all.map(b=>`<tr><td><b>${fmtDate(new Date(b.date))}</b><br>${b.slot}</td><td>${esc(b.name)}<br><a href="${telHref(b.phone)}" style="color:var(--brand)">${esc(b.phone)}</a>${b.note?`<br><small style="color:var(--muted)">${esc(b.note)}</small>`:''}</td><td>${treatName(b.treat)}<br><small style="color:var(--muted)">${b.lang.toUpperCase()}</small></td><td><span class="badge ${b.status==='ok'?'ok':''}">${b.status==='ok'?t('pOk'):t('pPending')}</span></td><td>${b.status==='ok'?'':`<button class="btn btn-primary btn-sm" data-ok="${b.id}">${t('pApprove')}</button>`}</td></tr>`).join('')}</table>`;
+  $$('[data-ok]').forEach(btn=>btn.onclick=()=>{const a=loadB();const x=a.find(y=>String(y.id)===btn.dataset.ok);if(x)x.status='ok';saveB(a);renderPanel();});
+}
+$('#panelLink').onclick=e=>{e.preventDefault();renderPanel();openModal('#panelModal');};
+if(location.hash==='#panel'){renderPanel();openModal('#panelModal');}
+
+$$('#lang button').forEach(b=>b.onclick=()=>{lang=b.dataset.l;try{localStorage.setItem('lang',lang)}catch(e){};renderStatic();});
+$$('[data-go]').forEach(b=>b.onclick=()=>{lang=b.dataset.go;try{localStorage.setItem('lang',lang)}catch(e){};renderStatic();$('#international').scrollIntoView({behavior:'smooth'});});
+$('#burger').onclick=()=>$('#menu').classList.toggle('open');
+$$('#menu a').forEach(a=>a.onclick=()=>$('#menu').classList.remove('open'));
+renderStatic();
+</script>
+</body>
+</html>

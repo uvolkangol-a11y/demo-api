@@ -32,7 +32,8 @@
     "source": "densaclinic.com (arama sonucu özeti)",
     "currentSite": "Var (densaclinic.com) — online randevu takvimi görünmüyor",
     "key": "k7m2",
-    "instagram": null
+    "instagram": null,
+    "area": "Bağcılar Mahmutbey"
   },
   {
     "slug": "astradent",
@@ -68,7 +69,8 @@
     "source": "astradentclinic.com + yorum.com (arama sonucu özeti)",
     "currentSite": "Var (astradentclinic.com) — SEO blog ağırlıklı, randevu takvimi yok",
     "key": "p4x9",
-    "instagram": null
+    "instagram": null,
+    "area": "Bağcılar Mahmutbey"
   },
   {
     "slug": "dentexpert-mahmutbey",
@@ -104,7 +106,8 @@
     "source": "dentexpertdisklinigi.com + Yandex Haritalar (arama sonucu özeti)",
     "currentSite": "Var (dentexpertdisklinigi.com)",
     "key": "r8v3",
-    "instagram": null
+    "instagram": null,
+    "area": "Bağcılar Mahmutbey"
   },
   {
     "slug": "kirazli",
@@ -139,7 +142,8 @@
     "source": "kirazlidis.com + Zavis rehberi (arama sonucu özeti)",
     "currentSite": "Var (kirazlidis.com)",
     "key": "t2n6",
-    "instagram": null
+    "instagram": null,
+    "area": "Bağcılar Mahmutbey"
   },
   {
     "slug": "mkm-klinik",
@@ -148,19 +152,19 @@
     "address": "Barbaros Mah. Mahmutbey Cad. No:6A, Bağcılar / İstanbul",
     "mapQuery": "MKM Klinik Mahmutbey Cad 6A Bağcılar",
     "phone": "0212 651 00 61",
-    "whatsapp": null,
-    "email": null,
+    "whatsapp": "905528614211",
+    "email": "info@mkmklinik.com",
     "hours": {
       "weekdays": "10:00 – 21:00",
       "saturday": "10:00 – 21:00",
-      "sunday": "10:00 – 19:00"
+      "sunday": "10:00 – 21:00"
     },
     "open": {
       "start": 10,
       "end": 21,
       "satEnd": 21,
       "sunday": true,
-      "sunEnd": 19
+      "sunEnd": 21
     },
     "color": "#2D6A4F",
     "accent": "#D4A373",
@@ -172,9 +176,191 @@
       "kanal",
       "dis-tasi"
     ],
-    "source": "Zavis rehberi (Google puanı 4.8 / 76 yorum)",
-    "currentSite": "Bulunamadı — en sıcak aday",
+    "source": "mkmklinik.com + Zavis rehberi (Google 4.8 / 76 yorum)",
+    "currentSite": "Var (mkmklinik.com) — her gün 10:00–21:00 açık, birden fazla şube var",
     "key": "h5q1",
+    "instagram": null,
+    "area": "Bağcılar Mahmutbey",
+    "phone2": "0552 861 42 11"
+  },
+  {
+    "slug": "afildent",
+    "key": "m3q8",
+    "name": "Afildent",
+    "fullName": "Afildent Bağcılar Ağız ve Diş Sağlığı Polikliniği",
+    "area": "Bağcılar Göztepe",
+    "address": "Göztepe Mah. Bosna Cad. No:10 D:14C, Bağcılar / İstanbul",
+    "mapQuery": "Afildent Bağcılar Ağız ve Diş Sağlığı Polikliniği Bosna Cad",
+    "phone": "0532 390 24 53",
+    "whatsapp": "905323902453",
+    "email": null,
+    "color": "#6A4C93",
+    "accent": "#F7B267",
+    "featured": [
+      "implant",
+      "zirkonyum",
+      "estetik",
+      "kanal",
+      "ortodonti",
+      "beyazlatma"
+    ],
+    "source": "Zavis rehberi (Google 4.8 / 149 yorum)",
+    "currentSite": "Bilinmiyor — Google Haritalar'dan kontrol et",
+    "hours": {
+      "weekdays": "09:00 – 19:00",
+      "saturday": "09:00 – 18:00",
+      "sunday": null
+    },
+    "open": {
+      "start": 9,
+      "end": 19,
+      "satEnd": 18,
+      "sunday": false
+    },
+    "instagram": null
+  },
+  {
+    "slug": "batisehir-bogazici",
+    "key": "w6c2",
+    "name": "Boğaziçi Diş",
+    "fullName": "Batışehir Boğaziçi Diş Polikliniği",
+    "area": "Bağcılar Batışehir",
+    "address": "Göztepe Mah. Batışehir Cad. G3 Blok No:6/G, Bağcılar / İstanbul",
+    "mapQuery": "Batışehir Boğaziçi Diş Polikliniği",
+    "phone": "0507 805 48 27",
+    "whatsapp": "905078054827",
+    "email": null,
+    "color": "#0B5D8F",
+    "accent": "#F4D35E",
+    "featured": [
+      "estetik",
+      "zirkonyum",
+      "implant",
+      "beyazlatma",
+      "ortodonti",
+      "dis-tasi"
+    ],
+    "source": "Zavis rehberi (Google 4.7 / 45 yorum, İngilizce konuşan ekip)",
+    "currentSite": "Bilinmiyor — İngilizce hizmet veriyor, sağlık turizmi için iyi aday",
+    "hours": {
+      "weekdays": "09:00 – 19:00",
+      "saturday": "09:00 – 18:00",
+      "sunday": null
+    },
+    "open": {
+      "start": 9,
+      "end": 19,
+      "satEnd": 18,
+      "sunday": false
+    },
+    "instagram": null
+  },
+  {
+    "slug": "yuzyil-dis",
+    "key": "z9f4",
+    "name": "Yüzyıl Diş",
+    "fullName": "Yüzyıl Ağız ve Diş Sağlığı Polikliniği",
+    "area": "Bağcılar Yüzyıl",
+    "address": "Yüzyıl Mah. Barbaros Cad. No:19, Bağcılar / İstanbul",
+    "mapQuery": "Yüzyıl Ağız ve Diş Sağlığı Polikliniği Barbaros Cad 19 Bağcılar",
+    "phone": "0212 432 32 88",
+    "whatsapp": null,
+    "email": null,
+    "color": "#9C2C77",
+    "accent": "#FFB4A2",
+    "featured": [
+      "implant",
+      "kanal",
+      "zirkonyum",
+      "pedodonti",
+      "ortodonti",
+      "dis-tasi"
+    ],
+    "source": "yuzyildis.com.tr (arama sonucu özeti)",
+    "currentSite": "Var (yuzyildis.com.tr)",
+    "hours": {
+      "weekdays": "09:00 – 19:00",
+      "saturday": "09:00 – 18:00",
+      "sunday": null
+    },
+    "open": {
+      "start": 9,
+      "end": 19,
+      "satEnd": 18,
+      "sunday": false
+    },
+    "instagram": null
+  },
+  {
+    "slug": "medicine-dis",
+    "key": "b7k5",
+    "name": "MEDICINE",
+    "fullName": "MEDICINE Ağız ve Diş Sağlığı Polikliniği",
+    "area": "Bağcılar Yenigün",
+    "address": "Yenigün Mah. Bağcılar Cad. No:99/A, Bağcılar / İstanbul",
+    "mapQuery": "MEDICINE Ağız ve Diş Sağlığı Polikliniği Bağcılar Cad 99",
+    "phone": "0530 822 56 96",
+    "whatsapp": "905308225696",
+    "email": null,
+    "color": "#334155",
+    "accent": "#22D3EE",
+    "featured": [
+      "cene-cerrahisi",
+      "implant",
+      "kanal",
+      "zirkonyum",
+      "dis-tasi",
+      "estetik"
+    ],
+    "source": "saglikgo.com + doktortakvimi.com (çene cerrahisi ağırlıklı)",
+    "currentSite": "Bilinmiyor — Doktortakvimi'nde profili var",
+    "hours": {
+      "weekdays": "09:00 – 19:00",
+      "saturday": "09:00 – 18:00",
+      "sunday": null
+    },
+    "open": {
+      "start": 9,
+      "end": 19,
+      "satEnd": 18,
+      "sunday": false
+    },
+    "instagram": null
+  },
+  {
+    "slug": "dentbul",
+    "key": "n4x1",
+    "name": "Dentbul",
+    "fullName": "Bağcılar İmplant Dentbul Diş Kliniği",
+    "area": "Bağcılar Yıldıztepe",
+    "address": "Yıldıztepe Mah. 37. Sk. No:6, Bağcılar / İstanbul",
+    "mapQuery": "Bağcılar İmplant Dentbul Diş Kliniği",
+    "phone": "0552 716 36 08",
+    "whatsapp": "905527163608",
+    "email": null,
+    "color": "#B45309",
+    "accent": "#FDE68A",
+    "featured": [
+      "implant",
+      "zirkonyum",
+      "cene-cerrahisi",
+      "estetik",
+      "kanal",
+      "beyazlatma"
+    ],
+    "source": "Zavis rehberi (arama sonucu özeti)",
+    "currentSite": "Bilinmiyor",
+    "hours": {
+      "weekdays": "09:00 – 19:00",
+      "saturday": "09:00 – 18:00",
+      "sunday": null
+    },
+    "open": {
+      "start": 9,
+      "end": 19,
+      "satEnd": 18,
+      "sunday": false
+    },
     "instagram": null
   }
 ]

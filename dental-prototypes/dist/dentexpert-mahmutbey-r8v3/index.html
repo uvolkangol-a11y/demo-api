@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr" dir="ltr">
+<html lang="tr" dir="ltr" data-theme="modern">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -251,11 +251,175 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
   .mbar .btn{padding:12px 10px;font-size:14px}
   footer{padding-bottom:90px}
 }
+
+/* ---------- theme switch (demo only) ---------- */
+.theme-switch{background:#14202b;color:#93a3b1;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;padding:0 12px 9px;font-size:12.5px;font-family:system-ui,sans-serif}
+.theme-switch a{padding:4px 11px;border-radius:999px;border:1px solid #ffffff2e;color:#e8eef3;font-weight:600}
+.theme-switch a.on{background:#fff;color:#14202b;border-color:#fff}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] .logo{font-family:"Noto Sans Arabic",sans-serif!important;font-style:normal}
+
+/* ================= KLASİK ================= */
+[data-theme=klasik]{--bg:#faf7f2;--card:#fffdf9;--line:#e6dccb;--ink:#2a2420;--muted:#7a6f63;--gold:#b08d57;--radius:4px;--shadow:0 24px 50px -30px rgba(60,40,20,.35)}
+[data-theme=klasik] body{font-family:"Lato",system-ui,sans-serif;background:var(--bg)}
+[data-theme=klasik] h1,[data-theme=klasik] h2,[data-theme=klasik] h3,[data-theme=klasik] .logo,[data-theme=klasik] .fact b,[data-theme=klasik] .stay b,[data-theme=klasik] .flow-item .n{font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:0}
+[data-theme=klasik] h1{font-size:clamp(42px,6.2vw,78px);font-weight:500;line-height:1.04}
+[data-theme=klasik] h1 em{font-style:italic;background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--brand)}
+[data-theme=klasik] h2{font-size:clamp(34px,4.2vw,52px);font-weight:500}
+[data-theme=klasik] h2::after{content:"";display:block;width:56px;height:1px;background:var(--gold);margin:18px auto 0}
+[data-theme=klasik] .book-side h2::after,[data-theme=klasik] .intl h2::after{margin-inline:0}
+[data-theme=klasik] h3{font-weight:600}
+[data-theme=klasik] .btn{border-radius:2px;text-transform:uppercase;letter-spacing:.12em;font-size:12.5px;padding:15px 26px}
+[data-theme=klasik] .btn-sm{padding:11px 18px}
+[data-theme=klasik] .btn-primary{background:var(--brand);box-shadow:none}
+[data-theme=klasik] .btn-ghost{background:transparent;border:1px solid var(--ink)}
+[data-theme=klasik] .btn-dark{background:transparent;color:var(--ink);border:1px solid var(--gold)}
+[data-theme=klasik] .btn-accent{background:var(--gold);color:#fff}
+[data-theme=klasik] header.nav{background:var(--bg)}
+[data-theme=klasik] .nav-in{height:84px}
+[data-theme=klasik] .logo{font-size:26px;font-weight:600}
+[data-theme=klasik] .logo small{font-family:"Lato",sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:9.5px;margin-top:0}
+[data-theme=klasik] .logo-mark{border-radius:50%;background:transparent;border:1px solid var(--gold);color:var(--gold)}
+[data-theme=klasik] .menu{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700}
+[data-theme=klasik] .lang{border-radius:2px;background:transparent}
+[data-theme=klasik] .lang button{border-radius:2px}
+[data-theme=klasik] .lang button.on{background:var(--ink)}
+[data-theme=klasik] .hero{background:linear-gradient(180deg,#f2eadc,var(--bg));border-bottom:1px solid var(--line)}
+[data-theme=klasik] .deco-tooth,[data-theme=klasik] .float-tag{display:none}
+[data-theme=klasik] .hero-in{grid-template-columns:1fr;text-align:center;justify-items:center;padding:84px 20px 72px;gap:52px}
+[data-theme=klasik] .lead{margin:0 auto}
+[data-theme=klasik] .hero-cta,[data-theme=klasik] .istrip,[data-theme=klasik] .facts{justify-content:center}
+[data-theme=klasik] .pill{border-radius:0;background:transparent;border:0;border-bottom:1px solid var(--gold);text-transform:uppercase;letter-spacing:.16em;font-size:11.5px;padding:6px 2px}
+[data-theme=klasik] .istrip button{border-radius:2px;background:transparent}
+[data-theme=klasik] .facts{gap:0}
+[data-theme=klasik] .fact{padding:0 34px;border-inline-start:1px solid var(--line)}
+[data-theme=klasik] .fact:first-child{border:0}
+[data-theme=klasik] .fact b{font-size:38px;font-weight:500;color:var(--brand)}
+[data-theme=klasik] .fact span{text-transform:uppercase;letter-spacing:.12em;font-size:11px}
+[data-theme=klasik] .hero-card{width:100%;max-width:900px;border-radius:4px;border:1px solid var(--line);background:var(--card);display:grid;grid-template-columns:1fr 1.5fr;gap:8px 32px;text-align:start;align-items:center;padding:30px}
+[data-theme=klasik] .hero-card h3,[data-theme=klasik] .hero-card p.s,[data-theme=klasik] .hero-card .qday{grid-column:1}
+[data-theme=klasik] .hero-card h3{font-size:28px}
+[data-theme=klasik] .hero-card .qslots{grid-column:2;grid-row:1/4;margin:0}
+[data-theme=klasik] .hero-card #qGo{grid-column:1/-1;margin-top:10px}
+[data-theme=klasik] .qday{border-radius:2px;background:#f4ede1}
+[data-theme=klasik] .qslots button,[data-theme=klasik] .slot,[data-theme=klasik] .day,[data-theme=klasik] .chip{border-radius:2px}
+[data-theme=klasik] .eyebrow{color:var(--gold);letter-spacing:.26em;font-size:11.5px}
+[data-theme=klasik] .head{flex-direction:column;align-items:center;text-align:center}
+[data-theme=klasik] .head .sub{margin:0 auto}
+[data-theme=klasik] .grid-t{gap:0;border-top:1px solid var(--line);border-inline-start:1px solid var(--line)}
+[data-theme=klasik] .tcard{border-radius:0;border:0;border-inline-end:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;padding:40px 30px;text-align:center;align-items:center}
+[data-theme=klasik] .tcard:hover{transform:none;box-shadow:none;background:var(--card)}
+[data-theme=klasik] .tcard h3{font-size:26px}
+[data-theme=klasik] .tcard .lnk{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+[data-theme=klasik] .tic{border-radius:50%;background:transparent;border:1px solid var(--gold);color:var(--gold)}
+[data-theme=klasik] .why{background:var(--card)}
+[data-theme=klasik] .why-item{background:transparent;border-top:2px solid var(--gold);border-radius:0;padding:26px 4px}
+[data-theme=klasik] .why-item h4{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600}
+[data-theme=klasik] .panel{border-radius:4px;background:var(--card)}
+[data-theme=klasik] .steps div.on{color:var(--ink)}
+[data-theme=klasik] .steps div.on::after{height:2px;background:var(--gold)}
+[data-theme=klasik] .book-side li .ck{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+[data-theme=klasik] .field input,[data-theme=klasik] .field select,[data-theme=klasik] .field textarea{border-radius:2px;border-width:1px}
+[data-theme=klasik] .pfoot{background:#f6f0e6}
+[data-theme=klasik] .intl{background:#221c18}
+[data-theme=klasik] .intl .eyebrow{color:var(--gold)}
+[data-theme=klasik] .flow-item{border-radius:0;background:transparent;border:0;border-bottom:1px solid #ffffff1f;padding:18px 0}
+[data-theme=klasik] .flow-item .n{background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:50%;font-size:22px;font-weight:600}
+[data-theme=klasik] .langs span{border-radius:2px}
+[data-theme=klasik] .stay{border-radius:0;background:transparent;border:1px solid #ffffff22;text-align:center}
+[data-theme=klasik] .stay b{color:var(--gold);font-size:34px;font-weight:500}
+[data-theme=klasik] .cinfo,[data-theme=klasik] .map{border-radius:4px}
+[data-theme=klasik] .cinfo{background:var(--card)}
+[data-theme=klasik] footer{background:#221c18}
+[data-theme=klasik] .mbox{border-radius:4px}
+
+/* ================= PREMIUM (koyu) ================= */
+[data-theme=premium]{--bg:#0a0d12;--card:#121821;--line:#243041;--ink:#eef2f6;--muted:#93a1b0;--radius:16px;--shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+[data-theme=premium] body{font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+[data-theme=premium] h1{font-size:clamp(42px,6.6vw,84px);font-weight:800;letter-spacing:-.045em}
+[data-theme=premium] h1 em{background:linear-gradient(90deg,var(--accent),color-mix(in oklab,var(--accent) 35%,#fff));-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-theme=premium] h2{font-size:clamp(32px,4.4vw,56px);font-weight:800;letter-spacing:-.04em}
+[data-theme=premium] section{padding:110px 0}
+[data-theme=premium] .demo-bar,[data-theme=premium] .theme-switch{background:#000}
+[data-theme=premium] header.nav{background:rgba(10,13,18,.72);border-bottom:1px solid var(--line)}
+[data-theme=premium] .menu{color:var(--muted)}
+[data-theme=premium] .menu a:hover{color:#fff}
+[data-theme=premium] .menu .nav-intl{color:var(--accent)}
+[data-theme=premium] .menu.open{background:var(--bg)}
+[data-theme=premium] .burger{border-color:var(--line)}
+[data-theme=premium] .logo-mark{background:linear-gradient(135deg,var(--accent),var(--brand));color:#0a0d12;border-radius:10px}
+[data-theme=premium] .logo small{color:var(--muted)}
+[data-theme=premium] .lang{background:transparent;border-color:var(--line)}
+[data-theme=premium] .lang button.on{background:var(--accent);color:#111}
+[data-theme=premium] .btn{border-radius:12px}
+[data-theme=premium] .btn-primary,[data-theme=premium] .btn-primary:hover{background:linear-gradient(135deg,var(--accent),color-mix(in oklab,var(--accent) 50%,var(--brand)));color:#0a0d12;box-shadow:0 12px 40px -12px var(--accent)}
+[data-theme=premium] .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+[data-theme=premium] .btn-dark{background:#ffffff10;border:1px solid #ffffff26;color:#fff}
+[data-theme=premium] .btn-accent{background:var(--accent);color:#0a0d12}
+[data-theme=premium] .hero{background:radial-gradient(900px 560px at 85% 10%,color-mix(in oklab,var(--brand) 60%,transparent),transparent 62%),radial-gradient(700px 460px at 0% 100%,color-mix(in oklab,var(--accent) 22%,transparent),transparent 60%),var(--bg)}
+[data-theme=premium] .hero-in{padding:110px 20px 120px}
+[data-theme=premium] .deco-tooth{color:var(--accent);opacity:.05}
+[data-theme=premium] .pill{background:#ffffff0d;border-color:#ffffff1f;color:var(--muted)}
+[data-theme=premium] .istrip button{background:#ffffff0a;border-color:#ffffff1f;color:var(--muted)}
+[data-theme=premium] .istrip button:hover{border-color:var(--accent);color:var(--accent)}
+[data-theme=premium] .fact{background:#ffffff08;border:1px solid #ffffff14;border-radius:14px;padding:14px 18px}
+[data-theme=premium] .fact b{color:var(--accent)}
+[data-theme=premium] .hero-card{background:rgba(255,255,255,.06);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid #ffffff22;color:var(--ink)}
+[data-theme=premium] .qday{background:#ffffff0d}
+[data-theme=premium] .qslots button{border-color:#ffffff22}
+[data-theme=premium] .qslots button:hover,[data-theme=premium] .qslots button.on{background:color-mix(in oklab,var(--accent) 22%,transparent);border-color:var(--accent);color:#fff}
+[data-theme=premium] .float-tag{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+[data-theme=premium] .eyebrow{color:var(--accent)}
+[data-theme=premium] .grid-t{counter-reset:t}
+[data-theme=premium] .tcard{background:var(--card);border-color:var(--line);counter-increment:t;position:relative}
+[data-theme=premium] .tcard::before{content:"0" counter(t);position:absolute;inset-inline-end:22px;top:16px;font-size:46px;font-weight:800;color:#ffffff0c;letter-spacing:-.04em}
+[data-theme=premium] .tcard:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),var(--shadow)}
+[data-theme=premium] .tic{background:color-mix(in oklab,var(--accent) 14%,transparent);color:var(--accent)}
+[data-theme=premium] .tcard .lnk{color:var(--accent)}
+[data-theme=premium] .why{background:#0d1118;border-color:var(--line)}
+[data-theme=premium] .why-item{background:var(--card);border:1px solid var(--line)}
+[data-theme=premium] .why-item .tic{background:color-mix(in oklab,var(--accent) 14%,transparent)}
+[data-theme=premium] .panel{background:var(--card);border-color:var(--line);color:var(--ink)}
+[data-theme=premium] .intl .panel{color:var(--ink)}
+[data-theme=premium] .steps{border-color:var(--line)}
+[data-theme=premium] .steps div.on{color:var(--accent)}
+[data-theme=premium] .steps div.on::after{background:var(--accent)}
+[data-theme=premium] .steps div.done{color:var(--ink)}
+[data-theme=premium] .chip,[data-theme=premium] .day,[data-theme=premium] .slot{background:#ffffff08;border-color:var(--line);color:var(--ink)}
+[data-theme=premium] .chip.on,[data-theme=premium] .day.on,[data-theme=premium] .slot.on{background:var(--accent);border-color:var(--accent);color:#0a0d12}
+[data-theme=premium] .day.on small,[data-theme=premium] .day.on em{color:#0a0d12b3}
+[data-theme=premium] .day:disabled,[data-theme=premium] .slot:disabled{background:#ffffff04;color:#4b5868}
+[data-theme=premium] .field input,[data-theme=premium] .field select,[data-theme=premium] .field textarea{background:#0d1118;border-color:var(--line);color:var(--ink)}
+[data-theme=premium] .pfoot{background:#0d1118;border-color:var(--line)}
+[data-theme=premium] .summary b{color:#fff}
+[data-theme=premium] .rcpt{background:#0d1118}
+[data-theme=premium] .book-side li .ck{background:var(--accent);color:#0a0d12}
+[data-theme=premium] .intl{background:linear-gradient(160deg,#0d1118,color-mix(in oklab,var(--brand) 40%,#0a0d12))}
+[data-theme=premium] .flow-item .n,[data-theme=premium] .stay b{color:var(--accent)}
+[data-theme=premium] .flow-item .n{background:color-mix(in oklab,var(--accent) 18%,transparent);border:1px solid var(--accent)}
+[data-theme=premium] .cinfo{background:var(--card);border-color:var(--line)}
+[data-theme=premium] .hours td{border-color:var(--line)}
+[data-theme=premium] .map{border-color:var(--line)}
+[data-theme=premium] .map iframe{filter:invert(.9) hue-rotate(180deg) saturate(.6)}
+[data-theme=premium] footer{background:#05070a}
+[data-theme=premium] .mbar{background:var(--bg);border-color:var(--line)}
+[data-theme=premium] .mbox{background:var(--card);color:var(--ink)}
+[data-theme=premium] table.bk td,[data-theme=premium] table.bk th{border-color:var(--line)}
+
+@media (max-width:620px){
+  [data-theme=klasik] .hero-card{grid-template-columns:1fr;padding:22px}
+  [data-theme=klasik] .hero-card .qslots{grid-column:1;grid-row:auto}
+  [data-theme=klasik] .fact{padding:0 14px}
+  [data-theme=klasik] .mbar .btn{letter-spacing:.04em;font-size:12px;padding:12px 8px}
+  [data-theme=premium] .hero-in{padding:56px 16px 64px}
+  [data-theme=premium] section{padding:72px 0}
+  [data-theme=premium] .facts{gap:10px}
+}
 </style>
 </head>
 <body>
 
 <div class="demo-bar" data-i18n-html="demoBar"></div>
+<div class="theme-switch"><span>Tasarım seçin:</span><a href="./" class="on">1 · Modern</a><a href="klasik/" class="">2 · Klasik</a><a href="premium/" class="">3 · Premium</a></div>
 
 <header class="nav">
   <div class="wrap nav-in">
@@ -445,7 +609,7 @@ table.bk td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
 </div></div>
 
 <script>
-const CLINIC = {"slug":"dentexpert-mahmutbey","name":"Dentexpert","fullName":"Özel Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği","address":"Demirkapı Mah. Günışığı Konutları, İnönü Cad. No:62B, Bağcılar / İstanbul","mapQuery":"Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği","phone":"0212 447 04 46","phone2":"0534 635 75 75","whatsapp":"905346357575","email":null,"hours":{"weekdays":"10:00 – 19:00","saturday":"10:00 – 18:00","sunday":null},"open":{"start":10,"end":19,"satEnd":18,"sunday":false},"color":"#1F6FEB","accent":"#2EC4B6","featured":["implant","cene-cerrahisi","pedodonti","estetik","zirkonyum","beyazlatma"],"source":"dentexpertdisklinigi.com + Yandex Haritalar (arama sonucu özeti)","currentSite":"Var (dentexpertdisklinigi.com)","key":"r8v3","instagram":null};
+const CLINIC = {"slug":"dentexpert-mahmutbey","name":"Dentexpert","fullName":"Özel Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği","address":"Demirkapı Mah. Günışığı Konutları, İnönü Cad. No:62B, Bağcılar / İstanbul","mapQuery":"Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği","phone":"0212 447 04 46","phone2":"0534 635 75 75","whatsapp":"905346357575","email":null,"hours":{"weekdays":"10:00 – 19:00","saturday":"10:00 – 18:00","sunday":null},"open":{"start":10,"end":19,"satEnd":18,"sunday":false},"color":"#1F6FEB","accent":"#2EC4B6","featured":["implant","cene-cerrahisi","pedodonti","estetik","zirkonyum","beyazlatma"],"source":"dentexpertdisklinigi.com + Yandex Haritalar (arama sonucu özeti)","currentSite":"Var (dentexpertdisklinigi.com)","key":"r8v3","instagram":null,"area":"Bağcılar Mahmutbey"};
 
 const ICONS = {
   tooth:'<path d="M7 3c-2.2 0-4 1.8-4 4.4 0 2.6 1.2 4 1.6 6.4.4 2.4.6 7.2 2.4 7.2 1.8 0 1.6-5 3-5h4c1.4 0 1.2 5 3 5s2-4.8 2.4-7.2C19.8 11.4 21 10 21 7.4 21 4.8 19.2 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z"/>',
@@ -518,7 +682,7 @@ tr:{
   pEmpty:'Henüz randevu yok. Yukarıdaki formdan bir deneme randevusu oluşturun.',pApprove:'Onayla',pPending:'Bekliyor',pOk:'Onaylandı',pWhen:'Zaman',pPatient:'Hasta',pTreat:'Tedavi',pStatus:'Durum',
   kvkkText:'<p>Veri sorumlusu: {fullName}.</p><p>Randevu formunda paylaştığınız ad, telefon ve sağlıkla ilgili notlarınız yalnızca randevunuzun planlanması ve sizinle iletişim kurulması amacıyla, açık rızanıza dayanarak işlenir.</p><p>Verileriniz yasal saklama süreleri boyunca muhafaza edilir ve üçüncü kişilerle paylaşılmaz. 6698 sayılı KVKK md. 11 kapsamındaki haklarınız için kliniğimize başvurabilirsiniz.</p><p><i>(Örnek metindir; yayın öncesi klinik bilgileriyle güncellenir.)</i></p>',
   weekdays:['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'],months:['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'],
-  heroTitle:"Gülüşünüz için <em>1 dakikada</em> online randevu",heroLead:"{name} · Bağcılar Mahmutbey. Telefonda beklemeden randevunuzu oluşturun. Yurt dışından geliyorsanız ücretsiz online ön değerlendirme ile tedavinizi önceden planlayın.",ctaIntl:"Yurt Dışından Hasta",factB3:"1 dk",fact3:"Randevu süresi",stayTitle:"Yabancı hastaların en çok tercih ettiği tedaviler",stayLabel:"İstanbul'da tipik kalış",stayNote:"Süreler tipiktir; kesin plan hekim muayenesinden sonra netleşir.",stays:[["zirkonyum", "5–7 gün"], ["implant", "2 ziyaret"], ["estetik", "5–7 gün"], ["beyazlatma", "1 gün"]],sendPhotos:"Fotoğraf / röntgen gönder"
+  heroTitle:"Gülüşünüz için <em>1 dakikada</em> online randevu",heroLead:"{name} · {area}. Telefonda beklemeden randevunuzu oluşturun. Yurt dışından geliyorsanız ücretsiz online ön değerlendirme ile tedavinizi önceden planlayın.",ctaIntl:"Yurt Dışından Hasta",factB3:"1 dk",fact3:"Randevu süresi",stayTitle:"Yabancı hastaların en çok tercih ettiği tedaviler",stayLabel:"İstanbul'da tipik kalış",stayNote:"Süreler tipiktir; kesin plan hekim muayenesinden sonra netleşir.",stays:[["zirkonyum", "5–7 gün"], ["implant", "2 ziyaret"], ["estetik", "5–7 gün"], ["beyazlatma", "1 gün"]],sendPhotos:"Fotoğraf / röntgen gönder"
 },
 en:{
   demoBar:'<b>Design preview</b> · prepared for {fullName} · not the official website',
@@ -646,7 +810,7 @@ let lang = 'tr';
 })();
 const state={step:0,treat:null,date:null,slot:null};
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const t=k=>{const v=T[lang][k]; return typeof v==='string'? v.replace(/\{name\}/g,CLINIC.name).replace(/\{fullName\}/g,CLINIC.fullName):v;};
+const t=k=>{const v=T[lang][k]; return typeof v==='string'? v.replace(/\{name\}/g,CLINIC.name).replace(/\{area\}/g,CLINIC.area||'Bağcılar').replace(/\{fullName\}/g,CLINIC.fullName):v;};
 const treatName=id=>TREAT[id][lang][0];
 const treatList=()=>[...CLINIC.featured,'muayene'];
 const pad=n=>String(n).padStart(2,'0');
