@@ -72,7 +72,7 @@ Hâlâ doğrulanmayanlar: WhatsApp numaralarının aktif olup olmadığı (sited
 ## Sıradaki işler
 1. **Yayın:** Doğrulanan verilerle `node build.mjs && npx wrangler pages deploy dist --project-name=kliniz-onizleme`. Kalan `checks` maddeleri (WhatsApp aktif mi vb.) mesaj atmadan hemen önce panelden kontrol edilecek.
 2. **Densa (25 Kasım):** Doktor isimleri ve saatleri gelince "Hekimlerimiz" bölümü, yabancı hasta SSS (4 dil), logo/renk uyarlaması.
-3. **Marka:** Ad **Markan Studio**, alan adı markanstudio.com. Tanıtım ana sayfası ve info@ (Email Routing) 21.11.2026'da yayında. Kalan: önizleme şeridi ve mesaj imzalarına "Markan Studio" adı, logo.
+3. **Marka:** Ad **Markan Studio**, alan adı markanstudio.com. Tanıtım ana sayfası ve info@ (Email Routing) 21.11.2026'da yayında. Önizleme şeridi ("… için Markan Studio tarafından hazırlanmıştır", markanstudio.com linkli) ve panel mesajlarındaki imza (açılış/telefon: "Ben {AD}, Markan Studio'dan", link mesajı: ad · Markan Studio, telefon · markanstudio.com) eklendi. Açılış mesajı hâlâ linksiz. Kalan: logo.
 4. **Çok sektör:** Üreticiyi sektörden bağımsız hale getir (tedaviler → hizmetler, sektöre göre ikon, metin ve kanca).
 5. **İletişim hattı:** WhatsApp Business ayrı bir hatla kuruluyor. Profil, hızlı yanıtlar (panel mesajları) ve etiketler ayarlanacak. Yeni numarada günde 5–10 kişiye, kişiye özel mesaj at.
 6. **Fatura:** Annenin şahıs şirketine mali müşavirle faaliyet kodları eklenecek (62.01 programlama, 63.11 hosting, 58.29 yazılım yayımlama, 62.02 danışmanlık, gerekirse 73.11 / 47.91). Kesin kodları müşavir belirleyecek. Basit hizmet sözleşmesi + KVKK (veri işleyen) maddesi hazırlanacak.

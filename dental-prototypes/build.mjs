@@ -33,10 +33,10 @@ const THEMES = [
 // Ana sayfadaki örnek tasarım için uydurma klinik (gerçek klinik değil; panelde yer almaz)
 const SAMPLE = JSON.parse(readFileSync(join(root, 'data/sample.json'), 'utf8'));
 const SAMPLE_BAR = [
-  '<b>Örnek tasarım</b> · Markan Studio · Bu klinik gerçek değildir',
-  '<b>Sample design</b> · Markan Studio · This clinic is fictional',
-  '<b>تصميم نموذجي</b> · Markan Studio · هذه العيادة غير حقيقية',
-  '<b>Beispieldesign</b> · Markan Studio · Diese Klinik ist fiktiv',
+  '<b>Örnek tasarım</b> · <a href="https://markanstudio.com/" target="_blank" rel="noopener">Markan Studio</a> · Bu klinik gerçek değildir',
+  '<b>Sample design</b> · <a href="https://markanstudio.com/" target="_blank" rel="noopener">Markan Studio</a> · This clinic is fictional',
+  '<b>تصميم نموذجي</b> · <a href="https://markanstudio.com/" target="_blank" rel="noopener">Markan Studio</a> · هذه العيادة غير حقيقية',
+  '<b>Beispieldesign</b> · <a href="https://markanstudio.com/" target="_blank" rel="noopener">Markan Studio</a> · Diese Klinik ist fiktiv',
 ];
 
 function renderClinic(c, dirName, { sample = false } = {}) {
@@ -90,10 +90,10 @@ const msgs = c => {
   const o = c.outreach || {};
   return {
   acilis: o.opener || `Merhaba, iyi çalışmalar 🙏
-Ben {AD}. ${c.fullName} için online randevulu ve 4 dilli, 3 farklı tasarımda bir site önizlemesi hazırladım. Bağlantıyı göndermemi ister misiniz? Bakmak ücretsiz.`,
+Ben {AD}, Markan Studio'dan. ${c.fullName} için online randevulu ve 4 dilli, 3 farklı tasarımda bir site önizlemesi hazırladım. Bağlantıyı göndermemi ister misiniz? Bakmak ücretsiz.`,
   telefon: `📞 TELEFON SCRİPTİ – ${c.fullName}
 
-"Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?"
+"Merhaba, iyi günler. Ben {AD}, Markan Studio'dan. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?"
 
 "${o.phoneIntro || `Bağcılar'daki diş kliniklerine online randevu ve yabancı hasta odaklı web siteleri hazırlıyorum. ${c.name} için size özel, 3 farklı tasarımda ücretsiz bir site önizlemesi hazırladım. Hastalar telefonsuz randevu alıyor, site 4 dilde ve yurt dışından gelen hastalar için ön değerlendirme formu var.`}"
 
@@ -115,7 +115,8 @@ Denemek için:
 3️⃣ En alttaki "Klinik Paneli" ile gelen randevuları görün
 
 Değişmesini istediğiniz bir yer olursa (renk, tedaviler, saatler, doktorlar) ücretsiz güncellerim.
-{AD} – {TEL}`,
+{AD} · Markan Studio
+{TEL} · markanstudio.com`,
   takip: `Merhaba, ${c.name} için gönderdiğim önizlemeye bakma fırsatınız oldu mu? 🙏
 Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ücretsiz düzenleyebilirim.
 İlgilenmiyorsanız bir "hayır" yazmanız yeterli; önizlemeyi kaldırırım, tekrar rahatsız etmem.`
