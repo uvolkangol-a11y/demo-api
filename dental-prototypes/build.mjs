@@ -9,13 +9,19 @@ import { fileURLToPath } from 'node:url';
 
 const PANEL_PATH = 'panel-9w4zq7';
 const root = dirname(fileURLToPath(import.meta.url));
-const clinics = JSON.parse(readFileSync(join(root, 'data/clinics.json'), 'utf8'));
+const outreach = JSON.parse(readFileSync(join(root, 'data/outreach.json'), 'utf8'));
+const clinics = JSON.parse(readFileSync(join(root, 'data/clinics.json'), 'utf8')).map(c => {
+  const o = outreach[c.slug] || {};
+  return { ...c, focus: o.focus || 'genel', theme: o.theme || 'modern', outreach: o };
+});
 const template = readFileSync(join(root, 'template/site.html'), 'utf8');
 const dist = join(root, 'dist');
 rmSync(dist, { recursive: true, force: true });
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const pathOf = c => `${c.slug}-${c.key}`;
+const demoPathOf = c => pathOf(c) + (c.theme && c.theme !== 'modern' ? '/' + c.theme : '');
+const THEME_LABEL = { modern: 'Modern', klasik: 'Klasik', premium: 'Premium' };
 
 const THEMES = [
   { id: 'modern', label: 'Modern', fonts: 'family=Plus+Jakarta+Sans:wght@400;500;600;700;800' },
@@ -24,11 +30,12 @@ const THEMES = [
 ];
 
 for (const c of clinics) {
-  const json = JSON.stringify(c).replace(/</g, '\\u003c');
+  const { outreach: _o, ...pub } = c;
+  const json = JSON.stringify(pub).replace(/</g, '\\u003c');
   THEMES.forEach((th, i) => {
     const up = i === 0 ? '' : '../';
     const sw = `<div class="theme-switch"><span>Tasarım seçin:</span>${THEMES.map((o, j) =>
-      `<a href="${(up + (j === 0 ? '' : o.id + '/')) || './'}" class="${j === i ? 'on' : ''}">${j + 1} · ${o.label}</a>`).join('')}</div>`;
+      `<a href="${(up + (j === 0 ? '' : o.id + '/')) || './'}" class="${j === i ? 'on' : ''}">${j + 1} · ${o.label}${o.id === c.theme ? ' ⭐' : ''}</a>`).join('')}</div>`;
     const html = template
       .replace('{{THEME}}', th.id)
       .replace('{{FONTS}}', th.fonts)
@@ -52,20 +59,16 @@ writeFileSync(join(dist, 'index.html'), `<!doctype html><html lang="tr"><head><m
 
 // ---- Mesaj şablonları ----
 // {LINK} -> demo adresi, {AD} -> senin adın, {TEL} -> senin telefonun
-const msgs = c => ({
-  acilis: `Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
-
-${c.fullName} için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
-
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.`,
+const msgs = c => {
+  const o = c.outreach || {};
+  return {
+  acilis: o.opener || `Merhaba, iyi çalışmalar 🙏
+Ben {AD}. ${c.fullName} için online randevulu ve 4 dilli, 3 farklı tasarımda bir site önizlemesi hazırladım. Bağlantıyı göndermemi ister misiniz? Bakmak ücretsiz.`,
   telefon: `📞 TELEFON SCRİPTİ – ${c.fullName}
 
 "Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?"
 
-"Bağcılar'daki diş kliniklerine online randevu ve yabancı hasta odaklı web siteleri hazırlıyorum. ${c.name} için size özel, 3 farklı tasarımda ücretsiz bir site önizlemesi hazırladım. Hastalar telefonsuz randevu alıyor, site 4 dilde ve yurt dışından gelen hastalar için ön değerlendirme formu var."
+"${o.phoneIntro || `Bağcılar'daki diş kliniklerine online randevu ve yabancı hasta odaklı web siteleri hazırlıyorum. ${c.name} için size özel, 3 farklı tasarımda ücretsiz bir site önizlemesi hazırladım. Hastalar telefonsuz randevu alıyor, site 4 dilde ve yurt dışından gelen hastalar için ön değerlendirme formu var.`}"
 
 "Size WhatsApp'tan bağlantısını göndermem için hangi numarayı kullanabilirim?"
 
@@ -77,8 +80,9 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
   link: `Teşekkürler 🙏 ${c.name} için hazırladığım önizleme:
 {LINK}
 
+${o.linkNote ? o.linkNote + '\n' : ''}⭐ Size önerdiğim tasarım: ${THEME_LABEL[c.theme] || 'Modern'}. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ "Online Randevu" ile deneme randevusu oluşturun${c.whatsapp ? ' — talep WhatsApp\'ınıza düşer' : ''}
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki "Klinik Paneli" ile gelen randevuları görün
@@ -88,12 +92,13 @@ Değişmesini istediğiniz bir yer olursa (renk, tedaviler, saatler, doktorlar) 
   takip: `Merhaba, ${c.name} için gönderdiğim önizlemeye bakma fırsatınız oldu mu? 🙏
 Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ücretsiz düzenleyebilirim.
 İlgilenmiyorsanız bir "hayır" yazmanız yeterli; önizlemeyi kaldırırım, tekrar rahatsız etmem.`
-});
+  };
+};
 
 const cards = clinics.map(c => {
   const m = msgs(c);
   return `
-  <article class="card" style="--c:${c.color}" data-slug="${c.slug}" data-path="${pathOf(c)}" data-wa="${c.whatsapp || ''}" data-email="${esc(c.email || '')}" data-name="${esc(c.name)}">
+  <article class="card" style="--c:${c.color}" data-slug="${c.slug}" data-path="${demoPathOf(c)}" data-wa="${c.whatsapp || ''}" data-email="${esc(c.email || '')}" data-name="${esc(c.name)}">
     <div class="top"><span class="dot"></span><div><h2>${esc(c.fullName)}</h2><p>${esc(c.address)}</p></div></div>
     <dl>
       <dt>Telefon</dt><dd>${[c.phone, c.phone2].filter(Boolean).map(p => `<a href="tel:+90${p.replace(/\D/g, '').replace(/^0/, '')}">${esc(p)}</a>`).join(' · ')}</dd>
@@ -101,6 +106,9 @@ const cards = clinics.map(c => {
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>${esc(c.currentSite)}</dd>
     </dl>
+    ${c.outreach && c.outreach.hook ? `<div class="hook"><b>${esc(c.outreach.priority || '')}</b><p>🎣 ${esc(c.outreach.hook)}</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul>${(c.outreach.checks || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+      ${c.outreach.fallback ? `<p class="fb">↪ Kontrol tutmazsa: ${esc(c.outreach.fallback)}</p>` : ''}</details></div>` : ''}
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
@@ -111,7 +119,7 @@ const cards = clinics.map(c => {
       ${c.whatsapp ? `<a class="btn wa js-wa" target="_blank" rel="noopener">WhatsApp'ta aç</a>` : ''}
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       ${c.email ? `<a class="btn ghost js-mail">E-posta</a>` : ''}
-      <a class="btn" href="../${pathOf(c)}/" target="_blank">Demo</a>
+      <a class="btn" href="../${demoPathOf(c)}/" target="_blank">Demo (${THEME_LABEL[c.theme]} ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
@@ -134,6 +142,9 @@ writeFileSync(join(dist, PANEL_PATH, 'index.html'), `<!doctype html><html lang="
 .top{display:flex;gap:10px}.dot{flex:none;width:12px;height:12px;border-radius:50%;background:var(--c);margin-top:6px}
 h2{font-size:16px}.top p{font-size:12.5px;color:#5b6b7a}
 dl{display:grid;grid-template-columns:84px 1fr;gap:6px 10px;font-size:13.5px;align-items:center}dt{color:#5b6b7a;font-weight:600}dd a{color:inherit}.warn{color:#c2410c;font-weight:600}
+.hook{background:color-mix(in srgb,var(--c) 8%,#fff);border:1px solid color-mix(in srgb,var(--c) 25%,#fff);border-radius:12px;padding:10px 12px;font-size:13.5px;line-height:1.5}
+.hook b{display:block;margin-bottom:4px}.hook p{margin:0}.hook details{margin-top:8px}.hook summary{cursor:pointer;font-weight:700}
+.hook ul{margin:6px 0 0 18px}.hook .fb{margin-top:6px;color:#5b6b7a}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs button{border:1px solid #e4e9ee;background:#fff;border-radius:999px;padding:6px 11px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
 .tabs button.on{background:var(--c);border-color:var(--c);color:#fff}
 textarea{width:100%;border:1px solid #e4e9ee;border-radius:12px;padding:10px;font:inherit;font-size:13px;resize:vertical;background:#fbfcfd}

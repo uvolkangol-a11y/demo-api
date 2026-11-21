@@ -11,6 +11,9 @@
 .top{display:flex;gap:10px}.dot{flex:none;width:12px;height:12px;border-radius:50%;background:var(--c);margin-top:6px}
 h2{font-size:16px}.top p{font-size:12.5px;color:#5b6b7a}
 dl{display:grid;grid-template-columns:84px 1fr;gap:6px 10px;font-size:13.5px;align-items:center}dt{color:#5b6b7a;font-weight:600}dd a{color:inherit}.warn{color:#c2410c;font-weight:600}
+.hook{background:color-mix(in srgb,var(--c) 8%,#fff);border:1px solid color-mix(in srgb,var(--c) 25%,#fff);border-radius:12px;padding:10px 12px;font-size:13.5px;line-height:1.5}
+.hook b{display:block;margin-bottom:4px}.hook p{margin:0}.hook details{margin-top:8px}.hook summary{cursor:pointer;font-weight:700}
+.hook ul{margin:6px 0 0 18px}.hook .fb{margin-top:6px;color:#5b6b7a}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs button{border:1px solid #e4e9ee;background:#fff;border-radius:999px;padding:6px 11px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
 .tabs button.on{background:var(--c);border-color:var(--c);color:#fff}
 textarea{width:100%;border:1px solid #e4e9ee;border-radius:12px;padding:10px;font:inherit;font-size:13px;resize:vertical;background:#fbfcfd}
@@ -32,17 +35,17 @@ textarea{width:100%;border:1px solid #e4e9ee;border-radius:12px;padding:10px;fon
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Var (densaclinic.com) — online randevu takvimi görünmüyor</dd>
     </dl>
+    <div class="hook"><b>🔥 Tanıdık – 25 Kasım yüz yüze</b><p>🎣 Tanıdık klinik. Çocuk diş hekimliği ve kanal tedavisi öne çıkıyor. Mevcut sitede online randevu takvimi görünmüyor. Kancan: &quot;Aileler telefonla uğraşmadan randevu alsın + yurt dışı hasta bölümü&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>densaclinic.com'da 'Randevu' butonu nereye gidiyor? Takvim mi, telefon mu?</li><li>Hekim isimlerini ve çalışma saatlerini öğren (görüşmede sor)</li><li>Instagram adresini panele yaz</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: Zaten online randevuları varsa: kancayı 'yurt dışı hasta bölümü + 4 dil + yeni görünüm' yap.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Selam 🙏 25'inde klinikteyim ya, sana Densa için hazırladığım bir şeyi göstermek istiyorum.
 
-Densa Ağız ve Diş Sağlığı Polikliniği için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+Ailelerin telefonla uğraşmadan 1 dakikada randevu aldığı, çocuk hastalara ve yurt dışından gelen hastalara özel bölümü olan yeni bir site. 3 farklı tasarımda hazırladım.
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Densa Ağız ve Diş Sağlığı Polikliniği
+10 dakika ayırabilir misin? Bence çok hoşuna gidecek 😊</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Densa Ağız ve Diş Sağlığı Polikliniği
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
@@ -57,8 +60,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 Densa için hazırladığım önizleme:
 {LINK}
 
+Sizin için çocuk diş hekimliği ve kanal tedavisini öne çıkardım; aileler randevuyu telefonsuz alabiliyor.
+⭐ Size önerdiğim tasarım: Modern. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun — talep WhatsApp'ınıza düşer
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -73,14 +78,14 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <a class="btn wa js-wa" target="_blank" rel="noopener">WhatsApp'ta aç</a>
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       <a class="btn ghost js-mail">E-posta</a>
-      <a class="btn" href="../densa-k7m2/" target="_blank">Demo</a>
+      <a class="btn" href="../densa-k7m2/" target="_blank">Demo (Modern ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
       <input class="note" placeholder="Not (kiminle görüşüldü, ne dedi…)">
     </div>
   </article>
-  <article class="card" style="--c:#3B3F98" data-slug="astradent" data-path="astradent-p4x9" data-wa="905060439043" data-email="info@astradentclinic.com" data-name="Astradent">
+  <article class="card" style="--c:#3B3F98" data-slug="astradent" data-path="astradent-p4x9/premium" data-wa="905060439043" data-email="info@astradentclinic.com" data-name="Astradent">
     <div class="top"><span class="dot"></span><div><h2>Astradent Ağız ve Diş Sağlığı Polikliniği</h2><p>Demirkapı Mah., Bağcılar / İstanbul</p></div></div>
     <dl>
       <dt>Telefon</dt><dd><a href="tel:+902123439043">0212 343 90 43</a> · <a href="tel:+905060439043">0506 043 90 43</a></dd>
@@ -88,17 +93,19 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Var (astradentclinic.com) — SEO blog ağırlıklı, randevu takvimi yok</dd>
     </dl>
+    <div class="hook"><b>Yüksek – SEO'ya yatırım yapmış</b><p>🎣 Sitelerinde 'Bağcılar diş implantı / beyazlatma' gibi SEO sayfaları var → Google'dan trafik alıyorlar ama ziyaretçi randevu için aramak zorunda. Kancan: &quot;Google'dan gelen ziyaretçiyi kaybediyorsunuz&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>astradentclinic.com'a gir: online randevu takvimi var mı? (Yoksa kanca doğru)</li><li>WhatsApp hattı 0506 043 90 43 aktif mi? (WhatsApp'ta profil fotoğrafı görünüyor mu)</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: Randevu takvimleri varsa: kancayı 'yabancı hasta bölümü yok, implant için yurt dışından gelen hastayı kaçırıyorsunuz' yap.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏 Ben {AD}.
 
-Astradent Ağız ve Diş Sağlığı Polikliniği için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+Astradent'in sitesine baktım; implant ve beyazlatma için Bağcılar aramalarına yönelik güzel içerikler hazırlamışsınız 👏 Ama siteye gelen hasta randevu almak için hâlâ telefon açmak zorunda. Google'dan gelen ziyaretçinin önemli bir kısmı tam bu adımda kayboluyor.
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Astradent Ağız ve Diş Sağlığı Polikliniği
+Sizin için ziyaretçiyi 1 dakikada randevuya çeviren, implantı öne çıkaran ve İngilizce/Arapça/Almanca yabancı hasta bölümü olan 3 tasarımlık bir önizleme hazırladım.
+
+Bağlantıyı göndermemi ister misiniz? Bakmak ücretsiz.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Astradent Ağız ve Diş Sağlığı Polikliniği
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
@@ -113,8 +120,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 Astradent için hazırladığım önizleme:
 {LINK}
 
+Sizin için implantı öne çıkardım; sitenize Google'dan gelen ziyaretçi artık aramadan randevu alabiliyor.
+⭐ Size önerdiğim tasarım: Premium. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun — talep WhatsApp'ınıza düşer
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -129,7 +138,7 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <a class="btn wa js-wa" target="_blank" rel="noopener">WhatsApp'ta aç</a>
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       <a class="btn ghost js-mail">E-posta</a>
-      <a class="btn" href="../astradent-p4x9/" target="_blank">Demo</a>
+      <a class="btn" href="../astradent-p4x9/premium/" target="_blank">Demo (Premium ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
@@ -144,17 +153,17 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Var (dentexpertdisklinigi.com)</dd>
     </dl>
+    <div class="hook"><b>Orta</b><p>🎣 Mahmutbey metrosunun hemen yanında, Günışığı Konutları'nda. Hem sabit hem cep hattı var. Kancan: &quot;Yanınızdan her gün geçen binlerce kişi, aramadan randevu alsın&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>dentexpertdisklinigi.com'da online randevu var mı?</li><li>0534 635 75 75 WhatsApp'ta aktif mi?</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: Online randevuları varsa: kancayı '4 dilli yabancı hasta bölümü + daha modern görünüm' yap.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏 Ben {AD}, Bağcılar'daki kliniklere online randevu sistemli web siteleri hazırlıyorum.
 
-Özel Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+Dentexpert, Mahmutbey metrosunun hemen yanında. Her gün yanınızdan geçen binlerce kişiden biri 'akşam müsait misiniz?' diye aramak yerine sitenizden boş saati görüp 1 dakikada randevu alabilse nasıl olur?
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Özel Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği
+Sizin için bunu yapan, estetik ve implant tedavilerinizi öne çıkaran 3 farklı tasarım hazırladım. Linki göndermemi ister misiniz?</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Özel Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
@@ -169,8 +178,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 Dentexpert için hazırladığım önizleme:
 {LINK}
 
+Gülüş tasarımı, zirkonyum ve implantı öne çıkardım; hasta boş saatleri görüp anında randevu alıyor.
+⭐ Size önerdiğim tasarım: Modern. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun — talep WhatsApp'ınıza düşer
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -185,14 +196,14 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <a class="btn wa js-wa" target="_blank" rel="noopener">WhatsApp'ta aç</a>
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       
-      <a class="btn" href="../dentexpert-mahmutbey-r8v3/" target="_blank">Demo</a>
+      <a class="btn" href="../dentexpert-mahmutbey-r8v3/" target="_blank">Demo (Modern ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
       <input class="note" placeholder="Not (kiminle görüşüldü, ne dedi…)">
     </div>
   </article>
-  <article class="card" style="--c:#B23A48" data-slug="kirazli" data-path="kirazli-t2n6" data-wa="" data-email="" data-name="Kirazlı Diş">
+  <article class="card" style="--c:#B23A48" data-slug="kirazli" data-path="kirazli-t2n6/klasik" data-wa="" data-email="" data-name="Kirazlı Diş">
     <div class="top"><span class="dot"></span><div><h2>Özel Kirazlı Ağız ve Diş Sağlığı Polikliniği</h2><p>Kirazlı Mah. Mahmutbey Cad. No:134, Bağcılar / İstanbul</p></div></div>
     <dl>
       <dt>Telefon</dt><dd><a href="tel:+902125152299">0212 515 22 99</a></dd>
@@ -200,21 +211,23 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Var (kirazlidis.com)</dd>
     </dl>
+    <div class="hook"><b>Orta – önce TELEFON</b><p>🎣 Google'da 4.9 puan / 75 yorum ama yalnızca sabit hat bulduk, WhatsApp yok. Kancan: &quot;Hastalar sizi seviyor ama mesai dışında ya da hat meşgulken ulaşamıyor&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>Google Haritalar'da bir cep/WhatsApp numarası var mı?</li><li>kirazlidis.com'da online randevu var mı?</li><li>Instagram hesabı var mı? (DM ile de açılış yapabilirsin)</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: WhatsApp'ları varsa: kancayı 'sitede online randevu yok' üzerine kur.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏 Ben {AD}.
 
-Özel Kirazlı Ağız ve Diş Sağlığı Polikliniği için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+Google'da 4.9 puanınızı ve 75 yorumunuzu gördüm, tebrikler 👏 Ama size ulaşmanın tek yolu sabit hat gibi görünüyor; mesai dışında ya da hat meşgulken arayan hasta bekleyemiyor, başka kliniğe gidiyor.
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Özel Kirazlı Ağız ve Diş Sağlığı Polikliniği
+Sizin için hastaların 7/24 telefonsuz randevu aldığı, 4 dilli ve 3 farklı tasarımda bir site önizlemesi hazırladım.
+
+Linki göndermemi ister misiniz? Bakmak ücretsiz.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Özel Kirazlı Ağız ve Diş Sağlığı Polikliniği
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
-&quot;Bağcılar'daki diş kliniklerine online randevu ve yabancı hasta odaklı web siteleri hazırlıyorum. Kirazlı Diş için size özel, 3 farklı tasarımda ücretsiz bir site önizlemesi hazırladım. Hastalar telefonsuz randevu alıyor, site 4 dilde ve yurt dışından gelen hastalar için ön değerlendirme formu var.&quot;
+&quot;Google'da 4.9 puanınızı ve yorumlarınızı gördüm, tebrikler. Hastalarınız sizi çok seviyor ama size ulaşmanın tek yolu sabit hat gibi görünüyor; mesai dışında ya da hat meşgulken arayan hasta bekleyemiyor. Sizin için hastaların 7/24 telefonsuz randevu aldığı, 3 farklı tasarımda ücretsiz bir site önizlemesi hazırladım.&quot;
 
 &quot;Size WhatsApp'tan bağlantısını göndermem için hangi numarayı kullanabilirim?&quot;
 
@@ -225,8 +238,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 Kirazlı Diş için hazırladığım önizleme:
 {LINK}
 
+Klasik tasarımı önerdim; köklü ve güven veren bir görünüm. Hastalar artık mesai dışında da randevu bırakabiliyor.
+⭐ Size önerdiğim tasarım: Klasik. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -241,7 +256,7 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       
-      <a class="btn" href="../kirazli-t2n6/" target="_blank">Demo</a>
+      <a class="btn" href="../kirazli-t2n6/klasik/" target="_blank">Demo (Klasik ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
@@ -256,17 +271,19 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Var (mkmklinik.com) — her gün 10:00–21:00 açık, birden fazla şube var</dd>
     </dl>
+    <div class="hook"><b>Yüksek – her gün 21:00'e kadar açık</b><p>🎣 Her gün 10:00–21:00 açıklar ve birden fazla şubeleri var; bu büyük bir avantaj. Kancan: &quot;Gece 23:00'te diş ağrısıyla sitenize giren hasta randevu alamıyor&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>mkmklinik.com'da online randevu var mı? Varsa kancayı fallback'e çevir</li><li>0552 861 42 11 WhatsApp'ta aktif mi?</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: Online randevuları varsa: kancayı 'İngilizce/Arapça/Almanca yabancı hasta bölümü + şubeler için tek randevu' yap.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏 Ben {AD}.
 
-MKM Klinik Mahmutbey için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+MKM Klinik'in her gün 21:00'e kadar açık olduğunu gördüm. Bu, bölgede çok az klinikte olan büyük bir avantaj 👏 Ama gece 23:00'te diş ağrısıyla sitenize giren biri randevu alamıyor; sabahı bekliyor ya da başka yere gidiyor.
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – MKM Klinik Mahmutbey
+Sizin için 7/24 online randevu alan, &quot;her gün 21:00'e kadar açığız&quot; mesajını öne çıkaran ve yabancı hasta bölümü olan 3 tasarımlık bir önizleme hazırladım.
+
+Göndermemi ister misiniz?</template><template data-t="telefon">📞 TELEFON SCRİPTİ – MKM Klinik Mahmutbey
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
@@ -281,8 +298,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 MKM Klinik için hazırladığım önizleme:
 {LINK}
 
+&quot;Her gün 21:00'e kadar açığız&quot; mesajını en üste koydum; pazar dahil her güne randevu alınabiliyor.
+⭐ Size önerdiğim tasarım: Modern. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun — talep WhatsApp'ınıza düşer
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -297,14 +316,14 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <a class="btn wa js-wa" target="_blank" rel="noopener">WhatsApp'ta aç</a>
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       <a class="btn ghost js-mail">E-posta</a>
-      <a class="btn" href="../mkm-klinik-h5q1/" target="_blank">Demo</a>
+      <a class="btn" href="../mkm-klinik-h5q1/" target="_blank">Demo (Modern ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
       <input class="note" placeholder="Not (kiminle görüşüldü, ne dedi…)">
     </div>
   </article>
-  <article class="card" style="--c:#6A4C93" data-slug="afildent" data-path="afildent-m3q8" data-wa="905323902453" data-email="" data-name="Afildent">
+  <article class="card" style="--c:#6A4C93" data-slug="afildent" data-path="afildent-m3q8/premium" data-wa="905323902453" data-email="" data-name="Afildent">
     <div class="top"><span class="dot"></span><div><h2>Afildent Bağcılar Ağız ve Diş Sağlığı Polikliniği</h2><p>Göztepe Mah. Bosna Cad. No:10 D:14C, Bağcılar / İstanbul</p></div></div>
     <dl>
       <dt>Telefon</dt><dd><a href="tel:+905323902453">0532 390 24 53</a></dd>
@@ -312,17 +331,19 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Bilinmiyor — Google Haritalar'dan kontrol et</dd>
     </dl>
+    <div class="hook"><b>Yüksek – güçlü itibar</b><p>🎣 Google'da 4.8 puan / 149 yorum ve İngilizce konuşan ekip (rehbere göre). Web sitesi bulamadık. Kancan: &quot;Bu itibarı randevuya çeviren bir siteniz yok&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>Google Haritalar'da 'Web sitesi' butonu var mı? Yoksa kanca çok güçlü</li><li>0532 390 24 53 WhatsApp'ta aktif mi?</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: Siteleri varsa: kancayı 'sitenizde online randevu ve yabancı hasta bölümü yok' yap.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏 Ben {AD}.
 
-Afildent Bağcılar Ağız ve Diş Sağlığı Polikliniği için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+Google'da 149 yorumla 4.8 puanınızı gördüm, tebrikler 👏 Bu kadar güçlü bir itibar, sizi Google'da bulan hastayı randevuya çevirecek bir siteyle çok daha fazla işe yarar. Ekibinizde İngilizce konuşan olduğunu da gördüm; bu, yurt dışından gelen hasta için büyük avantaj.
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Afildent Bağcılar Ağız ve Diş Sağlığı Polikliniği
+Sizin için online randevu ve İngilizce/Arapça/Almanca yabancı hasta bölümü olan 3 tasarımlık bir önizleme hazırladım.
+
+Linki göndermemi ister misiniz?</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Afildent Bağcılar Ağız ve Diş Sağlığı Polikliniği
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
@@ -337,8 +358,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 Afildent için hazırladığım önizleme:
 {LINK}
 
+Premium tasarımı önerdim; estetik tedavilere ve yabancı hastaya hitap eden lüks bir görünüm.
+⭐ Size önerdiğim tasarım: Premium. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun — talep WhatsApp'ınıza düşer
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -353,14 +376,14 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <a class="btn wa js-wa" target="_blank" rel="noopener">WhatsApp'ta aç</a>
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       
-      <a class="btn" href="../afildent-m3q8/" target="_blank">Demo</a>
+      <a class="btn" href="../afildent-m3q8/premium/" target="_blank">Demo (Premium ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
       <input class="note" placeholder="Not (kiminle görüşüldü, ne dedi…)">
     </div>
   </article>
-  <article class="card" style="--c:#0B5D8F" data-slug="batisehir-bogazici" data-path="batisehir-bogazici-w6c2" data-wa="905078054827" data-email="" data-name="Boğaziçi Diş">
+  <article class="card" style="--c:#0B5D8F" data-slug="batisehir-bogazici" data-path="batisehir-bogazici-w6c2/premium" data-wa="905078054827" data-email="" data-name="Boğaziçi Diş">
     <div class="top"><span class="dot"></span><div><h2>Batışehir Boğaziçi Diş Polikliniği</h2><p>Göztepe Mah. Batışehir Cad. G3 Blok No:6/G, Bağcılar / İstanbul</p></div></div>
     <dl>
       <dt>Telefon</dt><dd><a href="tel:+905078054827">0507 805 48 27</a></dd>
@@ -368,17 +391,19 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Bilinmiyor — İngilizce hizmet veriyor, sağlık turizmi için iyi aday</dd>
     </dl>
+    <div class="hook"><b>🔥 Sağlık turizmi için en iyi aday</b><p>🎣 İngilizce hizmet veriyorlar ve 'Boğaziçi' adı yabancı hasta için güçlü bir marka. Aynı adreste sağlık turizmi yapan başka klinikler de listeleniyor, yani rekabet var. Kancan: &quot;Yabancı hastayı kendi dilinde karşılayın&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>Google Haritalar'da web siteleri var mı, İngilizce mi?</li><li>0507 805 48 27 WhatsApp'ta aktif mi?</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: Zaten İngilizce siteleri varsa: kancayı 'Arapça + Almanca + online ön değerlendirme ve randevu' yap.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏 Ben {AD}.
 
-Batışehir Boğaziçi Diş Polikliniği için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+Batışehir'de yurt dışından gelen hasta sayısı her geçen gün artıyor. Ekibinizin İngilizce hizmet verdiğini gördüm; &quot;Boğaziçi&quot; adı da yabancı hasta için çok güçlü bir marka 🌉
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Batışehir Boğaziçi Diş Polikliniği
+Sizin için yabancı hastanın kendi dilinde (İngilizce, Arapça, Almanca) ücretsiz ön değerlendirme isteyip WhatsApp'tan fotoğraf/röntgen gönderebildiği, Türk hastaların da 1 dakikada randevu aldığı 3 tasarımlık bir önizleme hazırladım.
+
+Göndermemi ister misiniz?</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Batışehir Boğaziçi Diş Polikliniği
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
@@ -393,8 +418,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 Boğaziçi Diş için hazırladığım önizleme:
 {LINK}
 
+Sayfayı yurt dışı hastası odaklı kurdum; telefonu İngilizce olan biri siteyi otomatik İngilizce görüyor.
+⭐ Size önerdiğim tasarım: Premium. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun — talep WhatsApp'ınıza düşer
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -409,14 +436,14 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <a class="btn wa js-wa" target="_blank" rel="noopener">WhatsApp'ta aç</a>
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       
-      <a class="btn" href="../batisehir-bogazici-w6c2/" target="_blank">Demo</a>
+      <a class="btn" href="../batisehir-bogazici-w6c2/premium/" target="_blank">Demo (Premium ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
       <input class="note" placeholder="Not (kiminle görüşüldü, ne dedi…)">
     </div>
   </article>
-  <article class="card" style="--c:#9C2C77" data-slug="yuzyil-dis" data-path="yuzyil-dis-z9f4" data-wa="" data-email="" data-name="Yüzyıl Diş">
+  <article class="card" style="--c:#9C2C77" data-slug="yuzyil-dis" data-path="yuzyil-dis-z9f4/klasik" data-wa="" data-email="" data-name="Yüzyıl Diş">
     <div class="top"><span class="dot"></span><div><h2>Yüzyıl Ağız ve Diş Sağlığı Polikliniği</h2><p>Yüzyıl Mah. Barbaros Cad. No:19, Bağcılar / İstanbul</p></div></div>
     <dl>
       <dt>Telefon</dt><dd><a href="tel:+902124323288">0212 432 32 88</a></dd>
@@ -424,21 +451,23 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Var (yuzyildis.com.tr)</dd>
     </dl>
+    <div class="hook"><b>Orta – önce TELEFON</b><p>🎣 Sitesi var (yuzyildis.com.tr) ama yalnızca sabit hat bulduk. Kancan: &quot;Hastalar sitenizden doğrudan randevu alamıyor, aramak zorunda&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>yuzyildis.com.tr'de online randevu var mı?</li><li>Google Haritalar'da cep/WhatsApp numarası var mı?</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: Online randevuları varsa: kancayı 'yabancı hasta bölümü + daha modern görünüm' yap.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏 Ben {AD}.
 
-Yüzyıl Ağız ve Diş Sağlığı Polikliniği için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+Yüzyıl Diş'in sitesine baktım; güzel bir tanıtım var ama hasta randevu almak için hâlâ aramak zorunda. Hat meşgulken ya da mesai dışında arayan hastayı kaçırıyorsunuz.
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Yüzyıl Ağız ve Diş Sağlığı Polikliniği
+Sizin için hastaların sitenizden 1 dakikada randevu aldığı, 4 dilli ve 3 farklı tasarımda bir önizleme hazırladım.
+
+Linki göndermemi ister misiniz?</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Yüzyıl Ağız ve Diş Sağlığı Polikliniği
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
-&quot;Bağcılar'daki diş kliniklerine online randevu ve yabancı hasta odaklı web siteleri hazırlıyorum. Yüzyıl Diş için size özel, 3 farklı tasarımda ücretsiz bir site önizlemesi hazırladım. Hastalar telefonsuz randevu alıyor, site 4 dilde ve yurt dışından gelen hastalar için ön değerlendirme formu var.&quot;
+&quot;Sitenize baktım; güzel bir tanıtım var ama hasta randevu almak için aramak zorunda. Telefon meşgulken ya da mesai dışında bu hastaları kaçırıyorsunuz. Sizin için sitenizden 1 dakikada randevu alınan, 4 dilli ve 3 farklı tasarımda ücretsiz bir önizleme hazırladım.&quot;
 
 &quot;Size WhatsApp'tan bağlantısını göndermem için hangi numarayı kullanabilirim?&quot;
 
@@ -449,8 +478,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 Yüzyıl Diş için hazırladığım önizleme:
 {LINK}
 
+Klasik tasarımı önerdim. Hasta artık aramadan, sitenizden gün ve saat seçerek randevu alıyor.
+⭐ Size önerdiğim tasarım: Klasik. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -465,14 +496,14 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       
-      <a class="btn" href="../yuzyil-dis-z9f4/" target="_blank">Demo</a>
+      <a class="btn" href="../yuzyil-dis-z9f4/klasik/" target="_blank">Demo (Klasik ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
       <input class="note" placeholder="Not (kiminle görüşüldü, ne dedi…)">
     </div>
   </article>
-  <article class="card" style="--c:#334155" data-slug="medicine-dis" data-path="medicine-dis-b7k5" data-wa="905308225696" data-email="" data-name="MEDICINE">
+  <article class="card" style="--c:#334155" data-slug="medicine-dis" data-path="medicine-dis-b7k5/klasik" data-wa="905308225696" data-email="" data-name="MEDICINE">
     <div class="top"><span class="dot"></span><div><h2>MEDICINE Ağız ve Diş Sağlığı Polikliniği</h2><p>Yenigün Mah. Bağcılar Cad. No:99/A, Bağcılar / İstanbul</p></div></div>
     <dl>
       <dt>Telefon</dt><dd><a href="tel:+905308225696">0530 822 56 96</a></dd>
@@ -480,17 +511,19 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Bilinmiyor — Doktortakvimi'nde profili var</dd>
     </dl>
+    <div class="hook"><b>Orta</b><p>🎣 Ağız, diş ve çene cerrahisi ağırlıklı. Doktortakvimi'nde hekim profili var, yani randevular platforma bağımlı. Kancan: &quot;Platformdan gelen hasta platformun; kendi sitenizden gelen hasta sizin&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>Doktortakvimi'nde profil hâlâ aktif mi, hekim adı doğru mu?</li><li>Kendi web siteleri var mı?</li><li>0530 822 56 96 WhatsApp'ta aktif mi?</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: Doktortakvimi kullanmıyorlarsa: kancayı 'kendi markanızla online randevu + yabancı hasta' yap.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏 Ben {AD}.
 
-MEDICINE Ağız ve Diş Sağlığı Polikliniği için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+Doktortakvimi'nde ağız, diş ve çene cerrahisi profilinizi gördüm. Oradan gelen hasta platformun hastası olarak kalıyor; kendi sitenizden randevu alan hasta ise tamamen sizin.
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – MEDICINE Ağız ve Diş Sağlığı Polikliniği
+Sizin için gömülü diş, implant ve çene cerrahisini öne çıkaran, hastanın 1 dakikada randevu aldığı ve yurt dışı hastasına 4 dilde hitap eden 3 tasarımlık bir önizleme hazırladım.
+
+Göndermemi ister misiniz?</template><template data-t="telefon">📞 TELEFON SCRİPTİ – MEDICINE Ağız ve Diş Sağlığı Polikliniği
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
@@ -505,8 +538,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 MEDICINE için hazırladığım önizleme:
 {LINK}
 
+Cerrahi tedavileri öne çıkardım; güven veren klasik bir tasarım önerdim. Doktortakvimi'yle birlikte de kullanılabilir.
+⭐ Size önerdiğim tasarım: Klasik. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun — talep WhatsApp'ınıza düşer
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -521,14 +556,14 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <a class="btn wa js-wa" target="_blank" rel="noopener">WhatsApp'ta aç</a>
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       
-      <a class="btn" href="../medicine-dis-b7k5/" target="_blank">Demo</a>
+      <a class="btn" href="../medicine-dis-b7k5/klasik/" target="_blank">Demo (Klasik ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
       <input class="note" placeholder="Not (kiminle görüşüldü, ne dedi…)">
     </div>
   </article>
-  <article class="card" style="--c:#B45309" data-slug="dentbul" data-path="dentbul-n4x1" data-wa="905527163608" data-email="" data-name="Dentbul">
+  <article class="card" style="--c:#B45309" data-slug="dentbul" data-path="dentbul-n4x1/premium" data-wa="905527163608" data-email="" data-name="Dentbul">
     <div class="top"><span class="dot"></span><div><h2>Bağcılar İmplant Dentbul Diş Kliniği</h2><p>Yıldıztepe Mah. 37. Sk. No:6, Bağcılar / İstanbul</p></div></div>
     <dl>
       <dt>Telefon</dt><dd><a href="tel:+905527163608">0552 716 36 08</a></dd>
@@ -536,17 +571,19 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <dt>Instagram</dt><dd><input class="ig" placeholder="@kullaniciadi"></dd>
       <dt>Mevcut site</dt><dd>Bilinmiyor</dd>
     </dl>
+    <div class="hook"><b>Yüksek – implant = sağlık turizmi</b><p>🎣 Adında 'implant' geçiyor. İmplant, İstanbul'a gelen yabancı hastaların en çok aradığı tedavilerden biri. Kancan: &quot;İmplant için gelen yabancı hastayı yakalayın&quot;.</p>
+      <details><summary>✅ Göndermeden önce kontrol et</summary><ul><li>Google Haritalar'da web siteleri var mı?</li><li>0552 716 36 08 WhatsApp'ta aktif mi?</li></ul>
+      <p class="fb">↪ Kontrol tutmazsa: Yabancı hasta almıyorlarsa: kancayı 'Türk hastalar için 7/24 online randevu + modern görünüm' yap.</p></details></div>
     <div class="tabs">
       <button data-m="acilis" class="on">1 · Açılış</button><button data-m="telefon">Telefon</button><button data-m="link">2 · Link</button><button data-m="takip">3 · Takip</button>
     </div>
-    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏
-Ben {AD}. Bağcılar'daki diş kliniklerine online randevu ve yurt dışından hasta (sağlık turizmi) odaklı web siteleri hazırlıyorum.
+    <template data-t="acilis">Merhaba, iyi çalışmalar 🙏 Ben {AD}.
 
-Bağcılar İmplant Dentbul Diş Kliniği için size özel 3 farklı tasarımda (Modern, Klasik, Premium) site önizlemesi hazırladım:
-✅ Hastalar 7/24 telefonsuz randevu alıyor, talep doğrudan WhatsApp'ınıza düşüyor
-🌍 İngilizce, Arapça ve Almanca yabancı hasta bölümü + ücretsiz online ön değerlendirme formu
+Adınızda &quot;implant&quot; var. İmplant, İstanbul'a gelen yabancı hastaların en çok aradığı tedavilerden biri 🌍
 
-Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yükümlülüğü yok.</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Bağcılar İmplant Dentbul Diş Kliniği
+Sizin için implantı merkeze alan, yabancı hastanın röntgenini WhatsApp'tan gönderip ön değerlendirme isteyebildiği ve Türk hastaların 1 dakikada randevu aldığı 3 tasarımlık bir önizleme hazırladım.
+
+Linki göndermemi ister misiniz?</template><template data-t="telefon">📞 TELEFON SCRİPTİ – Bağcılar İmplant Dentbul Diş Kliniği
 
 &quot;Merhaba, iyi günler. Ben {AD}. Klinik sahibi ya da yönetimden biriyle 1 dakika görüşebilir miyim?&quot;
 
@@ -561,8 +598,10 @@ Bağlantıyı göndermemi ister misiniz? Bakmak tamamen ücretsiz, hiçbir yük�
 • &quot;Şimdi müsait değiliz&quot; → &quot;Anlıyorum, linki WhatsApp'tan bırakayım, müsait olduğunuzda bakarsınız.&quot;</template><template data-t="link">Teşekkürler 🙏 Dentbul için hazırladığım önizleme:
 {LINK}
 
+İmplantı ana sayfanın merkezine koydum; yabancı hasta röntgenini tek tıkla WhatsApp'tan gönderebiliyor.
+⭐ Size önerdiğim tasarım: Premium. En üstten diğer 2 tasarıma da geçebilirsiniz.
+
 Denemek için:
-0️⃣ En üstten 3 tasarım arasında geçiş yapın: Modern / Klasik / Premium
 1️⃣ &quot;Online Randevu&quot; ile deneme randevusu oluşturun — talep WhatsApp'ınıza düşer
 2️⃣ Sağ üstten EN / AR / DE seçip yabancı hasta bölümüne bakın
 3️⃣ En alttaki &quot;Klinik Paneli&quot; ile gelen randevuları görün
@@ -577,7 +616,7 @@ Randevu veya yabancı hasta bölümünde eklemek istediğiniz bir şey olursa ü
       <a class="btn wa js-wa" target="_blank" rel="noopener">WhatsApp'ta aç</a>
       <a class="btn ig-btn js-ig" target="_blank" rel="noopener">Instagram</a>
       
-      <a class="btn" href="../dentbul-n4x1/" target="_blank">Demo</a>
+      <a class="btn" href="../dentbul-n4x1/premium/" target="_blank">Demo (Premium ⭐)</a>
     </div>
     <div class="row">
       <select class="st"><option>Ulaşılmadı</option><option>Açılış atıldı</option><option>Arandı</option><option>Link istedi</option><option>Link gönderildi</option><option>Takip atıldı</option><option>Toplantı</option><option>Satıldı ✅</option><option>İlgilenmiyor ❌</option></select>
