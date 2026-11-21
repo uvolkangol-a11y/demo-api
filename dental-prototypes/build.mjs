@@ -4,6 +4,7 @@
 //         dist/<PANEL_PATH>/index.html   (sadece senin için satış paneli)
 //         dist/ornek-dis-klinigi/          (ana sayfadaki uydurma örnek klinik)
 //         dist/index.html                (Markan Studio ana sayfası; klinik demolarına link vermez)
+//         dist/<PKG.path>/index.html     (gizli paket / teklif sayfası, data/packages.json)
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -83,6 +84,41 @@ const home = readFileSync(join(root, 'template/home.html'), 'utf8')
 if (/\{\{[A-Z_]+\}\}/.test(home)) throw new Error('home.html içinde doldurulmamış yer tutucu kaldı');
 if (clinics.some(c => home.includes(pathOf(c)))) throw new Error('Ana sayfa gerçek bir klinik demosuna link veriyor');
 writeFileSync(join(dist, 'index.html'), home);
+
+// ---- Gizli paket / teklif sayfası (data/packages.json; hiçbir yerden link verilmez) ----
+const PKG = JSON.parse(readFileSync(join(root, 'data/packages.json'), 'utf8'));
+{
+  const ICON_OK = '<svg class="ok" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  const ICON_NO = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c7d1d9" stroke-width="2.4" stroke-linecap="round"><path d="M7 12h10"/></svg>';
+  const f = PKG.founder;
+  const dots = Array.from({ length: f.slotsTotal }, (_, i) => `<i class="${i < f.slotsLeft ? '' : 'off'}"></i>`).join('');
+  const founderHtml = f.slotsLeft > 0
+    ? `<div class="founder"><span><b>Kurucu müşteri fiyatı</b> · Profesyonel paket ilk ${f.slotsTotal} klinik için ${esc(f.setup)} kurulum, ${esc(f.monthly)}/ay</span><span class="slots">${dots} Kalan kontenjan: ${f.slotsLeft}/${f.slotsTotal}</span></div>`
+    : '';
+  const tiersHtml = PKG.tiers.map((t, ti) => {
+    const isFounder = f.slotsLeft > 0 && t.id === f.tier;
+    const price = isFounder
+      ? `<div class="price"><strong>${esc(f.setup)}</strong><s>${esc(t.setup)}</s><span>kurulum</span></div><div class="monthly"><b>${esc(f.monthly)}</b> <s>${esc(t.monthly)}</s> / ay</div><span class="fnote">Kurucu müşteri fiyatı</span>`
+      : `<div class="price"><strong>${esc(t.setup)}</strong><span>kurulum</span></div><div class="monthly"><b>${esc(t.monthly)}</b> / ay</div>`;
+    const items = PKG.rows.map(r => {
+      const v = r.values[ti];
+      if (v === false) return `<li class="no">${ICON_NO}<span>${esc(r.label)}</span></li>`;
+      if (v === true) return `<li>${ICON_OK}<span>${esc(r.label)}</span></li>`;
+      return `<li>${ICON_OK}<span>${esc(r.label)}: <em>${esc(v)}</em></span></li>`;
+    }).join('');
+    return `<article class="tier${t.recommended ? ' rec' : ''}">${t.recommended ? '<span class="badge">Önerilen</span>' : ''}<h2>${esc(t.name)}</h2><p class="tag">${esc(t.tagline)}</p>${price}<ul>${items}</ul></article>`;
+  }).join('\n    ');
+  const pkgHtml = readFileSync(join(root, 'template/packages.html'), 'utf8')
+    .replace('{{FOUNDER}}', founderHtml)
+    .replace('{{TIERS}}', tiersHtml)
+    .replaceAll('{{EMAIL}}', CONTACT_EMAIL)
+    .replaceAll('{{MAIL_SUBJECT}}', encodeURIComponent('Paket seçimi'))
+    .replace('{{PRICE_NOTE}}', esc(PKG.priceNote));
+  if (/\{\{[A-Z_]+\}\}/.test(pkgHtml)) throw new Error('packages.html içinde doldurulmamış yer tutucu kaldı');
+  if (home.includes(PKG.path)) throw new Error('Ana sayfa gizli paket sayfasına link veriyor');
+  mkdirSync(join(dist, PKG.path), { recursive: true });
+  writeFileSync(join(dist, PKG.path, 'index.html'), pkgHtml);
+}
 
 // ---- Mesaj şablonları ----
 // {LINK} -> demo adresi, {AD} -> senin adın, {TEL} -> senin telefonun
@@ -225,3 +261,4 @@ $$('.card').forEach(card=>{
 </script></body></html>`);
 console.log(`✓ dist/${PANEL_PATH}/ (satış paneli)`);
 console.log('✓ dist/index.html (Markan Studio ana sayfası)');
+console.log(`✓ dist/${PKG.path}/ (gizli paket sayfası)`);

@@ -9,19 +9,25 @@ Yeni oturuma: "dental-prototypes/NOTES.md dosyasını oku, kaldığımız yerden
 - "Kanca" stratejisi: her kliniğin eksiğine göre (randevu yok, WhatsApp yok, yabancı hasta bölümü yok vb.) kişiye özel mesajla WhatsApp/telefon/Instagram'dan ulaşmak.
 - İleride diğer randevulu sektörlere de genişlemek (kuaför/güzellik, veteriner, fizyoterapi, pilates, oto servis). Avukatlar reklam yasağı nedeniyle uygun değil; sağlık meslekleri tanıtım yönetmeliğine tabi.
 
-## Fiyatlandırma (taslak)
-| Paket | Kurulum | Aylık |
-|---|---|---|
-| Başlangıç | 7.500 ₺ | 1.000 ₺ |
-| Profesyonel | 15.000 ₺ | 2.000 ₺ |
-| Poliklinik / Sağlık turizmi | 30.000 ₺ | 4.000 ₺ |
-| **Kurucu müşteri (ilk 5)** | 9.900 ₺ | 1.500 ₺ (+ referans karşılığı 1 ay ücretsiz) |
+## Paketler ve fiyatlar (21.11.2026'da netleşti)
+| | Başlangıç | **Profesyonel** (önerilen) | Premium |
+|---|---|---|---|
+| Kurulum / aylık | 7.500 ₺ / 1.000 ₺ | 15.000 ₺ / 2.000 ₺ | 30.000 ₺ / 4.000 ₺ |
+| **Kurucu müşteri (ilk 5)** | – | **9.900 ₺ / 1.500 ₺** (+ referans karşılığı 1 ay ücretsiz) | – |
+
+- Başlangıç: site, harita, Instagram bağlantısı, WhatsApp butonu, sadece Türkçe. Online randevu yok.
+- Profesyonel: + online randevu, 4 dil, 3 tasarımdan seçim, yurt dışı hasta bölümü, Hekimlerimiz sayfası, ayda 3 değişiklik. Densa demosundaki her şey burada; kurucu fiyat bu paketin indirimli hali.
+- Premium: + tedavi detay sayfaları, 4 dilde SSS, Google İşletme Profili ve Instagram düzenlemesi, aylık rapor, Bospora Health'te listelenme, ayda 6 değişiklik ve aynı gün yanıt; gerçek randevu takvimi hazır olunca ücretsiz eklenir.
+- Premium'un görevi ortadaki paketi seçtirmek (çapa). Yine de içindeki her kalem bugün teslim edilebilir olmalı; olmayan özellik satılmaz.
+- Kıtlık sadece gerçek olanla: "ilk 5 klinik" ve kalan kontenjan (`data/packages.json` → `founder.slotsLeft`, her kurucu satışta düşür). Uydurma "son 2 yer" yok.
+- Kaynak: `data/packages.json`. Gizli teklif sayfası `dist/paketler-t8w3/` (noindex, hiçbir yerden link verilmez). Ana sayfada fiyat yok.
 
 ## Klasör yapısı
 ```
 dental-prototypes/
   data/clinics.json     # klinik bilgileri (ad, adres, telefon, WhatsApp, saat, renk, tedaviler, key)
   data/outreach.json    # kliniğe özel kanca, kontrol listesi, açılış mesajı, odak (focus) ve önerilen tasarım (theme)
+  data/packages.json    # paketler, fiyatlar, kurucu kontenjanı (teklif sayfası)
   data/sample.json      # uydurma "Örnek Diş Kliniği" (ana sayfadaki örnek tasarım; panelde yok)
   template/home.html    # markanstudio.com ana sayfası (Markan Studio tanıtımı)
   template/site.html    # tek şablon: 3 tema (modern/klasik/premium), 4 dil, randevu sihirbazı, yurt dışı hasta bölümü

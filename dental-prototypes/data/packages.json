@@ -1,0 +1,35 @@
+{
+  "path": "paketler-t8w3",
+  "founder": {
+    "tier": "pro",
+    "setup": "9.900 ₺",
+    "monthly": "1.500 ₺",
+    "slotsTotal": 5,
+    "slotsLeft": 5
+  },
+  "priceNote": "Fiyatlara KDV dahil değildir.",
+  "tiers": [
+    { "id": "baslangic", "name": "Başlangıç", "tagline": "Sitesi olmayan muayenehaneler için vitrin", "setup": "7.500 ₺", "monthly": "1.000 ₺" },
+    { "id": "pro", "name": "Profesyonel", "tagline": "Online randevu, 4 dil ve yurt dışı hastalar", "setup": "15.000 ₺", "monthly": "2.000 ₺", "recommended": true },
+    { "id": "premium", "name": "Premium", "tagline": "Ek sayfalar, Google ve Instagram düzenlemesi, aylık rapor", "setup": "30.000 ₺", "monthly": "4.000 ₺" }
+  ],
+  "rows": [
+    { "label": "Kliniğinize özel site, harita ve Instagram bağlantısı", "values": [true, true, true] },
+    { "label": "Kendi alan adınızda yayın, hosting ve SSL", "values": [true, true, true] },
+    { "label": "WhatsApp butonu", "values": [true, true, true] },
+    { "label": "Dil", "values": ["Türkçe", "TR · EN · AR · DE", "TR · EN · AR · DE"] },
+    { "label": "Online randevu (talep WhatsApp'ınıza düşer)", "values": [false, true, true] },
+    { "label": "3 tasarımdan seçim", "values": [false, true, true] },
+    { "label": "Yurt dışı hasta bölümü ve online ön değerlendirme", "values": [false, true, true] },
+    { "label": "Hekimlerimiz sayfası", "values": [false, true, true] },
+    { "label": "Her tedavi için ayrı detay sayfası (4 dil)", "values": [false, false, true] },
+    { "label": "4 dilde sıkça sorulan sorular", "values": [false, false, true] },
+    { "label": "Google İşletme Profili düzenlemesi", "values": [false, false, true] },
+    { "label": "Instagram profil düzenlemesi ve bağlantı sayfası", "values": [false, false, true] },
+    { "label": "Aylık ziyaretçi ve randevu talebi raporu", "values": [false, false, true] },
+    { "label": "Bospora Health'te listelenme", "values": [false, false, true] },
+    { "label": "Gerçek randevu takvimi ve klinik paneli", "values": [false, false, "Hazır olunca ücretsiz"] },
+    { "label": "Aylık içerik değişikliği", "values": ["1", "3", "6"] },
+    { "label": "Yanıt süresi", "values": ["2 iş günü", "2 iş günü", "Aynı gün"] }
+  ]
+}
