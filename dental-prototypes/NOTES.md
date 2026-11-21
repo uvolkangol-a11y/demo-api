@@ -20,6 +20,8 @@ Yeni oturuma: "dental-prototypes/NOTES.md dosyasını oku, kaldığımız yerden
 - Premium: + tedavi detay sayfaları, 4 dilde SSS, Google İşletme Profili ve Instagram düzenlemesi, aylık rapor, Bospora Health'te listelenme, ayda 6 değişiklik ve aynı gün yanıt; gerçek randevu takvimi hazır olunca ücretsiz eklenir.
 - Premium'un görevi ortadaki paketi seçtirmek (çapa). Yine de içindeki her kalem bugün teslim edilebilir olmalı; olmayan özellik satılmaz.
 - Kıtlık sadece gerçek olanla: "ilk 5 klinik" ve kalan kontenjan (`data/packages.json` → `founder.slotsLeft`, her kurucu satışta düşür). Uydurma "son 2 yer" yok.
+- Tüm klinik demolarında "Hekimlerimiz" bölümü var: `clinics.json`'da `doctors` yoksa uydurma isim yerine yer tutucu gösterir (gerçek kliniğe uydurma hekim koyma). SSS bölümü sadece `faq` verisi olan klinikte görünür.
+- Premium örneği klinik başına yapılmaz; sadece uydurma Örnek Diş Kliniği'nde (örnek hekimler + 4 dilde SSS). Paket sayfasındaki Premium kartı oraya link verir. Karanlık mod eklenmedi (koyu tasarım zaten Premium teması).
 - Kaynak: `data/packages.json`. Gizli teklif sayfası `dist/paketler-t8w3/` (noindex, hiçbir yerden link verilmez). Ana sayfada fiyat yok.
 
 ## Klasör yapısı

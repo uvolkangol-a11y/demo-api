@@ -106,7 +106,8 @@ const PKG = JSON.parse(readFileSync(join(root, 'data/packages.json'), 'utf8'));
       if (v === true) return `<li>${ICON_OK}<span>${esc(r.label)}</span></li>`;
       return `<li>${ICON_OK}<span>${esc(r.label)}: <em>${esc(v)}</em></span></li>`;
     }).join('');
-    return `<article class="tier${t.recommended ? ' rec' : ''}">${t.recommended ? '<span class="badge">Önerilen</span>' : ''}<h2>${esc(t.name)}</h2><p class="tag">${esc(t.tagline)}</p>${price}<ul>${items}</ul></article>`;
+    const ex = t.example ? `<a class="ex" href="${esc(t.example.href)}">${esc(t.example.label)} →</a>` : '';
+    return `<article class="tier${t.recommended ? ' rec' : ''}">${t.recommended ? '<span class="badge">Önerilen</span>' : ''}<h2>${esc(t.name)}</h2><p class="tag">${esc(t.tagline)}</p>${price}<ul>${items}</ul>${ex}</article>`;
   }).join('\n    ');
   const pkgHtml = readFileSync(join(root, 'template/packages.html'), 'utf8')
     .replace('{{FOUNDER}}', founderHtml)

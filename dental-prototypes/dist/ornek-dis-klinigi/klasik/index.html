@@ -108,6 +108,24 @@ h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.03em;line-height:1.15;margi
 .tcard p{color:var(--muted);font-size:14.5px;flex:1}
 .tcard .lnk{margin-top:16px;font-weight:700;font-size:14px;color:var(--brand);display:inline-flex;gap:6px;align-items:center}
 
+/* doctors + faq */
+.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.doc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;gap:16px;align-items:center}
+.doc .tic{margin:0;flex:none;border-radius:50%;font-weight:800;font-size:18px}
+.doc h4{font-size:17px;margin-bottom:2px}
+.doc p{color:var(--muted);font-size:14px}
+.doc.ph{border-style:dashed;background:transparent}
+.doc.ph h4,.doc.ph p{color:var(--muted);opacity:.7}
+.doc-note{margin-top:16px;color:var(--muted);font-size:14px}
+.faq-list{max-width:820px}
+.faq-list details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq-list summary{cursor:pointer;font-weight:700;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";color:var(--brand);font-size:22px;line-height:1}
+.faq-list details[open] summary::after{content:"–"}
+.faq-list p{color:var(--muted);margin-top:10px;font-size:15px}
+@media(max-width:900px){.doc-grid{grid-template-columns:1fr}}
+
 /* why */
 .why{background:#fff;border-block:1px solid var(--line)}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -549,6 +567,23 @@ html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] .logo{font-fami
   </div>
 </section>
 
+<!-- DOCTORS -->
+<section id="hekimler">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow" data-i18n="docEyebrow"></div><h2 data-i18n="docTitle"></h2></div></div>
+    <div class="doc-grid" id="docGrid"></div>
+    <p class="doc-note" id="docNote"></p>
+  </div>
+</section>
+
+<!-- FAQ (yalnızca CLINIC.faq varsa) -->
+<section id="sss" hidden>
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow" data-i18n="faqEyebrow"></div><h2 data-i18n="faqTitle"></h2></div></div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
 <!-- WHY -->
 <section class="why">
   <div class="wrap">
@@ -610,7 +645,7 @@ html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] .logo{font-fami
 </div></div>
 
 <script>
-const CLINIC = {"slug":"ornek-dis-klinigi","name":"Örnek Diş","fullName":"Örnek Diş Kliniği","address":"Örnek Mah. Örnek Cad. No:1, İstanbul","mapQuery":"İstanbul","phone":"0212 000 00 00","whatsapp":null,"email":null,"instagram":null,"hours":{"weekdays":"09:00 – 20:00","saturday":"09:00 – 18:00","sunday":null},"open":{"start":9,"end":20,"satEnd":18,"sunday":false},"color":"#1F5FBF","accent":"#F2A65A","featured":["implant","zirkonyum","ortodonti","beyazlatma","kanal","pedodonti"],"area":"İstanbul","focus":"genel","theme":"modern"};
+const CLINIC = {"slug":"ornek-dis-klinigi","name":"Örnek Diş","fullName":"Örnek Diş Kliniği","address":"Örnek Mah. Örnek Cad. No:1, İstanbul","mapQuery":"İstanbul","phone":"0212 000 00 00","whatsapp":null,"email":null,"instagram":null,"hours":{"weekdays":"09:00 – 20:00","saturday":"09:00 – 18:00","sunday":null},"open":{"start":9,"end":20,"satEnd":18,"sunday":false},"color":"#1F5FBF","accent":"#F2A65A","featured":["implant","zirkonyum","ortodonti","beyazlatma","kanal","pedodonti"],"area":"İstanbul","focus":"genel","theme":"modern","sample":true,"doctors":[{"name":"Uzm. Dt. Elif Örnek","role":{"tr":"Ortodonti","en":"Orthodontist","ar":"أخصائية تقويم الأسنان","de":"Kieferorthopädin"}},{"name":"Dt. Mert Örnek","role":{"tr":"İmplant ve ağız cerrahisi","en":"Implants and oral surgery","ar":"زراعة الأسنان وجراحة الفم","de":"Implantologie und Oralchirurgie"}},{"name":"Uzm. Dt. Zeynep Örnek","role":{"tr":"Çocuk diş hekimliği","en":"Paediatric dentist","ar":"أخصائية طب أسنان الأطفال","de":"Kinderzahnärztin"}}],"faq":[{"q":{"tr":"Yurt dışından geliyorum. Tedavi planını önceden alabilir miyim?","en":"I'm coming from abroad. Can I get a treatment plan in advance?","ar":"أنا قادم من الخارج. هل يمكنني الحصول على خطة العلاج مسبقًا؟","de":"Ich komme aus dem Ausland. Kann ich vorab einen Behandlungsplan bekommen?"},"a":{"tr":"Fotoğraf veya röntgeninizi WhatsApp'tan gönderin; hekimimiz ön değerlendirme yapar. Kesin plan muayeneden sonra hazırlanır.","en":"Send your photos or X-rays via WhatsApp and our dentist will do a preliminary assessment. The final plan is made after the examination.","ar":"أرسل صورك أو صور الأشعة عبر واتساب وسيقوم طبيبنا بتقييم أولي. تُعدّ الخطة النهائية بعد الفحص.","de":"Senden Sie Fotos oder Röntgenbilder per WhatsApp; unser Zahnarzt nimmt eine Ersteinschätzung vor. Der endgültige Plan wird nach der Untersuchung erstellt."}},{"q":{"tr":"Tedavi için İstanbul'da kaç gün kalmam gerekir?","en":"How many days do I need to stay in Istanbul?","ar":"كم يومًا أحتاج للبقاء في إسطنبول؟","de":"Wie viele Tage muss ich in Istanbul bleiben?"},"a":{"tr":"Tedaviye göre değişir. Ön değerlendirmeden sonra size tahmini süreyi bildiririz.","en":"It depends on the treatment. We will tell you the estimated duration after the preliminary assessment.","ar":"يختلف ذلك حسب العلاج. سنخبرك بالمدة التقديرية بعد التقييم الأولي.","de":"Das hängt von der Behandlung ab. Nach der Ersteinschätzung nennen wir Ihnen die voraussichtliche Dauer."}},{"q":{"tr":"Randevumu nasıl değiştirebilirim?","en":"How can I change my appointment?","ar":"كيف يمكنني تغيير موعدي؟","de":"Wie kann ich meinen Termin ändern?"},"a":{"tr":"WhatsApp'tan yazmanız ya da bizi aramanız yeterli.","en":"Just message us on WhatsApp or give us a call.","ar":"يكفي أن تراسلنا عبر واتساب أو تتصل بنا.","de":"Schreiben Sie uns einfach per WhatsApp oder rufen Sie uns an."}},{"q":{"tr":"Hangi dillerde iletişim kurabilirim?","en":"Which languages can I use to contact you?","ar":"بأي لغات يمكنني التواصل معكم؟","de":"In welchen Sprachen kann ich Sie kontaktieren?"},"a":{"tr":"Türkçe ve İngilizce yazabilirsiniz. Başka bir dil için lütfen önceden bilgi verin.","en":"You can write in Turkish or English. For other languages, please let us know in advance.","ar":"يمكنك الكتابة بالتركية أو الإنجليزية. للغات الأخرى، يرجى إبلاغنا مسبقًا.","de":"Sie können auf Türkisch oder Englisch schreiben. Für andere Sprachen geben Sie uns bitte vorher Bescheid."}}]};
 
 const ICONS = {
   tooth:'<path d="M7 3c-2.2 0-4 1.8-4 4.4 0 2.6 1.2 4 1.6 6.4.4 2.4.6 7.2 2.4 7.2 1.8 0 1.6-5 3-5h4c1.4 0 1.2 5 3 5s2-4.8 2.4-7.2C19.8 11.4 21 10 21 7.4 21 4.8 19.2 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z"/>',
@@ -683,6 +718,7 @@ tr:{
   legal:'Bu sitedeki bilgiler genel bilgilendirme amaçlıdır; teşhis ve tedavi için hekiminize başvurunuz.',
   panelTitle:'Klinik Paneli — Gelen Randevular',panelSub:'Demo: Bu tarayıcıda oluşturulan randevu talepleri burada listelenir. Gerçek sürümde tüm talepler klinik paneline ve WhatsApp\'a anında düşer.',
   pEmpty:'Henüz randevu yok. Yukarıdaki formdan bir deneme randevusu oluşturun.',pApprove:'Onayla',pPending:'Bekliyor',pOk:'Onaylandı',pWhen:'Zaman',pPatient:'Hasta',pTreat:'Tedavi',pStatus:'Durum',
+  docEyebrow:'Hekimlerimiz',docTitle:'Sizi tedavi edecek ekip',docPhName:'Hekim adı',docPhRole:'Unvan · Uzmanlık',docPhNote:'Hekim bilgileriniz ve fotoğraflarınız (yazılı izinle) buraya eklenecek.',docSample:'Bu hekimler örnektir, gerçek kişiler değildir.',faqEyebrow:'Sıkça Sorulan Sorular',faqTitle:'Merak ettikleriniz',
   kvkkText:'<p>Veri sorumlusu: {fullName}.</p><p>Randevu formunda paylaştığınız ad, telefon ve sağlıkla ilgili notlarınız yalnızca randevunuzun planlanması ve sizinle iletişim kurulması amacıyla, açık rızanıza dayanarak işlenir.</p><p>Verileriniz yasal saklama süreleri boyunca muhafaza edilir ve üçüncü kişilerle paylaşılmaz. 6698 sayılı KVKK md. 11 kapsamındaki haklarınız için kliniğimize başvurabilirsiniz.</p><p><i>(Örnek metindir; yayın öncesi klinik bilgileriyle güncellenir.)</i></p>',
   weekdays:['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'],months:['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'],
   heroTitle:"Gülüşünüz için <em>1 dakikada</em> online randevu",heroLead:"{name} · {area}. Telefonda beklemeden randevunuzu oluşturun. Yurt dışından geliyorsanız ücretsiz online ön değerlendirme ile tedavinizi önceden planlayın.",ctaIntl:"Yurt Dışından Hasta",factB3:"1 dk",fact3:"Randevu süresi",stayTitle:"Yabancı hastaların en çok tercih ettiği tedaviler",stayLabel:"İstanbul'da tipik kalış",stayNote:"Süreler tipiktir; kesin plan hekim muayenesinden sonra netleşir.",stays:[["zirkonyum", "5–7 gün"], ["implant", "2 ziyaret"], ["estetik", "5–7 gün"], ["beyazlatma", "1 gün"]],sendPhotos:"Fotoğraf / röntgen gönder"
@@ -721,6 +757,7 @@ en:{
   legal:'Information on this site is for general purposes only; consult your dentist for diagnosis and treatment.',
   panelTitle:'Clinic Panel — Incoming Appointments',panelSub:'Demo: requests created in this browser appear here. In production, every request lands in the clinic panel and on WhatsApp instantly.',
   pEmpty:'No appointments yet. Create a test booking using the form.',pApprove:'Approve',pPending:'Pending',pOk:'Approved',pWhen:'Time',pPatient:'Patient',pTreat:'Treatment',pStatus:'Status',
+  docEyebrow:'Our Dentists',docTitle:'The team that will treat you',docPhName:'Dentist name',docPhRole:'Title · Specialty',docPhNote:"Your dentists' details and photos (with written consent) will appear here.",docSample:'These dentists are examples, not real people.',faqEyebrow:'FAQ',faqTitle:'Frequently asked questions',
   kvkkText:'<p>Data controller: {fullName}.</p><p>Your name, phone and health-related notes are processed solely to plan your appointment and contact you, based on your explicit consent.</p><p>Data is kept for the legally required period and is not shared with third parties.</p><p><i>(Sample text.)</i></p>',
   weekdays:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],months:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
   heroTitle:"Book your dental visit <em>in 1 minute</em>",heroLead:"{name} · Istanbul. Book online, no phone queues. Travelling from abroad? Get a free online pre-assessment and plan your treatment before you fly.",ctaIntl:"International Patients",factB3:"1 min",fact3:"To book",stayTitle:"Most requested by international patients",stayLabel:"Typical stay in Istanbul",stayNote:"Durations are typical; your exact plan is confirmed after examination.",stays:[["zirkonyum", "5–7 days"], ["implant", "2 visits"], ["estetik", "5–7 days"], ["beyazlatma", "1 day"]],sendPhotos:"Send photos / X-ray"
@@ -759,6 +796,7 @@ ar:{
   legal:'المعلومات الواردة لأغراض عامة فقط؛ استشر طبيبك للتشخيص والعلاج.',
   panelTitle:'لوحة العيادة — المواعيد الواردة',panelSub:'تجريبي: تظهر هنا الطلبات التي أُنشئت في هذا المتصفح.',
   pEmpty:'لا توجد مواعيد بعد.',pApprove:'تأكيد',pPending:'قيد الانتظار',pOk:'مؤكد',pWhen:'الموعد',pPatient:'المريض',pTreat:'العلاج',pStatus:'الحالة',
+  docEyebrow:'أطباؤنا',docTitle:'الفريق الذي سيعالجك',docPhName:'اسم الطبيب',docPhRole:'اللقب · التخصص',docPhNote:'ستُضاف هنا معلومات أطبائكم وصورهم (بموافقة خطية).',docSample:'هؤلاء الأطباء أمثلة وليسوا أشخاصًا حقيقيين.',faqEyebrow:'الأسئلة الشائعة',faqTitle:'أسئلة يطرحها المرضى كثيرًا',
   kvkkText:'<p>المسؤول عن البيانات: {fullName}.</p><p>تتم معالجة بياناتك فقط لتنظيم موعدك والتواصل معك بناءً على موافقتك الصريحة.</p><p><i>(نص توضيحي.)</i></p>',
   weekdays:['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'],months:['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'],
   heroTitle:"احجز موعدك <em>في دقيقة واحدة</em>",heroLead:"{name} · إسطنبول. احجز عبر الإنترنت دون انتظار. قادم من الخارج؟ احصل على تقييم أولي مجاني وخطط لعلاجك قبل السفر.",ctaIntl:"المرضى الدوليون",factB3:"1",fact3:"دقيقة للحجز",stayTitle:"الأكثر طلباً من المرضى الدوليين",stayLabel:"مدة الإقامة المعتادة",stayNote:"المدد تقريبية؛ تُحدد الخطة النهائية بعد الفحص.",stays:[["zirkonyum", "5–7 أيام"], ["implant", "زيارتان"], ["estetik", "5–7 أيام"], ["beyazlatma", "يوم واحد"]],sendPhotos:"أرسل الصور / الأشعة"
@@ -797,6 +835,7 @@ de:{
   legal:'Die Informationen dienen nur der allgemeinen Information; für Diagnose und Behandlung wenden Sie sich an Ihren Zahnarzt.',
   panelTitle:'Klinik-Panel — Eingehende Termine',panelSub:'Demo: In diesem Browser erstellte Anfragen erscheinen hier.',
   pEmpty:'Noch keine Termine.',pApprove:'Bestätigen',pPending:'Offen',pOk:'Bestätigt',pWhen:'Zeit',pPatient:'Patient',pTreat:'Behandlung',pStatus:'Status',
+  docEyebrow:'Unsere Zahnärzte',docTitle:'Das Team, das Sie behandelt',docPhName:'Name des Zahnarztes',docPhRole:'Titel · Fachgebiet',docPhNote:'Hier erscheinen die Angaben und Fotos Ihrer Zahnärzte (mit schriftlicher Einwilligung).',docSample:'Diese Zahnärzte sind Beispiele, keine realen Personen.',faqEyebrow:'FAQ',faqTitle:'Häufig gestellte Fragen',
   kvkkText:'<p>Verantwortlicher: {fullName}.</p><p>Ihre Daten werden ausschließlich zur Terminplanung und Kontaktaufnahme auf Grundlage Ihrer ausdrücklichen Einwilligung verarbeitet.</p><p><i>(Beispieltext.)</i></p>',
   weekdays:['So','Mo','Di','Mi','Do','Fr','Sa'],months:['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'],
   heroTitle:"Ihr Zahnarzttermin <em>in 1 Minute</em>",heroLead:"{name} · Istanbul. Online buchen ohne Warteschleife. Sie kommen aus dem Ausland? Kostenlose Online-Voreinschätzung – Behandlung vor der Reise planen.",ctaIntl:"Internationale Patienten",factB3:"1 Min",fact3:"zur Buchung",stayTitle:"Am häufigsten von internationalen Patienten angefragt",stayLabel:"Typischer Aufenthalt",stayNote:"Typische Dauer; der genaue Plan wird nach der Untersuchung festgelegt.",stays:[["zirkonyum", "5–7 Tage"], ["implant", "2 Aufenthalte"], ["estetik", "5–7 Tage"], ["beyazlatma", "1 Tag"]],sendPhotos:"Fotos / Röntgen senden"
@@ -861,6 +900,14 @@ function renderStatic(){
   // treatments
   $('#treatGrid').innerHTML=CLINIC.featured.map(id=>`<div class="tcard"><div class="tic">${ico(TREAT[id].ic,26)}</div><h3>${TREAT[id][lang][0]}</h3><p>${TREAT[id][lang][1]}</p><a href="#randevu" class="lnk" data-treat="${id}">${t('more')} ${ico('arrow',16)}</a></div>`).join('');
   $$('[data-treat]').forEach(a=>a.onclick=()=>{state.treat=a.dataset.treat;state.step=1;renderBook();});
+  const docs=CLINIC.doctors||[];
+  const initials=n=>n.replace(/^(Uzm\.\s*)?(Dr\.\s*)?(Dt\.\s*)?/,'').split(/\s+/).map(w=>w[0]).slice(0,2).join('');
+  $('#docGrid').innerHTML=docs.length
+    ? docs.map(d=>`<div class="doc"><div class="tic">${initials(d.name)}</div><div><h4>${d.name}</h4><p>${d.role[lang]||d.role.tr}</p></div></div>`).join('')
+    : [1,2,3].map(()=>`<div class="doc ph"><div class="tic">${ico('smile',22)}</div><div><h4>${t('docPhName')}</h4><p>${t('docPhRole')}</p></div></div>`).join('');
+  $('#docNote').textContent=docs.length?(CLINIC.sample?t('docSample'):''):t('docPhNote');
+  const faq=CLINIC.faq||[]; $('#sss').hidden=!faq.length;
+  $('#faqList').innerHTML=faq.map(f=>`<details><summary>${f.q[lang]||f.q.tr}</summary><p>${f.a[lang]||f.a.tr}</p></details>`).join('');
   $('#whyGrid').innerHTML=t('why').map(([i,h,p])=>`<div class="why-item"><div class="tic">${ico(i)}</div><h4>${h}</h4><p>${p}</p></div>`).join('');
   $('#bookPerks').innerHTML=t('perks').map(p=>`<li><span class="ck">${ico('check',14,3)}</span>${p}</li>`).join('');
   $('#flow').innerHTML=t('flow').map(([h,p],i)=>`<div class="flow-item"><span class="n">${i+1}</span><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');

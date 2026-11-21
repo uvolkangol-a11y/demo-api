@@ -21,9 +21,104 @@
   },
   "color": "#1F5FBF",
   "accent": "#F2A65A",
-  "featured": ["implant", "zirkonyum", "ortodonti", "beyazlatma", "kanal", "pedodonti"],
+  "featured": [
+    "implant",
+    "zirkonyum",
+    "ortodonti",
+    "beyazlatma",
+    "kanal",
+    "pedodonti"
+  ],
   "area": "İstanbul",
   "focus": "genel",
   "theme": "modern",
-  "note": "Uydurma klinik. markanstudio.com ana sayfasındaki örnek tasarım için; gerçek bir klinikle ilgisi yok."
+  "note": "Uydurma klinik. markanstudio.com ana sayfasındaki örnek tasarım için; gerçek bir klinikle ilgisi yok.",
+  "sample": true,
+  "doctors": [
+    {
+      "name": "Uzm. Dt. Elif Örnek",
+      "role": {
+        "tr": "Ortodonti",
+        "en": "Orthodontist",
+        "ar": "أخصائية تقويم الأسنان",
+        "de": "Kieferorthopädin"
+      }
+    },
+    {
+      "name": "Dt. Mert Örnek",
+      "role": {
+        "tr": "İmplant ve ağız cerrahisi",
+        "en": "Implants and oral surgery",
+        "ar": "زراعة الأسنان وجراحة الفم",
+        "de": "Implantologie und Oralchirurgie"
+      }
+    },
+    {
+      "name": "Uzm. Dt. Zeynep Örnek",
+      "role": {
+        "tr": "Çocuk diş hekimliği",
+        "en": "Paediatric dentist",
+        "ar": "أخصائية طب أسنان الأطفال",
+        "de": "Kinderzahnärztin"
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": {
+        "tr": "Yurt dışından geliyorum. Tedavi planını önceden alabilir miyim?",
+        "en": "I'm coming from abroad. Can I get a treatment plan in advance?",
+        "ar": "أنا قادم من الخارج. هل يمكنني الحصول على خطة العلاج مسبقًا؟",
+        "de": "Ich komme aus dem Ausland. Kann ich vorab einen Behandlungsplan bekommen?"
+      },
+      "a": {
+        "tr": "Fotoğraf veya röntgeninizi WhatsApp'tan gönderin; hekimimiz ön değerlendirme yapar. Kesin plan muayeneden sonra hazırlanır.",
+        "en": "Send your photos or X-rays via WhatsApp and our dentist will do a preliminary assessment. The final plan is made after the examination.",
+        "ar": "أرسل صورك أو صور الأشعة عبر واتساب وسيقوم طبيبنا بتقييم أولي. تُعدّ الخطة النهائية بعد الفحص.",
+        "de": "Senden Sie Fotos oder Röntgenbilder per WhatsApp; unser Zahnarzt nimmt eine Ersteinschätzung vor. Der endgültige Plan wird nach der Untersuchung erstellt."
+      }
+    },
+    {
+      "q": {
+        "tr": "Tedavi için İstanbul'da kaç gün kalmam gerekir?",
+        "en": "How many days do I need to stay in Istanbul?",
+        "ar": "كم يومًا أحتاج للبقاء في إسطنبول؟",
+        "de": "Wie viele Tage muss ich in Istanbul bleiben?"
+      },
+      "a": {
+        "tr": "Tedaviye göre değişir. Ön değerlendirmeden sonra size tahmini süreyi bildiririz.",
+        "en": "It depends on the treatment. We will tell you the estimated duration after the preliminary assessment.",
+        "ar": "يختلف ذلك حسب العلاج. سنخبرك بالمدة التقديرية بعد التقييم الأولي.",
+        "de": "Das hängt von der Behandlung ab. Nach der Ersteinschätzung nennen wir Ihnen die voraussichtliche Dauer."
+      }
+    },
+    {
+      "q": {
+        "tr": "Randevumu nasıl değiştirebilirim?",
+        "en": "How can I change my appointment?",
+        "ar": "كيف يمكنني تغيير موعدي؟",
+        "de": "Wie kann ich meinen Termin ändern?"
+      },
+      "a": {
+        "tr": "WhatsApp'tan yazmanız ya da bizi aramanız yeterli.",
+        "en": "Just message us on WhatsApp or give us a call.",
+        "ar": "يكفي أن تراسلنا عبر واتساب أو تتصل بنا.",
+        "de": "Schreiben Sie uns einfach per WhatsApp oder rufen Sie uns an."
+      }
+    },
+    {
+      "q": {
+        "tr": "Hangi dillerde iletişim kurabilirim?",
+        "en": "Which languages can I use to contact you?",
+        "ar": "بأي لغات يمكنني التواصل معكم؟",
+        "de": "In welchen Sprachen kann ich Sie kontaktieren?"
+      },
+      "a": {
+        "tr": "Türkçe ve İngilizce yazabilirsiniz. Başka bir dil için lütfen önceden bilgi verin.",
+        "en": "You can write in Turkish or English. For other languages, please let us know in advance.",
+        "ar": "يمكنك الكتابة بالتركية أو الإنجليزية. للغات الأخرى، يرجى إبلاغنا مسبقًا.",
+        "de": "Sie können auf Türkisch oder Englisch schreiben. Für andere Sprachen geben Sie uns bitte vorher Bescheid."
+      }
+    }
+  ]
 }
