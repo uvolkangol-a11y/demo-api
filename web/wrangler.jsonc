@@ -1,0 +1,13 @@
+// Bospora Health static site on Cloudflare Workers (static assets only).
+// Deploy: ./build.sh && npx wrangler deploy
+{
+  "name": "bospora-health",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist"
+  },
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "bospora.markanstudio.com", "custom_domain": true }
+  ]
+}

@@ -6,7 +6,9 @@ Bu dosya, bulut oturumunda yapılan işin ve alınan kararların özetidir. Yeni
 ## Şu an ne var
 - `web/index.html` — sitenin kaynağı (claude.ai Artifact formatı: `<html>/<head>` iskeleti yok).
 - `web/build.sh` — kaynağı bağımsız siteye çevirir → `web/dist/index.html` (doctype, favicon, WhatsApp önizleme etiketleri).
-- Canlı site: https://rota-health.netlify.app (Netlify Drop ile yüklendi, "Public").
+- Canlı site: https://bospora.markanstudio.com (21.11.2026'dan beri). Cloudflare'de `bospora-health` adlı Worker (yalnızca statik dosya, `web/wrangler.jsonc`). workers.dev ve önizleme adresleri kapalı.
+  - markanstudio.com ve www, diş işinin `kliniz-onizleme` Pages projesine ait (Marka-Diş oturumu, dal `claude/happy-hamilton-x13c1e`). O projeye, apex/www alan adlarına ve MX/TXT kayıtlarına dokunma; yalnızca `bospora` alt alanı bizim.
+- Eski site: https://rota-health.netlify.app (Netlify Drop, eski Rota adıyla duruyor; kapatılabilir).
 - Önizleme (claude.ai): https://claude.ai/artifact/MNWvW68Tg33dwPSACw5S8i
 - Diller: EN (varsayılan), AR (sağdan sola), DE, RU, FR, TR. URL'deki `#ar`, `#de`… dili seçer.
 - Klinikler **örnek veri** (kartlarda "Örnek/Sample" etiketi var). Gerçek klinik + Google puanı henüz yok.
@@ -14,8 +16,7 @@ Bu dosya, bulut oturumunda yapılan işin ve alınan kararların özetidir. Yeni
 
 ## Güncelleme akışı
 1. `web/index.html` düzenle.
-2. `./web/build.sh` çalıştır.
-3. `web/dist/index.html` dosyasını Netlify'da site sayfasındaki **Drop** alanına sürükle (tek HTML dosyası kabul ediliyor).
+2. `cd web && ./build.sh && npx wrangler deploy` (ilk seferde `npx wrangler login`). Yalnızca `web/dist/` yayınlanır.
 
 ## İş modeli kararları
 - Komisyon %10, **hasta kaporası olarak peşin** alınır (randevu klinik tarafından onaylanınca). Kalan %90 klinikte ödenir.

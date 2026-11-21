@@ -10,3 +10,6 @@ target/
 *.log
 .env
 rota-health-site.zip
+
+# Wrangler local state
+.wrangler/
