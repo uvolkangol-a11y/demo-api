@@ -9,3 +9,6 @@ target/
 .DS_Store
 *.log
 .env
+
+# Cloudflare wrangler local state
+.wrangler/
