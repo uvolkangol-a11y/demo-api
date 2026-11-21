@@ -1,6 +1,8 @@
-# Rota Health — web preview
+# Bospora Health — web preview
 
-Live: https://rota-health.netlify.app (Netlify Drop — upload `rota-health-site.zip` from `./build.sh` + zip to update)
+Patient-facing brand of Markan Studio (formerly "Rota Health"; renamed because "Rota" is registered by others in classes 44 and 39, see NOTES.md).
+
+Live: https://rota-health.netlify.app (Netlify Drop — run `./build.sh`, then drag `dist/index.html` onto the site's Drop area to update; the Netlify site can be renamed to bospora-health in Site settings)
 
 Mobile-first, single-file launch preview (`index.html`) of a medical travel platform:
 Google-rated dental and hair transplant clinics in Türkiye, booking on a 10% deposit model.

@@ -1,4 +1,4 @@
-# Rota Health — proje notları (devir dosyası)
+# Bospora Health (eski adı Rota Health) — proje notları (devir dosyası)
 
 Bu dosya, bulut oturumunda yapılan işin ve alınan kararların özetidir. Yeni bir Claude oturumuna
 "web/NOTES.md ve web/README.md dosyalarını oku, buradan devam ediyoruz" diyerek başlayın.
@@ -38,9 +38,27 @@ Bu dosya, bulut oturumunda yapılan işin ve alınan kararların özetidir. Yeni
   yabancı dilde site, en az 2 yabancı dilde 7/24 çağrı hizmeti, komplikasyon sigortası vb.
 - Klinik web siteleri için sağlık hizmetlerinde tanıtım/reklam kuralları ve hasta verileri için KVKK ayrıca kontrol edilmeli.
 
+## Marka yapısı (21.11.2026)
+- **Markan Studio** şirketin adı ve kliniklere satılan B2B iş (web sitesi, online randevu, WhatsApp; `dental-prototypes/`). Hedef sınıf 42.
+  TÜRKPATENT'te "markan s" ile başlayan kayıt yok. `markanstudio.com` ve `markanstudio.com.tr` boşta (henüz alınmadı).
+  Birebir "markan" başka bir şirkette kayıtlı (06/07/12/16/20/24/35/37/40). Sınıf 35'e güvenilmemeli.
+- **Bospora Health** hastaya görünen yeni marka (21.11.2026 kararı), "by Markan Studio" alt satırıyla. Rota adının yerine geçer.
+  - Bosporus/Boğaz'dan türetilmiş uydurma ad; İstanbul + tedavi + gezi konumlandırması. Slogan önerisi: "Heal. Discover Istanbul."
+  - TÜRKPATENT: "bospora" ile başlayan kayıt yok; "bosporus" kayıtlarının hiçbiri sınıf 44'te değil ("bosporus sound" 16/39, "bosphorus travel services" 2026 başvurusu 39).
+  - Web'de sağlık/seyahatte "Bospora" kullanan yok. `bospora.com` ilgisiz bir sitede ("Be The Change").
+  - Boştaki domainler: `bosporahealth.com`, `bosporacare.com`, `bosporaclinics.com`, `bosporatravel.com`, `bosporahealth.com.tr`, `bospora.com.tr`. Henüz alınmadı.
+  - Gezi paketi satmak TÜRSAB belgesi gerektirir; gezi kısmı lisanslı bir acenteyle ortak yapılmalı.
+  - Elenen hasta markası adayları: Kervan (KERVAN TEKSTİL neredeyse tüm sınıflarda tescilli), Turkuaz/Turquoise (ABD'de Turquoise Health, ayrıca "Turkuaz Health" aracı firma), Afiya (Hindistan'da Al Afiya Medi Tour), Byzantia ("byzantin travel" sınıf 39). Yedek: Yalia Health, Salamet Health.
+- **Rota Health** (eski ad) neden bırakıldı:
+  - `rotahealth.com` 2016'dan beri aktif bir sağlık teknolojisi şirketinin sitesi ("Rota Health | Know where every provider stands").
+  - TÜRKPATENT'te birebir "rota" tescilleri: 2014/41976 **sınıf 44** (sağlık), 2025/116149 **sınıf 39** (seyahat), 2016/01931 sınıf 10 (Rota Ortopedi).
+  - `rotahealth.netlify.app` başka bir firmanın (içecek markası) sitesi.
+  - Boştaki domainler: `rota-health.com`, `rotahealthcare.com`, `rotaclinic.com`, `rotaclinics.com`, `rotahealth.com.tr`, `rotahealth.co`.
+  - Sonuç: ad Bospora Health olarak değişti. Marka vekiline danışmadan tescil başvurusu yapılmamalı.
+
 ## Açık işler
 1. Koordinatör WhatsApp numarasını `WHATSAPP_NUMBER`'a yaz.
 2. Google Places API (New) anahtarı → gerçek klinikler, puan, yorum sayısı (Google atfı zorunlu; uzun süreli yalnızca `place_id` saklanabilir).
-3. Marka adı: `rotahealth.netlify.app` dolu çıktı → başka biri kullanıyor olabilir. Domain almadan önce marka/tescil kontrolü.
+3. Bospora Health: domainleri al (`bosporahealth.com`, `bosporahealth.com.tr`, `bosporatravel.com`), marka vekiline 44 + 39 için benzerlik görüşü sor. Site metni Bospora'ya çevrildi (21.11.2026); Netlify site adı ve claude.ai önizlemesi hâlâ eski adla.
 4. Randevu ve klinik verisi için backend (bu repodaki Spring Boot API'ye `/api/clinics`, `/api/bookings` eklenebilir).
 5. Yeni hat: kliniklere web sitesi + online randevu + WhatsApp (bu sayfanın yapısı şablon olarak kullanılabilir).
