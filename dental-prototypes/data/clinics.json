@@ -30,13 +30,14 @@
       "ortodonti"
     ],
     "source": "densaclinic.com (arama sonucu özeti)",
-    "currentSite": "Var (densaclinic.com) — online randevu takvimi görünmüyor",
+    "currentSite": "Kapalı — densaclinic.com açılmıyor (alan adı 2031'e kadar kayıtlı ama DNS 'EXPIRED…parkenable.net' sunucularına yönlenmiş, büyük ihtimalle hosting süresi dolmuş)",
     "key": "k7m2",
     "instagram": null,
     "area": "Bağcılar Mahmutbey",
     "gmaps": "5,0 / 91 yorum",
     "website": "densaclinic.com",
-    "verified": "Google Haritalar, 21.11.2026"
+    "verified": "Google Haritalar, 21.11.2026",
+    "siteChecked": "Site kontrolü 21.11.2026"
   },
   {
     "slug": "astradent",
@@ -70,13 +71,14 @@
       "ortodonti"
     ],
     "source": "astradentclinic.com + yorum.com (arama sonucu özeti)",
-    "currentSite": "Var (astradentclinic.com) — SEO blog ağırlıklı, randevu takvimi yok",
+    "currentSite": "Var (astradentclinic.com) — tarih/saat seçilen randevu talep formu var ama müsait saatler görünmüyor; WhatsApp butonu ve İngilizce sayfa yok",
     "key": "p4x9",
-    "instagram": null,
+    "instagram": "astradentglobal",
     "area": "Bağcılar Mahmutbey",
     "gmaps": "5,0 / 182 yorum",
     "website": "astradentclinic.com",
-    "verified": "Google Haritalar, 21.11.2026"
+    "verified": "Google Haritalar, 21.11.2026",
+    "siteChecked": "Site kontrolü 21.11.2026"
   },
   {
     "slug": "dentexpert-mahmutbey",
@@ -110,13 +112,14 @@
       "beyazlatma"
     ],
     "source": "dentexpertdisklinigi.com + Yandex Haritalar (arama sonucu özeti)",
-    "currentSite": "Var (dentexpert.tr)",
+    "currentSite": "Var (dentexpert.tr) — güçlü: /randevu sayfası, 7 dil (TR/EN/FR/AR/DE/RU/BG), WhatsApp butonu",
     "key": "r8v3",
-    "instagram": null,
+    "instagram": "dentexpert.tr",
     "area": "Bağcılar Mahmutbey",
     "gmaps": "4,9 / 318 yorum",
     "website": "dentexpert.tr",
-    "verified": "Google Haritalar, 21.11.2026"
+    "verified": "Google Haritalar, 21.11.2026",
+    "siteChecked": "Site kontrolü 21.11.2026"
   },
   {
     "slug": "kirazli",
@@ -125,7 +128,7 @@
     "address": "Kirazlı Mah. Mahmutbey Cad. No:134, Bağcılar / İstanbul",
     "mapQuery": "Özel Kirazlı Ağız ve Diş Sağlığı Polikliniği Mahmutbey Cad 134",
     "phone": "0212 515 22 99",
-    "whatsapp": null,
+    "whatsapp": "905425152299",
     "email": null,
     "hours": {
       "weekdays": "10:00 – 21:00",
@@ -149,13 +152,15 @@
       "beyazlatma"
     ],
     "source": "kirazlidis.com + Zavis rehberi (arama sonucu özeti)",
-    "currentSite": "Var (kirazlidis.com)",
+    "currentSite": "Var (kirazlidis.com) — WhatsApp butonu ve iletişim formu var; online randevu ve yabancı dil yok",
     "key": "t2n6",
-    "instagram": null,
+    "instagram": "kirazlidis",
     "area": "Bağcılar Mahmutbey",
     "gmaps": "5,0 / 80 yorum",
     "website": "kirazlidis.com",
-    "verified": "Google Haritalar, 21.11.2026"
+    "verified": "Google Haritalar, 21.11.2026",
+    "phone2": "0542 515 22 99",
+    "siteChecked": "Site kontrolü 21.11.2026"
   },
   {
     "slug": "mkm-klinik",
@@ -189,14 +194,15 @@
       "dis-tasi"
     ],
     "source": "mkmklinik.com + Zavis rehberi (Google 4.8 / 76 yorum)",
-    "currentSite": "Var (mkmklinik.com) — her gün açık (Pazar 10:00–19:00), birden fazla şube var",
+    "currentSite": "Yayında değil — mkmklinik.com'da Natro'nun varsayılan hosting sayfası çıkıyor (HTTPS de çalışmıyor)",
     "key": "h5q1",
     "instagram": null,
     "area": "Bağcılar Mahmutbey",
     "phone2": "0552 861 42 11",
     "gmaps": "4,7 / 94 yorum",
     "website": "mkmklinik.com",
-    "verified": "Google Haritalar, 21.11.2026"
+    "verified": "Google Haritalar, 21.11.2026",
+    "siteChecked": "Site kontrolü 21.11.2026"
   },
   {
     "slug": "afildent",
@@ -220,7 +226,7 @@
       "beyazlatma"
     ],
     "source": "Zavis rehberi (Google 4.8 / 149 yorum)",
-    "currentSite": "Var (afildent.com)",
+    "currentSite": "Var (afildent.com) — 'Randevu için arayın' telefona gidiyor, WhatsApp ve iletişim formu var; yurt dışı hastaya yönelik içerik var ama site sadece Türkçe",
     "hours": {
       "weekdays": "09:00 – 23:00 (Perşembe 21:00)",
       "saturday": "09:00 – 23:00",
@@ -236,7 +242,8 @@
     "instagram": null,
     "gmaps": "4,8 / 168 yorum",
     "website": "afildent.com",
-    "verified": "Google Haritalar, 21.11.2026"
+    "verified": "Google Haritalar, 21.11.2026",
+    "siteChecked": "Site kontrolü 21.11.2026"
   },
   {
     "slug": "batisehir-bogazici",
@@ -247,7 +254,7 @@
     "address": "Göztepe Mah. Batışehir Cad. G3 Blok No:6/G, Bağcılar / İstanbul",
     "mapQuery": "Dental Bosphorus Batışehir Bağcılar",
     "phone": "0212 706 96 09",
-    "whatsapp": "905078054827",
+    "whatsapp": "905533149253",
     "email": null,
     "color": "#0B5D8F",
     "accent": "#F4D35E",
@@ -260,7 +267,7 @@
       "dis-tasi"
     ],
     "source": "Zavis rehberi (Google 4.7 / 45 yorum, İngilizce konuşan ekip)",
-    "currentSite": "Var (bogaziciadsp.com) — İngilizce marka adı, sağlık turizmi için iyi aday",
+    "currentSite": "Var (bogaziciadsp.com) — güçlü: 6 dil (TR/EN/DE/ES/AR/RU), sağlık turizmi bölümü, fotoğraf yükleme, WhatsApp; online randevu takvimi yok",
     "hours": {
       "weekdays": "09:00 – 22:00",
       "saturday": "09:00 – 22:00",
@@ -272,11 +279,12 @@
       "satEnd": 22,
       "sunday": false
     },
-    "instagram": null,
+    "instagram": "bogazici.dis",
     "phone2": "0507 805 48 27",
     "gmaps": "4,5 / 140 yorum (Dental Bosphorus) + 5,0 / 5 yorum (Özel Boğaziçi ADSP) — aynı adreste iki kayıt",
     "website": "bogaziciadsp.com",
-    "verified": "Google Haritalar, 21.11.2026"
+    "verified": "Google Haritalar, 21.11.2026",
+    "siteChecked": "Site kontrolü 21.11.2026"
   },
   {
     "slug": "yuzyil-dis",
@@ -287,8 +295,8 @@
     "address": "100. Yıl Mah. Barbaros Cad. No:19 D:C, Bağcılar / İstanbul",
     "mapQuery": "Yüzyıl Ağız ve Diş Sağlığı Polikliniği Barbaros Cad 19 Bağcılar",
     "phone": "0212 432 32 88",
-    "whatsapp": null,
-    "email": null,
+    "whatsapp": "905074608620",
+    "email": "yuzyildis@hotmail.com",
     "color": "#9C2C77",
     "accent": "#FFB4A2",
     "featured": [
@@ -300,7 +308,7 @@
       "dis-tasi"
     ],
     "source": "yuzyildis.com.tr (arama sonucu özeti)",
-    "currentSite": "Var (yuzyildis.com.tr)",
+    "currentSite": "Var (yuzyildis.com.tr) — WhatsApp butonu ve İngilizce sürüm var; 'Randevu Alın' sayfası sadece iletişim bilgisi",
     "hours": {
       "weekdays": "10:00 – 17:30",
       "saturday": "10:00 – 17:30",
@@ -312,10 +320,12 @@
       "satEnd": 17.5,
       "sunday": false
     },
-    "instagram": null,
+    "instagram": "yuzyildis",
     "gmaps": "4,7 / 66 yorum",
     "website": "yuzyildis.com.tr",
-    "verified": "Google Haritalar, 21.11.2026"
+    "verified": "Google Haritalar, 21.11.2026",
+    "phone2": "0507 460 86 20",
+    "siteChecked": "Site kontrolü 21.11.2026"
   },
   {
     "slug": "medicine-dis",
@@ -379,7 +389,7 @@
       "beyazlatma"
     ],
     "source": "Zavis rehberi (arama sonucu özeti)",
-    "currentSite": "Var (ozelbul.com — çok şubeli Özelbul markası)",
+    "currentSite": "Zincir sitesi (ozelbul.com) — 'Randevu Al' merkezi WhatsApp'a (0546 617 30 77) gidiyor, Bağcılar şubesine özel sayfa yok",
     "hours": {
       "weekdays": "08:00 – 20:30",
       "saturday": "08:00 – 20:30",
@@ -394,6 +404,7 @@
     "instagram": null,
     "gmaps": "4,9 / 144 yorum",
     "website": "ozelbul.com",
-    "verified": "Google Haritalar, 21.11.2026"
+    "verified": "Google Haritalar, 21.11.2026",
+    "siteChecked": "Site kontrolü 21.11.2026"
   }
 ]

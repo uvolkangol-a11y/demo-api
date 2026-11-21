@@ -1,6 +1,6 @@
 # Proje Devir Notu – Klinik Demo Siteleri (Bağcılar Pilotu)
 
-Bu dosya, projeye yeni bir Claude oturumunda (ör. Mac'te Claude Desktop) devam etmek için yazıldı.
+Bu dal Mac'te ayrı bir worktree'de: `~/Documents/demo-api-dental` (Rota Health dalı `~/Documents/demo-api` içinde). Bu dosya, projeye yeni bir Claude oturumunda (ör. Mac'te Claude Desktop) devam etmek için yazıldı.
 Yeni oturuma: "dental-prototypes/NOTES.md dosyasını oku, kaldığımız yerden devam edelim" demen yeterli.
 
 ## İş fikri
@@ -43,30 +43,31 @@ dental-prototypes/
 ## Klinikler (10) – durum
 | Klinik | Path | Tasarım ⭐ | Kanal | Not |
 |---|---|---|---|---|
-| Densa | densa-k7m2 | Modern | Yüz yüze **25 Kasım** | Kullanıcının tanıdığı. İlk müşteri/referans hedefi |
-| Astradent | astradent-p4x9 | Premium | WhatsApp | SEO var, randevu yok |
-| Dentexpert Mahmutbey | dentexpert-mahmutbey-r8v3 | Modern | WhatsApp | Metro yanında |
-| Kirazlı Diş | kirazli-t2n6 | Klasik | Telefon | Sadece sabit hat, 4.9 / 75 yorum |
-| MKM Klinik | mkm-klinik-h5q1 | Modern | WhatsApp | Her gün 10–21 açık, mkmklinik.com |
-| Afildent | afildent-m3q8 | Premium | WhatsApp | 4.8 / 149 yorum |
-| Batışehir Boğaziçi | batisehir-bogazici-w6c2 | Premium | WhatsApp | İngilizce ekip, sağlık turizmi için en iyi aday |
-| Yüzyıl Diş | yuzyil-dis-z9f4 | Klasik | Telefon | Sabit hat |
-| MEDICINE | medicine-dis-b7k5 | Klasik | WhatsApp | Çene cerrahisi, Doktortakvimi profili var |
-| Dentbul | dentbul-n4x1 | Premium | WhatsApp | İmplant odaklı |
+| Densa | densa-k7m2 | Modern | Yüz yüze **25 Kasım** | Tanıdık, ilk müşteri hedefi. **Sitesi kapalı** (densaclinic.com açılmıyor) |
+| MKM Klinik | mkm-klinik-h5q1 | Modern | WhatsApp | 🔥 **Sitesi yayında değil** (Natro varsayılan sayfası). 7 gün açık |
+| Afildent | afildent-m3q8 | Premium | WhatsApp | 4,8 / 168. Site var ama randevu telefonla, sadece Türkçe |
+| Astradent | astradent-p4x9 | Premium | WhatsApp | SEO güçlü. Randevu formu var ama takvim yok, WhatsApp/İngilizce yok |
+| Kirazlı Diş | kirazli-t2n6 | Klasik | WhatsApp | 5,0 / 80. WhatsApp 0542 515 22 99. Online randevu ve dil yok |
+| Yüzyıl Diş | yuzyil-dis-z9f4 | Klasik | WhatsApp | WhatsApp 0507 460 86 20, İngilizce sürüm var. 17:30 kapanış, online randevu yok |
+| MEDICINE | medicine-dis-b7k5 | Klasik | WhatsApp / Instagram | Sitesi yok, sadece Instagram @tanrikuludentists |
+| Dentbul | dentbul-n4x1 | Premium | WhatsApp | Özelbul zinciri şubesi; karar merkezde olabilir |
+| Dentexpert Mahmutbey | dentexpert-mahmutbey-r8v3 | Modern | WhatsApp | ⬇ Düşük: randevu sayfası + 7 dil zaten var |
+| Batışehir Boğaziçi | batisehir-bogazici-w6c2 | Premium | WhatsApp | ⬇ Düşük: 6 dil + sağlık turizmi zaten var, sadece takvim eksik |
 
-**21.11.2026:** 10 kliniğin adresi, telefonu, saatleri, web sitesi ve puanı Google Haritalar'dan doğrulandı ve `clinics.json`'a işlendi (her kayıtta `verified` ve `gmaps` alanı var). Önemli farklar:
-- Saatlerin çoğu tahminden uzun çıktı (ör. Densa ve Astradent hafta içi 21:00'e kadar, Afildent 23:00'e kadar, Yüzyıl 17:30'da kapanıyor).
-- Afildent'in sitesi var (afildent.com). Eski "siteniz yok" kancası yanlıştı, düzeltildi.
-- Batışehir Boğaziçi, Google'da "Dental Bosphorus" adıyla kayıtlı (4,5 / 140 yorum). Sitesi bogaziciadsp.com, Google'daki telefonu 0212 706 96 09. 0507 805 48 27 numarası Google'da yok.
-- Dentexpert'in Google adresi 1648. Sk. No:3-7B, sitesi dentexpert.tr.
-- MEDICINE'in web sitesi yok. Google kaydında site yerine Instagram (@tanrikuludentists) var.
-- Dentbul'un sitesi çok şubeli Özelbul markasının genel sitesi (ozelbul.com).
-- Kirazlı ve Yüzyıl'ın Google kaydında da sadece sabit hat var.
+Tablo öncelik sırasına göre dizildi.
 
-Hâlâ doğrulanmayanlar: cep numaralarının WhatsApp'ta aktif olup olmadığı, mevcut sitelerde online randevu ve yabancı hasta bölümü olup olmadığı, Instagram hesapları (MEDICINE hariç).
+**21.11.2026 – Google Haritalar:** 10 kliniğin adresi, telefonu, saatleri, web sitesi ve puanı doğrulandı (`clinics.json` içinde `verified` ve `gmaps`). Saatlerin çoğu tahminden uzun çıktı (Densa/Astradent hafta içi 21:00, Afildent 23:00; Yüzyıl 17:30'da kapanıyor). Boğaziçi Google'da "Dental Bosphorus" adıyla kayıtlı. Dentexpert'in adresi 1648. Sk. No:3-7B, sitesi dentexpert.tr.
+
+**21.11.2026 – Mevcut siteler:** 9 sitenin hepsi tarandı (`clinics.json` içinde `currentSite` ve `siteChecked`). Kancalar, açılış mesajları ve öncelikler buna göre güncellendi.
+- Densa ve MKM'nin siteleri çalışmıyor; ikisi için de en güçlü kanca bu. Göndermeden önce siteyi tekrar aç.
+- Kirazlı ve Yüzyıl'da WhatsApp var; "sabit hat" kancası kaldırıldı, kanal WhatsApp oldu.
+- Dentexpert ve Boğaziçi zaten çok dilli ve randevu odaklı; listenin sonuna alındı.
+- Hiçbir kliniğin sitesinde müsait saatleri gösteren gerçek bir randevu takvimi görülmedi (Dentexpert'in /randevu sayfası kontrol edilmedi).
+
+Hâlâ doğrulanmayanlar: WhatsApp numaralarının aktif olup olmadığı (sitede buton olması aktif olduğunu kanıtlamaz), Instagram hesaplarının aktifliği, Afildent/Densa/MKM Instagram'ı.
 
 ## Sıradaki işler
-1. **Tarayıcıyla doğrulama:** Her kliniğin Google Haritalar kaydı (telefon, saat, web sitesi, WhatsApp), mevcut sitelerinde online randevu ve yabancı hasta bölümü var mı (kancalar `outreach.json` içinde `checks` alanında), Instagram hesapları. Bulunanları `clinics.json` / `outreach.json`'a işle ve yeniden yükle.
+1. **Yayın:** Doğrulanan verilerle `node build.mjs && npx wrangler pages deploy dist --project-name=kliniz-onizleme`. Kalan `checks` maddeleri (WhatsApp aktif mi vb.) mesaj atmadan hemen önce panelden kontrol edilecek.
 2. **Densa (25 Kasım):** Doktor isimleri ve saatleri gelince "Hekimlerimiz" bölümü, yabancı hasta SSS (4 dil), logo/renk uyarlaması.
 3. **Marka:** Çok sektörlü, jenerik bir ajans adı seçilecek (öneriler: Randevulu, Vitrinim, Webkanca, Sitekur). Alan adı alınıp Cloudflare'e bağlanacak, Email Routing ile info@ adresi açılacak. Önizleme şeridi ve mesaj imzalarına marka adı eklenecek. Basit bir ajans tanıtım sitesi yapılacak.
 4. **Çok sektör:** Üreticiyi sektörden bağımsız hale getir (tedaviler → hizmetler, sektöre göre ikon, metin ve kanca).
