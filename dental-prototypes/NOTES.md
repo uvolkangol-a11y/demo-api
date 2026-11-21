@@ -54,7 +54,16 @@ dental-prototypes/
 | MEDICINE | medicine-dis-b7k5 | Klasik | WhatsApp | Çene cerrahisi, Doktortakvimi profili var |
 | Dentbul | dentbul-n4x1 | Premium | WhatsApp | İmplant odaklı |
 
-Bilgiler arama sonuçlarından derlendi. Klinik siteleri ve Google Haritalar bulut ortamından açılamadığı için **doğrulanmadı**. Çalışma saatlerinin çoğu tahmini. Instagram hesapları bulunamadı.
+**21.11.2026:** 10 kliniğin adresi, telefonu, saatleri, web sitesi ve puanı Google Haritalar'dan doğrulandı ve `clinics.json`'a işlendi (her kayıtta `verified` ve `gmaps` alanı var). Önemli farklar:
+- Saatlerin çoğu tahminden uzun çıktı (ör. Densa ve Astradent hafta içi 21:00'e kadar, Afildent 23:00'e kadar, Yüzyıl 17:30'da kapanıyor).
+- Afildent'in sitesi var (afildent.com). Eski "siteniz yok" kancası yanlıştı, düzeltildi.
+- Batışehir Boğaziçi, Google'da "Dental Bosphorus" adıyla kayıtlı (4,5 / 140 yorum). Sitesi bogaziciadsp.com, Google'daki telefonu 0212 706 96 09. 0507 805 48 27 numarası Google'da yok.
+- Dentexpert'in Google adresi 1648. Sk. No:3-7B, sitesi dentexpert.tr.
+- MEDICINE'in web sitesi yok. Google kaydında site yerine Instagram (@tanrikuludentists) var.
+- Dentbul'un sitesi çok şubeli Özelbul markasının genel sitesi (ozelbul.com).
+- Kirazlı ve Yüzyıl'ın Google kaydında da sadece sabit hat var.
+
+Hâlâ doğrulanmayanlar: cep numaralarının WhatsApp'ta aktif olup olmadığı, mevcut sitelerde online randevu ve yabancı hasta bölümü olup olmadığı, Instagram hesapları (MEDICINE hariç).
 
 ## Sıradaki işler
 1. **Tarayıcıyla doğrulama:** Her kliniğin Google Haritalar kaydı (telefon, saat, web sitesi, WhatsApp), mevcut sitelerinde online randevu ve yabancı hasta bölümü var mı (kancalar `outreach.json` içinde `checks` alanında), Instagram hesapları. Bulunanları `clinics.json` / `outreach.json`'a işle ve yeniden yükle.

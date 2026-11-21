@@ -9,14 +9,14 @@
     "whatsapp": "905514543424",
     "email": "info@densaclinic.com",
     "hours": {
-      "weekdays": "09:00 – 19:00",
-      "saturday": "09:00 – 18:00",
+      "weekdays": "09:00 – 21:00",
+      "saturday": "09:00 – 21:00",
       "sunday": null
     },
     "open": {
       "start": 9,
-      "end": 19,
-      "satEnd": 18,
+      "end": 21,
+      "satEnd": 21,
       "sunday": false
     },
     "color": "#0E7C86",
@@ -33,27 +33,30 @@
     "currentSite": "Var (densaclinic.com) — online randevu takvimi görünmüyor",
     "key": "k7m2",
     "instagram": null,
-    "area": "Bağcılar Mahmutbey"
+    "area": "Bağcılar Mahmutbey",
+    "gmaps": "5,0 / 91 yorum",
+    "website": "densaclinic.com",
+    "verified": "Google Haritalar, 21.11.2026"
   },
   {
     "slug": "astradent",
     "name": "Astradent",
     "fullName": "Astradent Ağız ve Diş Sağlığı Polikliniği",
-    "address": "Demirkapı Mah., Bağcılar / İstanbul",
+    "address": "Demirkapı Mah. Maslak Cad. No:6/8 B, Bağcılar / İstanbul",
     "mapQuery": "Astradent Ağız ve Diş Sağlığı Polikliniği Bağcılar",
-    "phone": "0212 343 90 43",
-    "phone2": "0506 043 90 43",
+    "phone": "0506 043 90 43",
+    "phone2": "0212 343 90 43",
     "whatsapp": "905060439043",
     "email": "info@astradentclinic.com",
     "hours": {
-      "weekdays": "09:00 – 19:00",
-      "saturday": "09:00 – 18:00",
+      "weekdays": "09:00 – 21:00",
+      "saturday": "09:00 – 19:00",
       "sunday": null
     },
     "open": {
       "start": 9,
-      "end": 19,
-      "satEnd": 18,
+      "end": 21,
+      "satEnd": 19,
       "sunday": false
     },
     "color": "#3B3F98",
@@ -70,26 +73,29 @@
     "currentSite": "Var (astradentclinic.com) — SEO blog ağırlıklı, randevu takvimi yok",
     "key": "p4x9",
     "instagram": null,
-    "area": "Bağcılar Mahmutbey"
+    "area": "Bağcılar Mahmutbey",
+    "gmaps": "5,0 / 182 yorum",
+    "website": "astradentclinic.com",
+    "verified": "Google Haritalar, 21.11.2026"
   },
   {
     "slug": "dentexpert-mahmutbey",
     "name": "Dentexpert",
     "fullName": "Özel Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği",
-    "address": "Demirkapı Mah. Günışığı Konutları, İnönü Cad. No:62B, Bağcılar / İstanbul",
+    "address": "Demirkapı Mah. 1648. Sk. No:3-7B (Günışığı Konutları), Bağcılar / İstanbul",
     "mapQuery": "Dentexpert Mahmutbey Ağız ve Diş Sağlığı Polikliniği",
-    "phone": "0212 447 04 46",
-    "phone2": "0534 635 75 75",
+    "phone": "0534 635 75 75",
+    "phone2": "0212 447 04 46",
     "whatsapp": "905346357575",
     "email": null,
     "hours": {
-      "weekdays": "10:00 – 19:00",
-      "saturday": "10:00 – 18:00",
+      "weekdays": "09:30 – 20:00",
+      "saturday": "09:30 – 18:00",
       "sunday": null
     },
     "open": {
-      "start": 10,
-      "end": 19,
+      "start": 9.5,
+      "end": 20,
       "satEnd": 18,
       "sunday": false
     },
@@ -104,10 +110,13 @@
       "beyazlatma"
     ],
     "source": "dentexpertdisklinigi.com + Yandex Haritalar (arama sonucu özeti)",
-    "currentSite": "Var (dentexpertdisklinigi.com)",
+    "currentSite": "Var (dentexpert.tr)",
     "key": "r8v3",
     "instagram": null,
-    "area": "Bağcılar Mahmutbey"
+    "area": "Bağcılar Mahmutbey",
+    "gmaps": "4,9 / 318 yorum",
+    "website": "dentexpert.tr",
+    "verified": "Google Haritalar, 21.11.2026"
   },
   {
     "slug": "kirazli",
@@ -119,14 +128,14 @@
     "whatsapp": null,
     "email": null,
     "hours": {
-      "weekdays": "09:00 – 19:00",
-      "saturday": "09:00 – 18:00",
+      "weekdays": "10:00 – 21:00",
+      "saturday": "10:00 – 21:00",
       "sunday": null
     },
     "open": {
-      "start": 9,
-      "end": 19,
-      "satEnd": 18,
+      "start": 10,
+      "end": 21,
+      "satEnd": 21,
       "sunday": false
     },
     "color": "#B23A48",
@@ -143,13 +152,16 @@
     "currentSite": "Var (kirazlidis.com)",
     "key": "t2n6",
     "instagram": null,
-    "area": "Bağcılar Mahmutbey"
+    "area": "Bağcılar Mahmutbey",
+    "gmaps": "5,0 / 80 yorum",
+    "website": "kirazlidis.com",
+    "verified": "Google Haritalar, 21.11.2026"
   },
   {
     "slug": "mkm-klinik",
     "name": "MKM Klinik",
     "fullName": "MKM Klinik Mahmutbey",
-    "address": "Barbaros Mah. Mahmutbey Cad. No:6A, Bağcılar / İstanbul",
+    "address": "Hürriyet Mah. Mahmutbey Cad. No:6A, Bağcılar / İstanbul",
     "mapQuery": "MKM Klinik Mahmutbey Cad 6A Bağcılar",
     "phone": "0212 651 00 61",
     "whatsapp": "905528614211",
@@ -157,14 +169,14 @@
     "hours": {
       "weekdays": "10:00 – 21:00",
       "saturday": "10:00 – 21:00",
-      "sunday": "10:00 – 21:00"
+      "sunday": "10:00 – 19:00"
     },
     "open": {
       "start": 10,
       "end": 21,
       "satEnd": 21,
       "sunday": true,
-      "sunEnd": 21
+      "sunEnd": 19
     },
     "color": "#2D6A4F",
     "accent": "#D4A373",
@@ -177,11 +189,14 @@
       "dis-tasi"
     ],
     "source": "mkmklinik.com + Zavis rehberi (Google 4.8 / 76 yorum)",
-    "currentSite": "Var (mkmklinik.com) — her gün 10:00–21:00 açık, birden fazla şube var",
+    "currentSite": "Var (mkmklinik.com) — her gün açık (Pazar 10:00–19:00), birden fazla şube var",
     "key": "h5q1",
     "instagram": null,
     "area": "Bağcılar Mahmutbey",
-    "phone2": "0552 861 42 11"
+    "phone2": "0552 861 42 11",
+    "gmaps": "4,7 / 94 yorum",
+    "website": "mkmklinik.com",
+    "verified": "Google Haritalar, 21.11.2026"
   },
   {
     "slug": "afildent",
@@ -205,29 +220,33 @@
       "beyazlatma"
     ],
     "source": "Zavis rehberi (Google 4.8 / 149 yorum)",
-    "currentSite": "Bilinmiyor — Google Haritalar'dan kontrol et",
+    "currentSite": "Var (afildent.com)",
     "hours": {
-      "weekdays": "09:00 – 19:00",
-      "saturday": "09:00 – 18:00",
-      "sunday": null
+      "weekdays": "09:00 – 23:00 (Perşembe 21:00)",
+      "saturday": "09:00 – 23:00",
+      "sunday": "11:00 – 23:00"
     },
     "open": {
       "start": 9,
-      "end": 19,
-      "satEnd": 18,
-      "sunday": false
+      "end": 23,
+      "satEnd": 23,
+      "sunday": true,
+      "sunEnd": 23
     },
-    "instagram": null
+    "instagram": null,
+    "gmaps": "4,8 / 168 yorum",
+    "website": "afildent.com",
+    "verified": "Google Haritalar, 21.11.2026"
   },
   {
     "slug": "batisehir-bogazici",
     "key": "w6c2",
-    "name": "Boğaziçi Diş",
-    "fullName": "Batışehir Boğaziçi Diş Polikliniği",
+    "name": "Dental Bosphorus",
+    "fullName": "Özel Boğaziçi Ağız ve Diş Sağlığı Polikliniği (Dental Bosphorus)",
     "area": "Bağcılar Batışehir",
     "address": "Göztepe Mah. Batışehir Cad. G3 Blok No:6/G, Bağcılar / İstanbul",
-    "mapQuery": "Batışehir Boğaziçi Diş Polikliniği",
-    "phone": "0507 805 48 27",
+    "mapQuery": "Dental Bosphorus Batışehir Bağcılar",
+    "phone": "0212 706 96 09",
     "whatsapp": "905078054827",
     "email": null,
     "color": "#0B5D8F",
@@ -241,27 +260,31 @@
       "dis-tasi"
     ],
     "source": "Zavis rehberi (Google 4.7 / 45 yorum, İngilizce konuşan ekip)",
-    "currentSite": "Bilinmiyor — İngilizce hizmet veriyor, sağlık turizmi için iyi aday",
+    "currentSite": "Var (bogaziciadsp.com) — İngilizce marka adı, sağlık turizmi için iyi aday",
     "hours": {
-      "weekdays": "09:00 – 19:00",
-      "saturday": "09:00 – 18:00",
+      "weekdays": "09:00 – 22:00",
+      "saturday": "09:00 – 22:00",
       "sunday": null
     },
     "open": {
       "start": 9,
-      "end": 19,
-      "satEnd": 18,
+      "end": 22,
+      "satEnd": 22,
       "sunday": false
     },
-    "instagram": null
+    "instagram": null,
+    "phone2": "0507 805 48 27",
+    "gmaps": "4,5 / 140 yorum (Dental Bosphorus) + 5,0 / 5 yorum (Özel Boğaziçi ADSP) — aynı adreste iki kayıt",
+    "website": "bogaziciadsp.com",
+    "verified": "Google Haritalar, 21.11.2026"
   },
   {
     "slug": "yuzyil-dis",
     "key": "z9f4",
     "name": "Yüzyıl Diş",
-    "fullName": "Yüzyıl Ağız ve Diş Sağlığı Polikliniği",
+    "fullName": "Özel Yüzyıl Ağız ve Diş Sağlığı Polikliniği",
     "area": "Bağcılar Yüzyıl",
-    "address": "Yüzyıl Mah. Barbaros Cad. No:19, Bağcılar / İstanbul",
+    "address": "100. Yıl Mah. Barbaros Cad. No:19 D:C, Bağcılar / İstanbul",
     "mapQuery": "Yüzyıl Ağız ve Diş Sağlığı Polikliniği Barbaros Cad 19 Bağcılar",
     "phone": "0212 432 32 88",
     "whatsapp": null,
@@ -279,17 +302,20 @@
     "source": "yuzyildis.com.tr (arama sonucu özeti)",
     "currentSite": "Var (yuzyildis.com.tr)",
     "hours": {
-      "weekdays": "09:00 – 19:00",
-      "saturday": "09:00 – 18:00",
+      "weekdays": "10:00 – 17:30",
+      "saturday": "10:00 – 17:30",
       "sunday": null
     },
     "open": {
-      "start": 9,
-      "end": 19,
-      "satEnd": 18,
+      "start": 10,
+      "end": 17.5,
+      "satEnd": 17.5,
       "sunday": false
     },
-    "instagram": null
+    "instagram": null,
+    "gmaps": "4,7 / 66 yorum",
+    "website": "yuzyildis.com.tr",
+    "verified": "Google Haritalar, 21.11.2026"
   },
   {
     "slug": "medicine-dis",
@@ -313,19 +339,23 @@
       "estetik"
     ],
     "source": "saglikgo.com + doktortakvimi.com (çene cerrahisi ağırlıklı)",
-    "currentSite": "Bilinmiyor — Doktortakvimi'nde profili var",
+    "currentSite": "Yok — Google kaydında web sitesi yerine Instagram (tanrikuludentists) var; Doktortakvimi profili var",
     "hours": {
-      "weekdays": "09:00 – 19:00",
-      "saturday": "09:00 – 18:00",
-      "sunday": null
+      "weekdays": "09:00 – 22:00",
+      "saturday": "09:00 – 22:00",
+      "sunday": "09:00 – 22:00"
     },
     "open": {
       "start": 9,
-      "end": 19,
-      "satEnd": 18,
-      "sunday": false
+      "end": 22,
+      "satEnd": 22,
+      "sunday": true,
+      "sunEnd": 22
     },
-    "instagram": null
+    "instagram": "tanrikuludentists",
+    "gmaps": "4,1 / 34 yorum",
+    "website": null,
+    "verified": "Google Haritalar, 21.11.2026"
   },
   {
     "slug": "dentbul",
@@ -349,18 +379,21 @@
       "beyazlatma"
     ],
     "source": "Zavis rehberi (arama sonucu özeti)",
-    "currentSite": "Bilinmiyor",
+    "currentSite": "Var (ozelbul.com — çok şubeli Özelbul markası)",
     "hours": {
-      "weekdays": "09:00 – 19:00",
-      "saturday": "09:00 – 18:00",
+      "weekdays": "08:00 – 20:30",
+      "saturday": "08:00 – 20:30",
       "sunday": null
     },
     "open": {
-      "start": 9,
-      "end": 19,
-      "satEnd": 18,
+      "start": 8,
+      "end": 20.5,
+      "satEnd": 20.5,
       "sunday": false
     },
-    "instagram": null
+    "instagram": null,
+    "gmaps": "4,9 / 144 yorum",
+    "website": "ozelbul.com",
+    "verified": "Google Haritalar, 21.11.2026"
   }
 ]

@@ -6,7 +6,7 @@
     "hook": "Tanıdık klinik. Çocuk diş hekimliği ve kanal tedavisi öne çıkıyor. Mevcut sitede online randevu takvimi görünmüyor. Kancan: \"Aileler telefonla uğraşmadan randevu alsın + yurt dışı hasta bölümü\".",
     "checks": [
       "densaclinic.com'da 'Randevu' butonu nereye gidiyor? Takvim mi, telefon mu?",
-      "Hekim isimlerini ve çalışma saatlerini öğren (görüşmede sor)",
+      "Hekim isimlerini öğren (görüşmede sor). Saatler Google'da Pzt–Cmt 09:00–21:00",
       "Instagram adresini panele yaz"
     ],
     "opener": "Selam 🙏 25'inde klinikteyim ya, sana Densa için hazırladığım bir şeyi göstermek istiyorum.\n\nAilelerin telefonla uğraşmadan 1 dakikada randevu aldığı, çocuk hastalara ve yurt dışından gelen hastalara özel bölümü olan yeni bir site. 3 farklı tasarımda hazırladım.\n\n10 dakika ayırabilir misin? Bence çok hoşuna gidecek 😊",
@@ -32,7 +32,7 @@
     "priority": "Orta",
     "hook": "Mahmutbey metrosunun hemen yanında, Günışığı Konutları'nda. Hem sabit hem cep hattı var. Kancan: \"Yanınızdan her gün geçen binlerce kişi, aramadan randevu alsın\".",
     "checks": [
-      "dentexpertdisklinigi.com'da online randevu var mı?",
+      "dentexpert.tr'de online randevu var mı?",
       "0534 635 75 75 WhatsApp'ta aktif mi?"
     ],
     "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}, Bağcılar'daki kliniklere online randevu sistemli web siteleri hazırlıyorum.\n\nDentexpert, Mahmutbey metrosunun hemen yanında. Her gün yanınızdan geçen binlerce kişiden biri 'akşam müsait misiniz?' diye aramak yerine sitenizden boş saati görüp 1 dakikada randevu alabilse nasıl olur?\n\nSizin için bunu yapan, estetik ve implant tedavilerinizi öne çıkaran 3 farklı tasarım hazırladım. Linki göndermemi ister misiniz?",
@@ -43,14 +43,13 @@
     "focus": "aile",
     "theme": "klasik",
     "priority": "Orta – önce TELEFON",
-    "hook": "Google'da 4.9 puan / 75 yorum ama yalnızca sabit hat bulduk, WhatsApp yok. Kancan: \"Hastalar sizi seviyor ama mesai dışında ya da hat meşgulken ulaşamıyor\".",
+    "hook": "Google'da 5,0 puan / 80 yorum ama Google kaydında da yalnızca sabit hat var, WhatsApp yok. Kancan: \"Hastalar sizi seviyor ama mesai dışında ya da hat meşgulken ulaşamıyor\".",
     "checks": [
-      "Google Haritalar'da bir cep/WhatsApp numarası var mı?",
       "kirazlidis.com'da online randevu var mı?",
       "Instagram hesabı var mı? (DM ile de açılış yapabilirsin)"
     ],
     "phoneIntro": "Google'da 4.9 puanınızı ve yorumlarınızı gördüm, tebrikler. Hastalarınız sizi çok seviyor ama size ulaşmanın tek yolu sabit hat gibi görünüyor; mesai dışında ya da hat meşgulken arayan hasta bekleyemiyor. Sizin için hastaların 7/24 telefonsuz randevu aldığı, 3 farklı tasarımda ücretsiz bir site önizlemesi hazırladım.",
-    "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nGoogle'da 4.9 puanınızı ve 75 yorumunuzu gördüm, tebrikler 👏 Ama size ulaşmanın tek yolu sabit hat gibi görünüyor; mesai dışında ya da hat meşgulken arayan hasta bekleyemiyor, başka kliniğe gidiyor.\n\nSizin için hastaların 7/24 telefonsuz randevu aldığı, 4 dilli ve 3 farklı tasarımda bir site önizlemesi hazırladım.\n\nLinki göndermemi ister misiniz? Bakmak ücretsiz.",
+    "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nGoogle'da 5,0 puanınızı ve 80 yorumunuzu gördüm, tebrikler 👏 Ama size ulaşmanın tek yolu sabit hat gibi görünüyor; mesai dışında ya da hat meşgulken arayan hasta bekleyemiyor, başka kliniğe gidiyor.\n\nSizin için hastaların 7/24 telefonsuz randevu aldığı, 4 dilli ve 3 farklı tasarımda bir site önizlemesi hazırladım.\n\nLinki göndermemi ister misiniz? Bakmak ücretsiz.",
     "linkNote": "Klasik tasarımı önerdim; köklü ve güven veren bir görünüm. Hastalar artık mesai dışında da randevu bırakabiliyor.",
     "fallback": "WhatsApp'ları varsa: kancayı 'sitede online randevu yok' üzerine kur."
   },
@@ -58,25 +57,25 @@
     "focus": "uzun-saat",
     "theme": "modern",
     "priority": "Yüksek – her gün 21:00'e kadar açık",
-    "hook": "Her gün 10:00–21:00 açıklar ve birden fazla şubeleri var; bu büyük bir avantaj. Kancan: \"Gece 23:00'te diş ağrısıyla sitenize giren hasta randevu alamıyor\".",
+    "hook": "Haftanın 7 günü açıklar (Pzt–Cmt 10:00–21:00, Pazar 10:00–19:00) ve birden fazla şubeleri var; bu büyük bir avantaj. Kancan: \"Gece 23:00'te diş ağrısıyla sitenize giren hasta randevu alamıyor\".",
     "checks": [
       "mkmklinik.com'da online randevu var mı? Varsa kancayı fallback'e çevir",
       "0552 861 42 11 WhatsApp'ta aktif mi?"
     ],
-    "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nMKM Klinik'in her gün 21:00'e kadar açık olduğunu gördüm. Bu, bölgede çok az klinikte olan büyük bir avantaj 👏 Ama gece 23:00'te diş ağrısıyla sitenize giren biri randevu alamıyor; sabahı bekliyor ya da başka yere gidiyor.\n\nSizin için 7/24 online randevu alan, \"her gün 21:00'e kadar açığız\" mesajını öne çıkaran ve yabancı hasta bölümü olan 3 tasarımlık bir önizleme hazırladım.\n\nGöndermemi ister misiniz?",
-    "linkNote": "\"Her gün 21:00'e kadar açığız\" mesajını en üste koydum; pazar dahil her güne randevu alınabiliyor.",
+    "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nMKM Klinik'in haftanın 7 günü, hafta içi ve cumartesi 21:00'e kadar açık olduğunu gördüm. Bu, bölgede çok az klinikte olan büyük bir avantaj 👏 Ama gece 23:00'te diş ağrısıyla sitenize giren biri randevu alamıyor; sabahı bekliyor ya da başka yere gidiyor.\n\nSizin için 7/24 online randevu alan, \"haftanın 7 günü açığız\" mesajını öne çıkaran ve yabancı hasta bölümü olan 3 tasarımlık bir önizleme hazırladım.\n\nGöndermemi ister misiniz?",
+    "linkNote": "\"Haftanın 7 günü açığız\" mesajını en üste koydum; pazar dahil her güne randevu alınabiliyor.",
     "fallback": "Online randevuları varsa: kancayı 'İngilizce/Arapça/Almanca yabancı hasta bölümü + şubeler için tek randevu' yap."
   },
   "afildent": {
     "focus": "estetik",
     "theme": "premium",
     "priority": "Yüksek – güçlü itibar",
-    "hook": "Google'da 4.8 puan / 149 yorum ve İngilizce konuşan ekip (rehbere göre). Web sitesi bulamadık. Kancan: \"Bu itibarı randevuya çeviren bir siteniz yok\".",
+    "hook": "Google'da 4,8 puan / 168 yorum ve İngilizce konuşan ekip (rehbere göre). Sitesi var (afildent.com). Kancan: \"Bu itibarı randevuya çeviren online randevu ve yabancı hasta bölümü\".",
     "checks": [
-      "Google Haritalar'da 'Web sitesi' butonu var mı? Yoksa kanca çok güçlü",
+      "afildent.com'da online randevu takvimi ve İngilizce/yabancı hasta bölümü var mı?",
       "0532 390 24 53 WhatsApp'ta aktif mi?"
     ],
-    "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nGoogle'da 149 yorumla 4.8 puanınızı gördüm, tebrikler 👏 Bu kadar güçlü bir itibar, sizi Google'da bulan hastayı randevuya çevirecek bir siteyle çok daha fazla işe yarar. Ekibinizde İngilizce konuşan olduğunu da gördüm; bu, yurt dışından gelen hasta için büyük avantaj.\n\nSizin için online randevu ve İngilizce/Arapça/Almanca yabancı hasta bölümü olan 3 tasarımlık bir önizleme hazırladım.\n\nLinki göndermemi ister misiniz?",
+    "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nGoogle'da 168 yorumla 4,8 puanınızı gördüm, tebrikler 👏 Bu kadar güçlü bir itibar, sizi Google'da bulan hastayı 1 dakikada online randevuya çeviren bir siteyle çok daha fazla işe yarar. Ekibinizde İngilizce konuşan olduğunu da gördüm; bu, yurt dışından gelen hasta için büyük avantaj.\n\nSizin için online randevu ve İngilizce/Arapça/Almanca yabancı hasta bölümü olan 3 tasarımlık bir önizleme hazırladım.\n\nLinki göndermemi ister misiniz?",
     "linkNote": "Premium tasarımı önerdim; estetik tedavilere ve yabancı hastaya hitap eden lüks bir görünüm.",
     "fallback": "Siteleri varsa: kancayı 'sitenizde online randevu ve yabancı hasta bölümü yok' yap."
   },
@@ -84,10 +83,10 @@
     "focus": "international",
     "theme": "premium",
     "priority": "🔥 Sağlık turizmi için en iyi aday",
-    "hook": "İngilizce hizmet veriyorlar ve 'Boğaziçi' adı yabancı hasta için güçlü bir marka. Aynı adreste sağlık turizmi yapan başka klinikler de listeleniyor, yani rekabet var. Kancan: \"Yabancı hastayı kendi dilinde karşılayın\".",
+    "hook": "Google'da 'Dental Bosphorus' adıyla 4,5 puan / 140 yorum (aynı adreste 'Özel Boğaziçi ADSP' kaydı da var). Sitesi bogaziciadsp.com, İngilizce hizmet veriyorlar. Aynı adreste sağlık turizmi yapan başka klinikler de listeleniyor, yani rekabet var. Kancan: \"Yabancı hastayı kendi dilinde karşılayın\".",
     "checks": [
-      "Google Haritalar'da web siteleri var mı, İngilizce mi?",
-      "0507 805 48 27 WhatsApp'ta aktif mi?"
+      "bogaziciadsp.com İngilizce/Arapça mı? Online randevu ve ön değerlendirme formu var mı?",
+      "0507 805 48 27 WhatsApp'ta aktif mi? (Google'da yok, rehberden geldi; Google'daki hat 0212 706 96 09)"
     ],
     "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nBatışehir'de yurt dışından gelen hasta sayısı her geçen gün artıyor. Ekibinizin İngilizce hizmet verdiğini gördüm; \"Boğaziçi\" adı da yabancı hasta için çok güçlü bir marka 🌉\n\nSizin için yabancı hastanın kendi dilinde (İngilizce, Arapça, Almanca) ücretsiz ön değerlendirme isteyip WhatsApp'tan fotoğraf/röntgen gönderebildiği, Türk hastaların da 1 dakikada randevu aldığı 3 tasarımlık bir önizleme hazırladım.\n\nGöndermemi ister misiniz?",
     "linkNote": "Sayfayı yurt dışı hastası odaklı kurdum; telefonu İngilizce olan biri siteyi otomatik İngilizce görüyor.",
@@ -97,10 +96,10 @@
     "focus": "aile",
     "theme": "klasik",
     "priority": "Orta – önce TELEFON",
-    "hook": "Sitesi var (yuzyildis.com.tr) ama yalnızca sabit hat bulduk. Kancan: \"Hastalar sitenizden doğrudan randevu alamıyor, aramak zorunda\".",
+    "hook": "Sitesi var (yuzyildis.com.tr) ama Google kaydında da yalnızca sabit hat var (Pzt–Cmt 10:00–17:30). Kancan: \"Hastalar sitenizden doğrudan randevu alamıyor, aramak zorunda\".",
     "checks": [
       "yuzyildis.com.tr'de online randevu var mı?",
-      "Google Haritalar'da cep/WhatsApp numarası var mı?"
+      "Instagram hesabı var mı?"
     ],
     "phoneIntro": "Sitenize baktım; güzel bir tanıtım var ama hasta randevu almak için aramak zorunda. Telefon meşgulken ya da mesai dışında bu hastaları kaçırıyorsunuz. Sizin için sitenizden 1 dakikada randevu alınan, 4 dilli ve 3 farklı tasarımda ücretsiz bir önizleme hazırladım.",
     "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nYüzyıl Diş'in sitesine baktım; güzel bir tanıtım var ama hasta randevu almak için hâlâ aramak zorunda. Hat meşgulken ya da mesai dışında arayan hastayı kaçırıyorsunuz.\n\nSizin için hastaların sitenizden 1 dakikada randevu aldığı, 4 dilli ve 3 farklı tasarımda bir önizleme hazırladım.\n\nLinki göndermemi ister misiniz?",
@@ -111,10 +110,10 @@
     "focus": "cerrahi",
     "theme": "klasik",
     "priority": "Orta",
-    "hook": "Ağız, diş ve çene cerrahisi ağırlıklı. Doktortakvimi'nde hekim profili var, yani randevular platforma bağımlı. Kancan: \"Platformdan gelen hasta platformun; kendi sitenizden gelen hasta sizin\".",
+    "hook": "Ağız, diş ve çene cerrahisi ağırlıklı. Doktortakvimi'nde hekim profili var, yani randevular platforma bağımlı. Kancan: \"Platformdan gelen hasta platformun; kendi sitenizden gelen hasta sizin\". Google kaydında web sitesi yerine Instagram (@tanrikuludentists) var, yani kendi siteleri yok.",
     "checks": [
       "Doktortakvimi'nde profil hâlâ aktif mi, hekim adı doğru mu?",
-      "Kendi web siteleri var mı?",
+      "Instagram @tanrikuludentists aktif mi? (DM ile de açılış yapabilirsin)",
       "0530 822 56 96 WhatsApp'ta aktif mi?"
     ],
     "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nDoktortakvimi'nde ağız, diş ve çene cerrahisi profilinizi gördüm. Oradan gelen hasta platformun hastası olarak kalıyor; kendi sitenizden randevu alan hasta ise tamamen sizin.\n\nSizin için gömülü diş, implant ve çene cerrahisini öne çıkaran, hastanın 1 dakikada randevu aldığı ve yurt dışı hastasına 4 dilde hitap eden 3 tasarımlık bir önizleme hazırladım.\n\nGöndermemi ister misiniz?",
@@ -125,9 +124,9 @@
     "focus": "implant",
     "theme": "premium",
     "priority": "Yüksek – implant = sağlık turizmi",
-    "hook": "Adında 'implant' geçiyor. İmplant, İstanbul'a gelen yabancı hastaların en çok aradığı tedavilerden biri. Kancan: \"İmplant için gelen yabancı hastayı yakalayın\".",
+    "hook": "Adında 'implant' geçiyor. İmplant, İstanbul'a gelen yabancı hastaların en çok aradığı tedavilerden biri. Kancan: \"İmplant için gelen yabancı hastayı yakalayın\". Google'daki site çok şubeli Özelbul markasının (ozelbul.com) genel sitesi; şubeye özel sayfa yok.",
     "checks": [
-      "Google Haritalar'da web siteleri var mı?",
+      "ozelbul.com'da Bağcılar şubesine özel sayfa ve online randevu var mı?",
       "0552 716 36 08 WhatsApp'ta aktif mi?"
     ],
     "opener": "Merhaba, iyi çalışmalar 🙏 Ben {AD}.\n\nAdınızda \"implant\" var. İmplant, İstanbul'a gelen yabancı hastaların en çok aradığı tedavilerden biri 🌍\n\nSizin için implantı merkeze alan, yabancı hastanın röntgenini WhatsApp'tan gönderip ön değerlendirme isteyebildiği ve Türk hastaların 1 dakikada randevu aldığı 3 tasarımlık bir önizleme hazırladım.\n\nLinki göndermemi ister misiniz?",
