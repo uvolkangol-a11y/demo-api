@@ -22,23 +22,26 @@ Yeni oturuma: "dental-prototypes/NOTES.md dosyasını oku, kaldığımız yerden
 dental-prototypes/
   data/clinics.json     # klinik bilgileri (ad, adres, telefon, WhatsApp, saat, renk, tedaviler, key)
   data/outreach.json    # kliniğe özel kanca, kontrol listesi, açılış mesajı, odak (focus) ve önerilen tasarım (theme)
+  data/sample.json      # uydurma "Örnek Diş Kliniği" (ana sayfadaki örnek tasarım; panelde yok)
+  template/home.html    # markanstudio.com ana sayfası (Markan Studio tanıtımı)
   template/site.html    # tek şablon: 3 tema (modern/klasik/premium), 4 dil, randevu sihirbazı, yurt dışı hasta bölümü
   build.mjs             # node build.mjs  ->  dist/
   dist/                 # Cloudflare Pages'e yüklenen çıktı
 ```
 - `dist/<slug>-<key>/` Modern, `.../klasik/` ve `.../premium/` diğer tasarımlar. Önerilen tasarım ⭐ ile işaretli.
 - `dist/panel-9w4zq7/` satış paneli (sadece kullanıcı için): kliniğe özel Açılış / Telefon / Link / Takip mesajları, kanca kartı, durum takibi (localStorage).
-- `dist/index.html` nötr kapak sayfası (klinik listesi göstermez).
+- `dist/index.html` Markan Studio ana sayfası: hizmetler, nasıl çalışır, örnek tasarım, Bospora Health kartı, info@ iletişimi. Fiyat, hasta yorumu, "en iyi" iddiası yok. Gerçek klinik demolarına link vermez (build.mjs bunu kontrol eder).
+- `dist/ornek-dis-klinigi/` (+ `klasik/`, `premium/`) ana sayfadan linklenen uydurma örnek klinik. Şeritte "Örnek tasarım · Bu klinik gerçek değildir" yazar; WhatsApp/e-posta yok.
 - Demolar `noindex`; üstte "Tasarım önizlemesi · Resmi site değildir" şeridi var. Sağlık tanıtım yönetmeliği gereği hasta yorumu, fiyat veya "en iyi" iddiası yok.
 - Randevu şu an demo: tarayıcıda saklanır, WhatsApp'ı olan klinikte talep hazır mesaj olarak wa.me ile gider.
 
 ## Yayın
-- Cloudflare Pages projesi (Direct Upload). Proje adı muhtemelen **kliniz-onizleme**, Cloudflare panelinden doğrula.
-  - `https://kliniz-onizleme.pages.dev/<slug>-<key>/`
-  - Panel: `https://kliniz-onizleme.pages.dev/panel-9w4zq7/`
-- Şimdiye kadar zip yüklendi. Mac'ten doğrudan yüklemek için:
-  `cd dental-prototypes && node build.mjs && npx wrangler pages deploy dist --project-name=kliniz-onizleme`
-  (ilk seferde `npx wrangler login`)
+- Cloudflare Pages projesi **kliniz-onizleme** (Direct Upload), `markanstudio.com` + `www` bağlı.
+  - `https://markanstudio.com/<slug>-<key>/`
+  - Panel: `https://markanstudio.com/panel-9w4zq7/`
+- Yayın: `cd dental-prototypes && node build.mjs && npx wrangler pages deploy dist --project-name=kliniz-onizleme --branch=main`
+- `bospora.markanstudio.com` ayrı Worker (bospora-health), başka repo/dal; buradan dokunma.
+- **E-posta (21.11.2026):** Cloudflare Email Routing açık; `info@markanstudio.com` kullanıcının kişisel Gmail'ine yönlenir (MX + SPF Cloudflare tarafından eklendi).
 
 ## Klinikler (10) – durum
 | Klinik | Path | Tasarım ⭐ | Kanal | Not |
@@ -69,7 +72,7 @@ Hâlâ doğrulanmayanlar: WhatsApp numaralarının aktif olup olmadığı (sited
 ## Sıradaki işler
 1. **Yayın:** Doğrulanan verilerle `node build.mjs && npx wrangler pages deploy dist --project-name=kliniz-onizleme`. Kalan `checks` maddeleri (WhatsApp aktif mi vb.) mesaj atmadan hemen önce panelden kontrol edilecek.
 2. **Densa (25 Kasım):** Doktor isimleri ve saatleri gelince "Hekimlerimiz" bölümü, yabancı hasta SSS (4 dil), logo/renk uyarlaması.
-3. **Marka:** Çok sektörlü, jenerik bir ajans adı seçilecek (öneriler: Randevulu, Vitrinim, Webkanca, Sitekur). Alan adı alınıp Cloudflare'e bağlanacak, Email Routing ile info@ adresi açılacak. Önizleme şeridi ve mesaj imzalarına marka adı eklenecek. Basit bir ajans tanıtım sitesi yapılacak.
+3. **Marka:** Ad **Markan Studio**, alan adı markanstudio.com. Tanıtım ana sayfası ve info@ (Email Routing) 21.11.2026'da yayında. Kalan: önizleme şeridi ve mesaj imzalarına "Markan Studio" adı, logo.
 4. **Çok sektör:** Üreticiyi sektörden bağımsız hale getir (tedaviler → hizmetler, sektöre göre ikon, metin ve kanca).
 5. **İletişim hattı:** WhatsApp Business ayrı bir hatla kuruluyor. Profil, hızlı yanıtlar (panel mesajları) ve etiketler ayarlanacak. Yeni numarada günde 5–10 kişiye, kişiye özel mesaj at.
 6. **Fatura:** Annenin şahıs şirketine mali müşavirle faaliyet kodları eklenecek (62.01 programlama, 63.11 hosting, 58.29 yazılım yayımlama, 62.02 danışmanlık, gerekirse 73.11 / 47.91). Kesin kodları müşavir belirleyecek. Basit hizmet sözleşmesi + KVKK (veri işleyen) maddesi hazırlanacak.

@@ -2,7 +2,8 @@
 // Girdi : data/clinics.json + template/site.html
 // Çıktı : dist/<slug>-<key>/index.html   (kliniğe gönderilecek demo; tahmin edilemez adres)
 //         dist/<PANEL_PATH>/index.html   (sadece senin için satış paneli)
-//         dist/index.html                (nötr kapak; klinik listesi göstermez)
+//         dist/ornek-dis-klinigi/          (ana sayfadaki uydurma örnek klinik)
+//         dist/index.html                (Markan Studio ana sayfası; klinik demolarına link vermez)
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -29,8 +30,17 @@ const THEMES = [
   { id: 'premium', label: 'Premium', fonts: 'family=Manrope:wght@400;500;600;700;800' },
 ];
 
-for (const c of clinics) {
-  const { outreach: _o, ...pub } = c;
+// Ana sayfadaki örnek tasarım için uydurma klinik (gerçek klinik değil; panelde yer almaz)
+const SAMPLE = JSON.parse(readFileSync(join(root, 'data/sample.json'), 'utf8'));
+const SAMPLE_BAR = [
+  '<b>Örnek tasarım</b> · Markan Studio · Bu klinik gerçek değildir',
+  '<b>Sample design</b> · Markan Studio · This clinic is fictional',
+  '<b>تصميم نموذجي</b> · Markan Studio · هذه العيادة غير حقيقية',
+  '<b>Beispieldesign</b> · Markan Studio · Diese Klinik ist fiktiv',
+];
+
+function renderClinic(c, dirName, { sample = false } = {}) {
+  const { outreach: _o, note: _n, ...pub } = c;
   const json = JSON.stringify(pub).replace(/</g, '\\u003c');
   THEMES.forEach((th, i) => {
     const up = i === 0 ? '' : '../';
@@ -45,38 +55,34 @@ for (const c of clinics) {
       .replace('{{COLOR}}', c.color)
       .replace('{{ACCENT}}', c.accent)
       .replace('/*CLINIC*/{}/*END*/', json);
-    const dir = i === 0 ? join(dist, pathOf(c)) : join(dist, pathOf(c), th.id);
+    let out = html;
+    if (sample) {
+      let n = 0;
+      out = out.replace(/demoBar:'[^']*'/g, () => `demoBar:'${SAMPLE_BAR[n++]}'`);
+      if (n !== SAMPLE_BAR.length) throw new Error(`Örnek şeridi: ${n} demoBar bulundu, ${SAMPLE_BAR.length} bekleniyordu`);
+    }
+    const dir = i === 0 ? join(dist, dirName) : join(dist, dirName, th.id);
     mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, 'index.html'), html);
+    writeFileSync(join(dir, 'index.html'), out);
   });
-  console.log(`✓ dist/${pathOf(c)}/  (+ klasik/, premium/)`);
+  console.log(`✓ dist/${dirName}/  (+ klasik/, premium/)`);
 }
 
-// ---- Kapak sayfası (markanstudio.com kökü; klinik listesi göstermez) ----
+for (const c of clinics) renderClinic(c, pathOf(c));
+renderClinic(SAMPLE, SAMPLE.slug, { sample: true });
+
+// ---- Ana sayfa (markanstudio.com kökü; gerçek klinik demolarına link vermez) ----
 const BOSPORA_URL = 'https://bospora.markanstudio.com/#tr';
-writeFileSync(join(dist, 'index.html'), `<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Markan Studio</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:system-ui,sans-serif;background:#f3f5f8;color:#14202b;padding:16px}
-main{max-width:520px;width:100%;text-align:center}
-h1{margin:0 0 8px;font-size:2rem}
-.lead{margin:0 0 28px;color:#5b6b7a;line-height:1.5}
-.card{display:block;text-align:left;background:#fff;border:1px solid #dde3ea;border-radius:14px;padding:18px 20px;color:inherit;text-decoration:none;transition:border-color .15s,box-shadow .15s}
-.card:hover,.card:focus-visible{border-color:#0B5D8F;box-shadow:0 4px 16px rgba(11,93,143,.12)}
-.card b{display:block;font-size:1.05rem;margin-bottom:4px}
-.card span{color:#5b6b7a;line-height:1.45}
-.card em{display:inline-block;margin-top:10px;font-style:normal;color:#0B5D8F;font-weight:600}
-.note{margin-top:28px;font-size:.85rem;color:#8796a5}
-</style></head>
-<body><main>
-<h1>Markan Studio</h1>
-<p class="lead">Klinikler için online randevulu, çok dilli web siteleri.</p>
-<a class="card" href="${BOSPORA_URL}">
-<b>Bospora Health</b>
-<span>Yurt dışından gelen hastalar için klinik bulma ve randevu platformumuz.</span>
-<em>Platformu incele →</em>
-</a>
-<p class="note">Bu adresteki tasarım önizlemeleri yalnızca kendilerine özel bağlantı gönderilen kişiler içindir.</p>
-</main></body></html>`);
+const CONTACT_EMAIL = 'info@markanstudio.com';
+const home = readFileSync(join(root, 'template/home.html'), 'utf8')
+  .replaceAll('{{BOSPORA_URL}}', BOSPORA_URL)
+  .replaceAll('{{SAMPLE_URL}}', `/${SAMPLE.slug}/`)
+  .replaceAll('{{EMAIL}}', CONTACT_EMAIL)
+  .replaceAll('{{MAIL_SUBJECT}}', encodeURIComponent('Klinik sitesi önizleme talebi'))
+  .replaceAll('{{YEAR}}', String(new Date().getFullYear()));
+if (/\{\{[A-Z_]+\}\}/.test(home)) throw new Error('home.html içinde doldurulmamış yer tutucu kaldı');
+if (clinics.some(c => home.includes(pathOf(c)))) throw new Error('Ana sayfa gerçek bir klinik demosuna link veriyor');
+writeFileSync(join(dist, 'index.html'), home);
 
 // ---- Mesaj şablonları ----
 // {LINK} -> demo adresi, {AD} -> senin adın, {TEL} -> senin telefonun
@@ -217,4 +223,4 @@ $$('.card').forEach(card=>{
 [myName,myTel].forEach(i=>i.oninput=()=>{ls.set('me-name',myName.value);ls.set('me-tel',myTel.value);$$('.card').forEach(fill);});
 </script></body></html>`);
 console.log(`✓ dist/${PANEL_PATH}/ (satış paneli)`);
-console.log('✓ dist/index.html (nötr kapak)');
+console.log('✓ dist/index.html (Markan Studio ana sayfası)');

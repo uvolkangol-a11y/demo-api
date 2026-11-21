@@ -1,0 +1,29 @@
+{
+  "slug": "ornek-dis-klinigi",
+  "name": "Örnek Diş",
+  "fullName": "Örnek Diş Kliniği",
+  "address": "Örnek Mah. Örnek Cad. No:1, İstanbul",
+  "mapQuery": "İstanbul",
+  "phone": "0212 000 00 00",
+  "whatsapp": null,
+  "email": null,
+  "instagram": null,
+  "hours": {
+    "weekdays": "09:00 – 20:00",
+    "saturday": "09:00 – 18:00",
+    "sunday": null
+  },
+  "open": {
+    "start": 9,
+    "end": 20,
+    "satEnd": 18,
+    "sunday": false
+  },
+  "color": "#1F5FBF",
+  "accent": "#F2A65A",
+  "featured": ["implant", "zirkonyum", "ortodonti", "beyazlatma", "kanal", "pedodonti"],
+  "area": "İstanbul",
+  "focus": "genel",
+  "theme": "modern",
+  "note": "Uydurma klinik. markanstudio.com ana sayfasındaki örnek tasarım için; gerçek bir klinikle ilgisi yok."
+}
